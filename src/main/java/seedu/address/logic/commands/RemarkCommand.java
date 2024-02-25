@@ -90,4 +90,3 @@ public class RemarkCommand extends Command {
         return String.format(message, personToEdit);
     }
 }
-
