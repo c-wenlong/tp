@@ -1,21 +1,27 @@
 package seedu.address.model.person;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
  * Represents a Person's remark in the address book.
  * Guarantees: immutable; is always valid
  */
 public class Remark {
-    public static final String MESSAGE_CONSTRAINTS =
-            "Remarks should only contain alphanumeric characters and spaces, and it should not be blank";
+    public static final String MESSAGE_CONSTRAINTS = "Remarks should only contain alphanumeric characters and spaces, and it should not be blank";
 
     public static final String VALIDATION_REGEX = "[A-Za-z0-9,.?!\\s]+";
 
     public final String value;
 
+    /**
+     * Constructs an {@code Remark}.
+     *
+     * @param remark A valid remark.
+     */
     public Remark(String remark) {
         requireNonNull(remark);
+        checkArgument(isValidRemark(remark), MESSAGE_CONSTRAINTS);
         value = remark;
     }
 
@@ -35,7 +41,7 @@ public class Remark {
     public boolean equals(Object other) {
         return other == this // short circuit if same object
                 || (other instanceof Remark // instanceof handles nulls
-                && value.equals(((Remark) other).value)); // state check
+                        && value.equals(((Remark) other).value)); // state check
     }
 
     @Override
