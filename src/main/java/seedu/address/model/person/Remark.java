@@ -8,7 +8,8 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
  * Guarantees: immutable; is always valid
  */
 public class Remark {
-    public static final String MESSAGE_CONSTRAINTS = "Remarks should only contain alphanumeric characters and spaces, and it should not be blank";
+    public static final String MESSAGE_CONSTRAINTS =
+            "Remarks should only contain alphanumeric characters and spaces, and it should not be blank";
 
     public static final String VALIDATION_REGEX = "[A-Za-z0-9,.?!\\s]+";
 
