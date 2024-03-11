@@ -1,5 +1,7 @@
 package seedu.address.logic.commands;
 
+import java.util.List;
+
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
@@ -9,8 +11,6 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Remark;
-
-import java.util.List;
 
 /**
  * Changes the remark of an existing person in the address book.
@@ -36,7 +36,7 @@ public class RemarkCommand extends Command {
     private final Remark remark;
 
     /**
-     * @param index of the person in the filtered person list to edit the remark
+     * @param index  of the person in the filtered person list to edit the remark
      * @param remark of the person to be updated to
      */
     public RemarkCommand(Index index, Remark remark) {
@@ -45,6 +45,7 @@ public class RemarkCommand extends Command {
         this.index = index;
         this.remark = remark;
     }
+
     @Override
     public CommandResult execute(Model model) throws CommandException {
         List<Person> lastShownList = model.getFilteredPersonList();
