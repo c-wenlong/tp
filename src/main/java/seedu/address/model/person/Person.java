@@ -24,6 +24,7 @@ public class Person {
     // Data fields
     private final Address address;
     private final Set<Tag> tags = new HashSet<>();
+    private Star starCount;
 
     /**
      * Every field must be present and not null.
@@ -34,6 +35,20 @@ public class Person {
         this.phone = phone;
         this.email = email;
         this.address = address;
+        this.tags.addAll(tags);
+        this.starCount = new Star(0);
+    }
+
+    /**
+     * Every field must be present and not null.
+     */
+    public Person(Name name, Phone phone, Email email, Address address, Star starCount, Set<Tag> tags) {
+        requireAllNonNull(name, phone, email, address, tags);
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.starCount = starCount;
         this.tags.addAll(tags);
     }
 
@@ -52,6 +67,8 @@ public class Person {
     public Address getAddress() {
         return address;
     }
+
+    public Star getStar() { return starCount; }
 
     /**
      * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
@@ -100,7 +117,7 @@ public class Person {
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, tags);
+        return Objects.hash(name, phone, email, address, starCount, tags);
     }
 
     @Override
@@ -110,6 +127,7 @@ public class Person {
                 .add("phone", phone)
                 .add("email", email)
                 .add("address", address)
+                .add("star", starCount)
                 .add("tags", tags)
                 .toString();
     }
