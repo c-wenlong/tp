@@ -24,7 +24,7 @@ public class StarCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Give star(s) to the student identified "
             + "by the index number used in the last student listing. "
             + "Stars will be added to the existing number of stars.\n"
-            + "Parameters: INDEX (must be a positive integer) "
+            + "Parameters: INDEX (must be a posigit tive integer) "
             + PREFIX_STAR + "[STAR]\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_STAR + "3";
