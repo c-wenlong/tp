@@ -22,10 +22,12 @@ import seedu.address.model.tag.Tag;
  */
 public class ParserUtil {
 
-    public static final String MESSAGE_INVALID_INDEX = "Index is not a non-zero unsigned integer.";
-    public static final String MESSAGE_INVALID_STAR = "Star is not a non-zero unsigned integer.";
-    public static final String MESSAGE_INVALID_BOLT = "Bolt is not a non-zero unsigned integer.";
-
+    public static final String MESSAGE_INVALID_INDEX =
+            "Invalid Index: \nIndex starts from 1 and should not exceed number of contacts in the list.";
+    public static final String MESSAGE_INVALID_STAR =
+            "Invalid Number of Stars: \nStar given should be more than 0 and not exceed 10.";
+    public static final String MESSAGE_INVALID_BOLT =
+            "Invalid Number of Stars: \nBolt given should be more than 0 and not exceed 10.";
 
     /**
      * Parses {@code oneBasedIndex} into an {@code Index} and returns it. Leading and trailing whitespaces will be
@@ -109,12 +111,34 @@ public class ParserUtil {
     public static Star parseStar(String star) throws ParseException {
         requireNonNull(star);
         String trimmedStar = star.trim(); // trim the string to only get the number
-        if (!StringUtil.isUnsignedInteger(trimmedStar)) {
+        if (!StringUtil.isNonZeroUnsignedInteger(trimmedStar))  { // star command only allows non-zero
             throw new ParseException(MESSAGE_INVALID_STAR);
-        } // checks if Star is in fact an Integer
+        }
         Integer starCount = Integer.parseInt(trimmedStar);
-        if (!Star.isValidStar(starCount)) { // check whether star is a valid Integer >= 0
+        if (!Star.isValidStar(starCount)) { // check whether star is a valid Integer > 0 & <= 10.
             throw new ParseException(Star.MESSAGE_CONSTRAINTS);
+        }
+        return new Star(starCount);
+    }
+
+    /**
+     * Parses a {@code String star} into a {@code Star}.
+     * Leading and trailing whitespaces will be trimmed. This is for EditCommand.
+     *
+     * @throws ParseException if the given {@code Star} is invalid.
+     */
+    public static Star parseStarEdit(String star) throws ParseException {
+        requireNonNull(star);
+        String trimmedStar = star.trim(); // trim the string to only get the number
+        if (!StringUtil.isUnsignedInteger(trimmedStar))  { // edit command allows zero
+            throw new ParseException(MESSAGE_INVALID_STAR);
+        }
+        Integer starCount = Integer.parseInt(trimmedStar);
+        if (!Star.isValidStar(starCount) && starCount != 0) { // check whether star is a valid Integer > 0 & <= 10.
+            throw new ParseException(Star.MESSAGE_CONSTRAINTS_EDIT);
+        }
+        if (starCount==0) {
+            return new Star();
         }
         return new Star(starCount);
     }

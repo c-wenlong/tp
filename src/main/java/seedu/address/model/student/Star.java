@@ -9,9 +9,11 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class Star implements Comparable<Star> {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Stars given should be more than 0.";
+            "Invalid Number of Stars: \nStar should be more than 0 and less than 10.";
+    public static final String MESSAGE_CONSTRAINTS_EDIT =
+            "Invalid Number of Stars: \nStar should not be negative and should be less than 10.";
 
-    public static final Star NO_STAR = new Star(0);
+    public static final Star NO_STAR = new Star();
 
     public final Integer numOfStars; // number of stars given to a student
 
@@ -27,10 +29,17 @@ public class Star implements Comparable<Star> {
     }
 
     /**
+     * Constructs a star of NO_STAR and to allow editing of stars to 0 in EditCommand.
+     */
+    public Star() {
+        this.numOfStars = 0;
+    }
+
+    /**
      * Returns true if a given string is a valid number.
      */
     public static boolean isValidStar(Integer numOfStars) {
-        return numOfStars >= 0;
+        return (numOfStars > 0 && numOfStars <= 10);
     }
 
     @Override
