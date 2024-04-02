@@ -29,8 +29,8 @@ public class Star implements Comparable<Star> {
     /**
      * Returns true if a given string is a valid number.
      */
-    public static boolean isValidStar(Integer noOfStars) {
-        return noOfStars >= 0;
+    public static boolean isValidStar(Integer numOfStars) {
+        return numOfStars >= 0;
     }
 
     @Override
