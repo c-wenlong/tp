@@ -144,7 +144,7 @@ public class ModelManager implements Model {
         Comparator<Student> comparator;
         switch (field.toLowerCase()) {
         case "email":
-            comparator = Comparator.comparing(Student::getEmail).thenComparing(Student::getName);
+            comparator = Comparator.comparing(Student::getEmail);
             break;
         case "major":
             comparator = Comparator.comparing(Student::getMajor);
