@@ -9,7 +9,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class Star implements Comparable<Star> {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Stars given should be more than 0.";
+            "Total stars should be between 0 and 50000.";
 
     public static final Star NO_STAR = new Star(0);
 
@@ -24,13 +24,6 @@ public class Star implements Comparable<Star> {
         requireNonNull(numOfStars);
         checkArgument(isValidStar(numOfStars), MESSAGE_CONSTRAINTS);
         this.numOfStars = numOfStars;
-    }
-
-    /**
-     * Constructs a {@code Star} with 0 numOfStars.
-     */
-    public Star() {
-        this.numOfStars = 0;
     }
 
     /**

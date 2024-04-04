@@ -54,8 +54,11 @@ public class StarCommand extends Command {
         }
 
         Student studentToEdit = lastShownList.get(index.getZeroBased()); // get Student indexed
-        Star starToEdit = studentToEdit.getStar(); // return the stars
-        Star editedStar = new Star(starToEdit.numOfStars + this.star.numOfStars); // new Star to be added
+        int totalStars = this.star.numOfStars + studentToEdit.getStarCount();
+        if (!Star.isValidStar(totalStars)) {
+            throw new CommandException(Star.MESSAGE_CONSTRAINTS);
+        }
+        Star editedStar = new Star(totalStars); // new Star to be added
 
         Student editedStudent = new Student(
                 studentToEdit.getName(), studentToEdit.getPhone(), studentToEdit.getEmail(),
