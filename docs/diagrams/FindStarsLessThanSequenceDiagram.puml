@@ -4,7 +4,7 @@ skinparam ArrowFontStyle plain
 
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
-participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant ":ClassMonitorParser" as ClassMonitorParser LOGIC_COLOR
 participant ":FindStarsLessThanCommandParser" as FindStarsLessThanCommandParser LOGIC_COLOR
 participant "d:FindStarsLessThanCommand" as FindStarsLessThanCommand LOGIC_COLOR
 participant "r:CommandResult" as CommandResult LOGIC_COLOR
@@ -17,17 +17,17 @@ end box
 [-> LogicManager : execute("findStarsLT 1")
 activate LogicManager
 
-LogicManager -> AddressBookParser : parseCommand("findStarsLT 1")
-activate AddressBookParser
+LogicManager -> ClassMonitorParser : parseCommand("findStarsLT 1")
+activate ClassMonitorParser
 
 create FindStarsLessThanCommandParser
-AddressBookParser -> FindStarsLessThanCommandParser
+ClassMonitorParser -> FindStarsLessThanCommandParser
 activate FindStarsLessThanCommandParser
 
-FindStarsLessThanCommandParser --> AddressBookParser
+FindStarsLessThanCommandParser --> ClassMonitorParser
 deactivate FindStarsLessThanCommandParser
 
-AddressBookParser -> FindStarsLessThanCommandParser : parse("1")
+ClassMonitorParser -> FindStarsLessThanCommandParser : parse("1")
 activate FindStarsLessThanCommandParser
 
 create StarsLessThanPredicate
@@ -44,15 +44,15 @@ activate FindStarsLessThanCommand
 FindStarsLessThanCommand --> FindStarsLessThanCommandParser :
 deactivate FindStarsLessThanCommand
 
-FindStarsLessThanCommandParser --> AddressBookParser : d
+FindStarsLessThanCommandParser --> ClassMonitorParser : d
 deactivate FindStarsLessThanCommandParser
 'Hidden arrow to position the destroy marker below the end of the activation bar.
-FindStarsLessThanCommandParser -[hidden]-> AddressBookParser
+FindStarsLessThanCommandParser -[hidden]-> ClassMonitorParser
 destroy FindStarsLessThanCommandParser
 deactivate FindStarsLessThanCommandParser
 
-AddressBookParser --> LogicManager : d
-deactivate AddressBookParser
+ClassMonitorParser --> LogicManager : d
+deactivate ClassMonitorParser
 
 LogicManager -> FindStarsLessThanCommand : execute(m)
 activate FindStarsLessThanCommand
