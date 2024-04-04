@@ -153,12 +153,20 @@ Format: `list`
 </ul>
 </div>
 
-<div markdown="span" class="alert alert-dark">:notebook: **Note:**
+<div class="alert alert-dark">
+:notebook: **Note:**
 <ul>
-<li> `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ </li>
-<li> `STAR` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​ </li>
-<li> The `STAR` will add onto existing number of stars the student already has. ​ </li>
-<li> A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars. ​ </li>
+{% capture index_note %}`INDEX` **must be a positive integer** (e.g. 1, 2, 3, …){% endcapture %}
+<li>{{ index_note }}</li>
+
+{% capture star_note %}`STAR` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10){% endcapture %}
+<li>{{ star_note }}</li>
+
+{% capture add_note %}The `STAR` will add onto existing number of stars the student already has.{% endcapture %}
+<li>{{ add_note }}</li>
+
+{% capture limit_note %}A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars.{% endcapture %}
+<li>{{ limit_note }}</li>
 </ul>
 </div>
 
