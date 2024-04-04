@@ -77,7 +77,7 @@ This User Guide provides an in-depth documentation so you can easily use and int
 
 ### Viewing help : `help`
 
-Shows a message explaning how to access the help page.
+Shows a message explaining how to access the help page.
 
 ![help message](images/helpMessage.png)
 
@@ -86,7 +86,7 @@ Format: `help`
 
 ### Adding a student to contact book: `add`
 
-Adds a student to the address book.
+> Adds a student to the address book.
 
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR [t/TAG]…​`
 
@@ -95,12 +95,17 @@ A student can have any number of tags (including 0)
 </div>
 
 Examples:
-* `add n/John Doe p/98765432 e/johnd@u.nus.edu m/Computer Science`
-* `add n/Betsy Crowe t/friend e/betsycrowe@u.nus.edu m/life sciences p/84459350 t/Exchange Student`
+
+**Command Input**: `add n/John Doe p/98765432 e/johnd@u.nus.edu m/Computer Science`
+
+**Assumptions**:
+* A student by the name of `John Doe` (case-sensitive) does not already exist. 
+
+**Command Output**: `New student added: John Doe; Phone: 98765432; Email: johnd@u.nus.edu; Major: Computer Science; Tags: `
 
 ### Listing all students : `list`
 
-Shows a list of all students in the address book.
+>Shows a list of all students in the address book.
 
 Format: `list`
 
@@ -168,9 +173,9 @@ Examples:
 
 ### Find all students by an attribute: `find`
 
-**Format**: `find FIELD CRITERIA`
-
 > Finds all students who fulfill the given criteria for the specified field.
+
+**Format**: `find FIELD CRITERIA`
 
 **The parameters for `CRITERIA` depends on the `FIELD` specified:**
 * `find name KEYWORD [MORE KEYWORDS]`: Finds students with names that match **any** of the given keywords.
@@ -209,7 +214,8 @@ Examples:
 * `find name alex david` returns `Alex Yeoh`, `David Li`
 
 
-  ![result for 'find name alex david'](images/findNameAlexDavidResult.png)
+<img src="images/findNameAlexDavidResult.png" alt="result for 'find name alex david'" style="width: 400px; height: 160px;">
+
 
 ### Deleting a student's particulars : `delete`
 
