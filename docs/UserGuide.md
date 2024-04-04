@@ -293,8 +293,7 @@ Format: `list`
 **Command Output**: `Sorted all persons by bolt in descending order.`
 * `sort bolt desc` displays **David Li** on the top of the students displayed, then **Alex Yeoh**, followed by **Bernice Yu**
 
-![result for 'sort bolt desc'](images/sortBoltDesc.png)
-
+<img src="images/sortBoltDesc.png" alt="result for 'sort bolt desc'" style="width: 400px; height: 160px;">
 
 ### Deleting a student's particulars : `delete`
 
