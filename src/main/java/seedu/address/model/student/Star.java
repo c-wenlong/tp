@@ -30,7 +30,7 @@ public class Star implements Comparable<Star> {
      * Returns true if a given string is a valid number. This should be within the range of 0 and 50000.
      */
     public static boolean isValidStar(Integer numOfStars) {
-        return (numOfStars >= 0 && numOfStars < 50000);
+        return (numOfStars >= 0 && numOfStars <= 50000);
     }
 
     @Override
