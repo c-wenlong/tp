@@ -1,20 +1,19 @@
 ---
 layout: page
-title: FoodRem
+title: AddressBook Level-3
 ---
 
-[![CI Status](https://github.com/AY2223S1-CS2103T-W16-2/tp/workflows/Java%20CI/badge.svg)](https://github.com/AY2223S1-CS2103T-W16-2/tp/actions)
-&nbsp;[![CI Status](https://github.com/AY2223S1-CS2103T-W16-2/tp/workflows/Build/badge.svg)](https://github.com/AY2223S1-CS2103T-W16-2/tp/actions)
-&nbsp;[![codecov](https://codecov.io/gh/AY2223S1-CS2103T-W16-2/tp/branch/master/graph/badge.svg)](https://codecov.io/gh/AY2223S1-CS2103T-W16-2/tp)
+[![CI Status](https://github.com/se-edu/addressbook-level3/workflows/Java%20CI/badge.svg)](https://github.com/se-edu/addressbook-level3/actions)
+[![codecov](https://codecov.io/gh/se-edu/addressbook-level3/branch/master/graph/badge.svg)](https://codecov.io/gh/se-edu/addressbook-level3)
 
 ![Ui](images/Ui.png)
 
-**FoodRem is a desktop application for F&B businesses to manage their inventory.** While it has a GUI, most of the user interactions happen using a CLI (Command Line Interface).
+**AddressBook is a desktop application for managing your contact details.** While it has a GUI, most of the user interactions happen using a CLI (Command Line Interface).
 
-* If you are interested in using FoodRem, head over to the [Installation Guide](UserGuide.html#installation).
-* If you are interested about developing FoodRem, the [**Developer Guide**](DeveloperGuide.html) is a good place to start.
+* If you are interested in using AddressBook, head over to the [_Quick Start_ section of the **User Guide**](UserGuide.html#quick-start).
+* If you are interested about developing AddressBook, the [**Developer Guide**](DeveloperGuide.html) is a good place to start.
 
-###### Acknowledgements
 
-<!-- markdownlint-disable-next-line proper-names -->
-{{ site.data.foodrem.acknowledgements }}
+**Acknowledgements**
+
+* Libraries used: [JavaFX](https://openjfx.io/), [Jackson](https://github.com/FasterXML/jackson), [JUnit5](https://github.com/junit-team/junit5)

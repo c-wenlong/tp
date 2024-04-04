@@ -1,4 +1,4 @@
-title: "FoodRem"
+title: "ClassMonitor"
 theme: minima
 
 header_pages:
@@ -11,7 +11,7 @@ markdown: kramdown
 collections:
   - glossary
 
-repository: "AY2223S1-CS2103T-W16-2/tp"
+repository: "AY2324S2-CS2103T-F13-4/tp"
 github_icon: "images/github-icon.png"
 
 enable_features:
@@ -22,8 +22,8 @@ defaults:
   - scope:
       path: "" # Site-wide default
     values:
-      master_branch: "https://github.com/AY2223S1-CS2103T-W16-2/tp/tree/master"
-      main_src: "src/main/java/seedu/foodrem"
+      master_branch: "https://github.com/AY2324S2-CS2103T-F13-4/tp/tree/master"
+      main_src: "src/main/java/seedu/classmonitor"
 
 plugins:
   - jemoji
