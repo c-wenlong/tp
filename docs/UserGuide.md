@@ -111,21 +111,27 @@ Format: `list`
 **Format:** `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [m/MAJOR] [s/STAR] [b/BOLT] [t/TAG]…​`
 
 <div markdown="span" class="alert alert-info">:information_source: **Info:**
-* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
-* At least one of the optional fields must be provided.
-* Existing values will be updated to the input values.
+<ul>
+<li> Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ </li>
+<li> At least one of the optional fields must be provided. </li>
+<li> Existing values will be updated to the input values. </li>
+</ul>
 </div>
 
 <div markdown="span" class="alert alert-dark">:notebook: **Note:**
-* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​
-* `STAR` **must be a positive integer between 1 and 50,000** (e.g. 1, 2, ..., 50,000) ​
-* A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars. ​
+<ul>
+<li> `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ </li>
+<li> `STAR` **must be a positive integer between 1 and 50,000** (e.g. 1, 2, ..., 50,000) ​ </li>
+<li> A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars. ​ </li>
+</ul>
 </div>
 
 <div markdown="span" class="alert alert-success">:bulb: **Tip:**
-* When editing tags, the existing tags of the student will be removed i.e adding of tags is not cumulative.
-* You can remove all the student’s tags by typing `t/` without specifying any tags after it.
-* Editing the number of stars of a student replaces the existing value.
+<ul>
+<li> When editing tags, the existing tags of the student will be removed i.e adding of tags is not cumulative. </li>
+<li> You can remove all the student’s tags by typing `t/` without specifying any tags after it. </li>
+<li> Editing the number of stars of a student replaces the existing value. </li>
+</ul>
 </div>
 
 
@@ -141,15 +147,19 @@ Format: `list`
 **Format:** `star INDEX [s/STAR]`
 
 <div markdown="span" class="alert alert-info">:information_source: **Info:**
-- Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
-- `STAR` refers to the number of stars to be awarded to the student. ​
+<ul>
+<li> Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ </li>
+<li> `STAR` refers to the number of stars to be awarded to the student. ​ </li>
+</ul>
 </div>
 
 <div markdown="span" class="alert alert-dark">:notebook: **Note:**
-- `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​
-- `STAR` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​
-- The `STAR` will add onto existing number of stars the student already has. ​
-- A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars. ​
+<ul>
+<li> `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ </li>
+<li> `STAR` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​ </li>
+<li> The `STAR` will add onto existing number of stars the student already has. ​ </li>
+<li> A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars. ​ </li>
+</ul>
 </div>
 
 **Example:**
@@ -171,16 +181,20 @@ Format: `list`
 **Format**: `bolt INDEX [b/BOLT]`
 
 <div markdown="span" class="alert alert-info">:information_source: **Info:**
-* The number of bolts corresponds to the number of times the student is absent. ​ 
-* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
-* `BOLT` refers to the number of bolts to be awarded to the student. ​
+<ul>
+<li> The number of bolts corresponds to the number of times the student is absent. ​ </li> 
+<li> Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ </li> 
+<li> `BOLT` refers to the number of bolts to be awarded to the student. ​ </li>
+</ul>
 </div>
 
 <div markdown="span" class="alert alert-dark">:notebook: **Note:**
-* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​
-* `BOLT` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​
-* The `BOLT` will add onto existing number of bolts the student already has. ​
-* A student can only be awarded a maximum of 50,000 bolts, with a minimum of 0 bolts. ​
+<ul>
+<li> `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ </li>
+<li> `BOLT` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​ </li>
+<li> The `BOLT` will add onto existing number of bolts the student already has. ​ </li>
+<li> A student can only be awarded a maximum of 50,000 bolts, with a minimum of 0 bolts. ​ </li>
+</ul>
 </div>
 
 **Example:**
