@@ -4,6 +4,7 @@ skinparam ArrowFontStyle plain
 
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
+
 participant "classMonitorParser\n:ClassMonitorParser" as ClassMonitorParser LOGIC_COLOR
 participant ":BoltCommandParser" as BoltCommandParser LOGIC_COLOR
 participant ":BoltCommand" as BoltCommand LOGIC_COLOR

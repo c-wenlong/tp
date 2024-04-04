@@ -244,6 +244,32 @@ Format: `list`
 <img src="images/findNameAlexDavidResult.png" alt="result for 'find name alex david'" style="width: 400px; height: 160px;">
 
 
+### Sort all students by a field: `sort`
+
+> Displays students on ClassMonitor in a sorted order based off a given field either in ascending or descending order.
+
+**Format**: `sort FIELD ORDER`
+
+**Info**:
+* The only accepted fields are `name`, `phone`, `email`, `major`, `star`, `bolt`
+* The only accepted orders are `asc` for ascending order of the specific field or `desc` for descending order of the specific field
+* The field and orders can have a combinations of capital and lower case letters
+  e.g. `sort name ASc` and `sort Major desc` are valid
+* For tie breaking between students that have the same value for a given field, name will be used as a tiebreaker
+ 
+
+**Examples**:
+
+**Command Input**:`sort bolt desc`
+
+**Assumptions**:
+* ClassMonitor contains three students **Alex Yeoh** with 3 bolts, **Bernice Yu** with 3 bolts, and **David Li** with 0 bolts
+
+**Command Output**: `Sorted all persons by bolt in descending order.`
+* `sort bolt desc` displays **David Li** on the top of the students displayed, then **Alex Yeoh**, followed by **Bernice Yu**
+
+<img src="images/sortBoltDesc.png" alt="result for 'sort bolt desc'" style="width: 400px; height: 160px;">
+
 ### Deleting a student's particulars : `delete`
 
 Deletes the specified student from the address book.
@@ -304,13 +330,15 @@ _Details coming soon ..._
 
 ## Command summary
 
-| Action      | Format, Examples                                                                                                                                                      |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**     | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague` |
-| **Clear**   | `clear`                                                                                                                                                               |
-| **Delete**  | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                   |
-| **Edit**    | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                           |
-| **Star**    | `star INDEX [s/STAR]` <br> e.g., `star 1 s/5`                                                                                                                         |
-| **Find**    | `find FIELD CRITERIA`<br> e.g., `find name James Jake`                                                                                                            |
-| **List**    | `list`                                                                                                                                                                |
-| **Help**    | `help`                                                                                                                                                                |
+Action | Format, Examples
+--------|------------------
+**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
+**Clear** | `clear`
+**Delete** | `delete INDEX`<br> e.g., `delete 3`
+**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
+**Star** | `star INDEX [s/STAR]` <br> e.g., `star 1 s/5`
+**Find** | `find FIELD CRITERIA`<br> e.g., `find name alex david`
+**Sort** | `sort FIELD ORDER`<br> e.g., `sort star asc`
+**List** | `list`
+**Help** | `help`
+
