@@ -4,25 +4,18 @@ skinparam arrowThickness 1.1
 skinparam arrowColor MODEL_COLOR
 skinparam classBackgroundColor MODEL_COLOR
 
-FoodRem *-right-> "1" UniqueItemList
-FoodRem *-right-> "1" UniqueTagList
-UniqueTagList -[hidden]down- UniqueItemList
-UniqueTagList -[hidden]down- UniqueItemList
+AddressBook *-right-> "1" UniqueStudentList
+AddressBook *-right-> "1" UniqueTagList
+UniqueTagList -[hidden]down- UniqueStudentList
+UniqueTagList -[hidden]down- UniqueStudentList
 
-UniqueTagList *-right-> "0..100" Tag
-UniqueItemList *-> "0...10000" Item
-note right : 10,000 items enforced by UniqueItemList
+UniqueTagList -right-> "*" Tag
+UniqueStudentList -right-> Student
 
-Item *-up-> "0..100" Tag
-note right : 100 tags enforced by UniqueTagList
+Student -up-> "*" Tag
 
-Item *--> "1" ItemUnit
-Item *--> "1" ItemBoughtDate
-Item *--> "1" ItemExpiryDate
-Item *--> "1" ItemQuantity
-Item *--> "1" ItemName
-Item *--> "1" ItemPrice
-Item *--> "1" ItemRemark
-Tag *-right--> "1" TagName
-
+Student *--> Name
+Student *--> Phone
+Student *--> Email
+Student *--> Address
 @enduml
