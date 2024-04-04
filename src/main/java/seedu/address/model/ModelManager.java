@@ -100,11 +100,13 @@ public class ModelManager implements Model {
 
     @Override
     public void deleteStudent(Student target) {
+        updateSortedStudentListByField("name", true);
         addressBook.removeStudent(target);
     }
 
     @Override
     public void addStudent(Student student) {
+        updateSortedStudentListByField("name", true);
         addressBook.addStudent(student);
         updateFilteredStudentList(PREDICATE_SHOW_ALL_STUDENTS);
     }
@@ -112,8 +114,8 @@ public class ModelManager implements Model {
     @Override
     public void setStudent(Student target, Student editedStudent) {
         requireAllNonNull(target, editedStudent);
-
         addressBook.setStudent(target, editedStudent);
+        updateSortedStudentListByField("name", true);
     }
 
     //=========== Filtered & Sorted Student List Accessors =============================================================
@@ -156,12 +158,16 @@ public class ModelManager implements Model {
         case "star":
             comparator = Comparator.comparing(Student::getStar);
             break;
+        case "bolt":
+            comparator = Comparator.comparing(Student::getBolt);
+            break;
         default:
             throw new IllegalArgumentException("Invalid field for sorting: " + field);
         }
         if (!isAscending) {
             comparator = comparator.reversed();
         }
+        comparator = comparator.thenComparing(Student::getName);
         sortedStudents.setComparator(comparator);
     }
     @Override
