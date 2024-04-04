@@ -185,6 +185,32 @@ Examples:
 * `find alex david` returns `Alex Yeoh`, `David Li`<br>
   ![result for 'find alex david'](images/findAlexDavidResult.png)
 
+### Sort all students by a field: `sort`
+
+**Format**: `sort FIELD ORDER`
+
+> Displays students on ClassMonitor in a sorted order based off a given field either in ascending or descending order.
+
+* The only accepted fields are `name`, `phone`, `email`, `major`, `star`, `bolt`
+* The only accepted orders are `asc` for ascending order of the specific field or `desc` for descending order of the specific field
+* The field and orders can have a combinations of capital and lower case letters
+  e.g. `sort name ASc` and `sort Major desc` are valid
+* For tie breaking between students that have the same value for a given field, name will be used as a tiebreaker
+ 
+
+**Examples**:
+
+**Command Input**:`sort bolt desc`
+
+**Assumptions**:
+* ClassMonitor contains thre students **Alex Yeoh** with 3 bolts, **Bernice Yu** with 3 bolts, and **David Li** with 0 bolts
+
+**Command Output**: `Sorted all persons by bolt in descending order.`
+* `sort bolt desc` displays **David Li** on the top of the students displayed, then **Alex Yeoh**, followed by **Bernice Yu**
+
+![result for 'sort bolt desc'](images/sortBoltDesc.png)
+
+
 ### Deleting a student's particulars : `delete`
 
 Deletes the specified student from the address book.
