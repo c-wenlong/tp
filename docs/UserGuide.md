@@ -141,15 +141,15 @@ Format: `list`
 **Format:** `star INDEX [s/STAR]`
 
 <div markdown="span" class="alert alert-info">:information_source: **Info:**
-* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
-* `STAR` refers to the number of stars to be awarded to the student. ​
+- Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
+- `STAR` refers to the number of stars to be awarded to the student. ​
 </div>
 
 <div markdown="span" class="alert alert-dark">:notebook: **Note:**
-* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​
-* `STAR` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​
-* The `STAR` will add onto existing number of stars the student already has. ​
-* A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars. ​
+- `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​
+- `STAR` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​
+- The `STAR` will add onto existing number of stars the student already has. ​
+- A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars. ​
 </div>
 
 **Example:**
