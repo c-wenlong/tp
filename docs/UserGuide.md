@@ -166,23 +166,50 @@ Examples:
 
 **Command Output**: `Added bolts to Student: Alex Yeoh; [...]`
 
-### Locating students by name: `find`
+### Find all students by an attribute: `find`
 
-Finds students whose names contain any of the given keywords.
+**Format**: `find FIELD CRITERIA`
 
-Format: `find KEYWORD [MORE_KEYWORDS]`
+> Finds all students who fulfill the given criteria for the specified field.
 
-* The search is case-insensitive. e.g `hans` will match `Hans`
-* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
-* Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
-* Students matching at least one keyword will be returned (i.e. `OR` search).
-  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+**The parameters for `CRITERIA` depends on the `FIELD` specified:**
+* `find name KEYWORD [MORE KEYWORDS]`: Finds students with names that match **any** of the given keywords.
+    * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
+    * Only full words will be matched. e.g. `Han` will not match `Hans`
+    * Students matching at least one keyword will be returned (i.e. `OR` search).
+      e.g. `find name Hans Bo` will return `Hans Gruber`, `Bo Yang`
+* `find major KEYWORD`: Finds students with majors that **contain** the given keyword.
+    * e.g. `find major Science` will return `Computer Science` majors and `Science` majors.
+* `find star OPERATOR NUMBER`: Finds students with stars within the bounds as specified by the given operator and number.
+    * e.g. `find star = 0` will return students with **0** stars.
+* `find bolt OPERATOR NUMBER`: Finds students with bolts within the bounds as specified by the given operator and number.
+    * e.g. `find bolt < 5` will return students with less than 5 stars.
+* `find tag KEYWORD`: Finds students with tags that **contain** the given keyword.
+    * e.g. `find tag friend` will return students that are tagged `friend` or `friends`.
 
-Examples:
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+**Info:**
+* Accepted fields are `name`, `major`, `star`, `bolt`, and `tag`.
+* Accepted operators for `find star` and `find bolt` are:
+  * < (strictly less than)
+  * <= (less than or equal to)
+  * \> (strictly more than)
+  * \>= (more than or equal to)
+  * = (equal to)
+* Matching is case-insensitive.
+
+**Examples**:
+
+**Command Input**: `find name alex david`
+
+**Assumptions**:
+* **Alex Yeoh** is the only student whose name includes a word that matches `alex`.
+* **David Li** is the only student whose name includes a word that matches `david`.
+
+**Command Output**: `2 students listed!`
+* `find name alex david` returns `Alex Yeoh`, `David Li`
+
+
+  ![result for 'find name alex david'](images/findNameAlexDavidResult.png)
 
 ### Deleting a student's particulars : `delete`
 
@@ -257,14 +284,14 @@ _Details coming soon ..._
 
 ## Command summary
 
-Action | Format, Examples
---------|------------------
-**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
-**Clear** | `clear`
-**Delete** | `delete INDEX`<br> e.g., `delete 3`
-**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
-**Star** | `star INDEX [s/STAR]` <br> e.g., `star 1 s/5`
-**Find** | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
-**FindTag** | `findtag TAG`<br> e.g., `find Friend`
-**List** | `list`
-**Help** | `help`
+| Action      | Format, Examples                                                                                                                                                      |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**     | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague` |
+| **Clear**   | `clear`                                                                                                                                                               |
+| **Delete**  | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                   |
+| **Edit**    | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                           |
+| **Star**    | `star INDEX [s/STAR]` <br> e.g., `star 1 s/5`                                                                                                                         |
+| **Find**    | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                            |
+| **FindTag** | `findtag TAG`<br> e.g., `find Friend`                                                                                                                                 |
+| **List**    | `list`                                                                                                                                                                |
+| **Help**    | `help`                                                                                                                                                                |
