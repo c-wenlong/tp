@@ -9,7 +9,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class Star implements Comparable<Star> {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Total stars should be between 0 and 50000.";
+            "Total stars should be between and inclusive of 0 and 50000.";
 
     public static final Star NO_STAR = new Star(0);
 
@@ -27,7 +27,7 @@ public class Star implements Comparable<Star> {
     }
 
     /**
-     * Returns true if a given string is a valid number. This should be within the range of 0 and 50000.
+     * Returns true if a given string is a valid number. This should be within the range of 0 and 50000 inclusive.
      */
     public static boolean isValidStar(Integer numOfStars) {
         return (numOfStars >= 0 && numOfStars <= 50000);
