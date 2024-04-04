@@ -109,7 +109,7 @@ Address book is empty
 include command-format.md
 notes=notes
 input="add n/John Doe p/98765432 e/johnd@u.nus.edu m/Computer Science"
-commandOutputBox="images/kwuunnn.png"
+commandOutputBox="images/Ui.png"
 %}
 
 ### Listing all students : `list`
