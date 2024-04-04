@@ -28,7 +28,7 @@ This User Guide provides an in-depth documentation so you can easily use and int
 
 1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar classmonitor.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/Ui.png)
+   ![Ui](images/Ui_v1.3.png)
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
@@ -271,10 +271,11 @@ Format: `list`
 
 ### Sort all students by a field: `sort`
 
-**Format**: `sort FIELD ORDER`
-
 > Displays students on ClassMonitor in a sorted order based off a given field either in ascending or descending order.
 
+**Format**: `sort FIELD ORDER`
+
+**Info**:
 * The only accepted fields are `name`, `phone`, `email`, `major`, `star`, `bolt`
 * The only accepted orders are `asc` for ascending order of the specific field or `desc` for descending order of the specific field
 * The field and orders can have a combinations of capital and lower case letters
@@ -287,7 +288,7 @@ Format: `list`
 **Command Input**:`sort bolt desc`
 
 **Assumptions**:
-* ClassMonitor contains thre students **Alex Yeoh** with 3 bolts, **Bernice Yu** with 3 bolts, and **David Li** with 0 bolts
+* ClassMonitor contains three students **Alex Yeoh** with 3 bolts, **Bernice Yu** with 3 bolts, and **David Li** with 0 bolts
 
 **Command Output**: `Sorted all persons by bolt in descending order.`
 * `sort bolt desc` displays **David Li** on the top of the students displayed, then **Alex Yeoh**, followed by **Bernice Yu**
