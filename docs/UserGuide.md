@@ -283,19 +283,6 @@ Examples:
 * `list` followed by `delete 2` deletes the 2nd student in the address book.
 * `find Betsy` followed by `delete 1` deletes the 1st student in the results of the `find` command.
 
-### Locating a student by tag: `findtag`
-
-Finds all students whose tags contain the specified text (case-insensitive) and displays them in the list.
-
-Format: `findtag TAG`
-
-* The search is case-insensitive. e.g `friend` will match `FRIEND`
-* Tags are matched as long as it contains the specified text. e.g. `friend` will match `myFriend`
-
-Examples:
-* `findtag friend` returns all students with the tag `friend`.
-* `findtag e` returns all students that have the tag `friend` and `colleague`.
-
 ### Clearing all entries : `clear`
 
 Clears all entries from the address book.
