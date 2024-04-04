@@ -238,3 +238,24 @@ Action | Format, Examples
 **FindTag** | `findtag TAG`<br> e.g., `find Friend`
 **List** | `list`
 **Help** | `help`
+
+
+#### Create a new tag: `newtag`
+
+**Format**: `newtag n/TAG_NAME`
+
+> Creates a new tag with the provided tag name
+
+**Example:**
+
+{% capture notes %}
+**Assumption:**
+
+FoodRem does not already contain a tag called "Vegetables".
+{% endcapture %}
+{%
+include command-format.md
+notes=notes
+input="newtag n/Vegetables"
+commandOutputBox="images/tagCommands/commandOutputBox/newtag.png"
+%}
