@@ -27,10 +27,17 @@ public class Star implements Comparable<Star> {
     }
 
     /**
-     * Returns true if a given string is a valid number.
+     * Constructs a {@code Star} with 0 numOfStars.
+     */
+    public Star() {
+        this.numOfStars = 0;
+    }
+
+    /**
+     * Returns true if a given string is a valid number. This should be within the range of 0 and 50000.
      */
     public static boolean isValidStar(Integer numOfStars) {
-        return numOfStars >= 0;
+        return (numOfStars >= 0 && numOfStars < 50000);
     }
 
     @Override
