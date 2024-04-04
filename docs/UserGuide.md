@@ -336,7 +336,6 @@ _Details coming soon ..._
 | **Delete**  | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                   |
 | **Edit**    | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                           |
 | **Star**    | `star INDEX [s/STAR]` <br> e.g., `star 1 s/5`                                                                                                                         |
-| **Find**    | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                            |
-| **FindTag** | `findtag TAG`<br> e.g., `find Friend`                                                                                                                                 |
+| **Find**    | `find FIELD CRITERIA`<br> e.g., `find name James Jake`                                                                                                            |
 | **List**    | `list`                                                                                                                                                                |
 | **Help**    | `help`                                                                                                                                                                |
