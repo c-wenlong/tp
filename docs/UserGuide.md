@@ -106,33 +106,51 @@ Format: `list`
 
 ### Editing a student's information : `edit`
 
-Edits an existing student in the address book.
+> Edits an existing student in the address book.
 
-Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [m/MAJOR] [s/STAR] [b/BOLT] [t/TAG]…​`
+**Format:** `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [m/MAJOR] [s/STAR] [b/BOLT] [t/TAG]…​`
 
-* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. The index **must be a positive integer** 1, 2, 3, …​
+<div markdown="span" class="alert alert-info">:information_source: **Info:**
+* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
-* When editing tags, the existing tags of the student will be removed i.e adding of tags is not cumulative.
-* You can remove all the student’s tags by typing `t/` without
-    specifying any tags after it.
+</div>
 
-Examples:
+<div markdown="span" class="alert alert-dark">:notebook: **Note:**
+* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​
+* `STAR` **must be a positive integer between 1 and 50,000** (e.g. 1, 2, ..., 50,000) ​
+* A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars. ​
+</div>
+
+<div markdown="span" class="alert alert-success">:bulb: **Tip:**
+* When editing tags, the existing tags of the student will be removed i.e adding of tags is not cumulative.
+* You can remove all the student’s tags by typing `t/` without specifying any tags after it.
+* Editing the number of stars of a student replaces the existing value.
+</div>
+
+
+**Examples:**
 *  `edit 1 p/98765432 e/johndoe@u.nus.edu` Edits the phone number and email address of the 1st student to be `91234567` and `johndoe@example.com` respectively.
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd student to be `Betsy Crower` and clears all existing tags.
-
-**Note that editing the number of stars of a student replaces the existing value instead of adding onto it like in `star` command.**
+*  `edit 3 s/0 b/0` Edits both the total number of stars and the total number of bolts received by student to be `0`. 
 
 ### Awarding a student stars for participation : `star`
 
-**Format:** `star INDEX [s/STAR]`
-
 > Awards a student stars for good participation in class.
 
-**Info:**
-* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. The index **must be a positive integer** 1, 2, 3, …​
-* The `STAR` is given as an unsigned integer, meaning it **has to be a whole number** starting from 0, 1, 2, …​
-* The `STAR` will add onto existing number of stars the student already has.
+**Format:** `star INDEX [s/STAR]`
+
+<div markdown="span" class="alert alert-info">:information_source: **Info:**
+* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
+* `STAR` refers to the number of stars to be awarded to the student. ​
+</div>
+
+<div markdown="span" class="alert alert-dark">:notebook: **Note:**
+* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​
+* `STAR` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​
+* The `STAR` will add onto existing number of stars the student already has. ​
+* A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars. ​
+</div>
 
 **Example:**
 
@@ -144,17 +162,26 @@ Examples:
 
 **Command Output**: `Added stars to Student: Alex Yeoh; [...]`
 
+![star added example](images/star.png)
+
 ### Awarding a student bolts for being absent : `bolt`
 
+> Awards a student bolts for being absent in class.
+> 
 **Format**: `bolt INDEX [b/BOLT]`
 
-> Awards a student bolts for being absent in class.  
-> The number of bolts corresponds to the number of times the student is absent.
+<div markdown="span" class="alert alert-info">:information_source: **Info:**
+* The number of bolts corresponds to the number of times the student is absent. ​ 
+* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
+* `BOLT` refers to the number of bolts to be awarded to the student. ​
+</div>
 
-**Info:**
-* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. The index **must be a positive integer** 1, 2, 3, …​
-* The `BOLT` is given as an unsigned integer, meaning it **has to be a whole number** starting from 0, 1, 2, …​
-* The `BOLT` will add onto existing number of stars the student already has.
+<div markdown="span" class="alert alert-dark">:notebook: **Note:**
+* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​
+* `BOLT` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​
+* The `BOLT` will add onto existing number of bolts the student already has. ​
+* A student can only be awarded a maximum of 50,000 bolts, with a minimum of 0 bolts. ​
+</div>
 
 **Example:**
 
@@ -165,6 +192,8 @@ Examples:
 * He currently has 0 bolts
 
 **Command Output**: `Added bolts to Student: Alex Yeoh; [...]`
+
+![bolt added example](images/bolt.png)
 
 ### Locating students by name: `find`
 
