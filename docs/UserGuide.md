@@ -115,29 +115,21 @@ Format: `list`
 
 **Format:** `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [m/MAJOR] [s/STAR] [b/BOLT] [t/TAG]…​`
 
-<div markdown="span" class="alert alert-info">:information_source: **Info:**
-<ul>
-<li> Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ </li>
-<li> At least one of the optional fields must be provided. </li>
-<li> Existing values will be updated to the input values. </li>
-</ul>
-</div>
+**Info:**
+* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
+* At least one of the optional fields must be provided.
+* Existing values will be updated to the input values.
 
-<div markdown="span" class="alert alert-dark">:notebook: **Note:**
-<ul>
-<li> `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ </li>
-<li> `STAR` **must be a positive integer between 1 and 50,000** (e.g. 1, 2, ..., 50,000) ​ </li>
-<li> A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars. ​ </li>
-</ul>
-</div>
 
-<div markdown="span" class="alert alert-success">:bulb: **Tip:**
-<ul>
-<li> When editing tags, the existing tags of the student will be removed i.e adding of tags is not cumulative. </li>
-<li> You can remove all the student’s tags by typing `t/` without specifying any tags after it. </li>
-<li> Editing the number of stars of a student replaces the existing value. </li>
-</ul>
-</div>
+**Note:**
+* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ </li>
+* `STAR` **must be a positive integer between 1 and 50,000** (e.g. 1, 2, ..., 50,000) ​ 
+* A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars. ​ 
+
+**Tip:**
+* When editing tags, the existing tags of the student will be removed i.e adding of tags is not cumulative.
+* You can remove all the student’s tags by typing `t/` without specifying any tags after it.
+* Editing the number of stars of a student replaces the existing value.
 
 
 **Examples:**
@@ -151,29 +143,16 @@ Format: `list`
 
 **Format:** `star INDEX [s/STAR]`
 
-<div markdown="span" class="alert alert-info">:information_source: **Info:**
-<ul>
-<li> Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ </li>
-<li> `STAR` refers to the number of stars to be awarded to the student. ​ </li>
-</ul>
-</div>
+**Info:**
+* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ 
+* `STAR` refers to the number of stars to be awarded to the student. ​ 
 
-<div class="alert alert-dark">
-:notebook: **Note:**
-<ul>
-{% capture index_note %}`INDEX` **must be a positive integer** (e.g. 1, 2, 3, …){% endcapture %}
-<li>{{ index_note }}</li>
 
-{% capture star_note %}`STAR` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10){% endcapture %}
-<li>{{ star_note }}</li>
-
-{% capture add_note %}The `STAR` will add onto existing number of stars the student already has.{% endcapture %}
-<li>{{ add_note }}</li>
-
-{% capture limit_note %}A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars.{% endcapture %}
-<li>{{ limit_note }}</li>
-</ul>
-</div>
+**Note:**
+* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …)
+* `STAR` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10)
+* The `STAR` will add onto existing number of stars the student already has.
+* A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars.
 
 **Example:**
 
@@ -193,22 +172,18 @@ Format: `list`
 > 
 **Format**: `bolt INDEX [b/BOLT]`
 
-<div markdown="span" class="alert alert-info">:information_source: **Info:**
-<ul>
-<li> The number of bolts corresponds to the number of times the student is absent. ​ </li> 
-<li> Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ </li> 
-<li> `BOLT` refers to the number of bolts to be awarded to the student. ​ </li>
-</ul>
-</div>
+**Info:**
+* The number of bolts corresponds to the number of times the student is absent. ​
+* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ 
+* `BOLT` refers to the number of bolts to be awarded to the student. ​ 
 
-<div markdown="span" class="alert alert-dark">:notebook: **Note:**
-<ul>
-<li> `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ </li>
-<li> `BOLT` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​ </li>
-<li> The `BOLT` will add onto existing number of bolts the student already has. ​ </li>
-<li> A student can only be awarded a maximum of 50,000 bolts, with a minimum of 0 bolts. ​ </li>
-</ul>
-</div>
+
+**Note:**
+`INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ 
+* `BOLT` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​ 
+* The `BOLT` will add onto existing number of bolts the student already has. ​ 
+* A student can only be awarded a maximum of 50,000 bolts, with a minimum of 0 bolts. ​ 
+
 
 **Example:**
 
@@ -269,6 +244,32 @@ Format: `list`
 <img src="images/findNameAlexDavidResult.png" alt="result for 'find name alex david'" style="width: 400px; height: 160px;">
 
 
+### Sort all students by a field: `sort`
+
+> Displays students on ClassMonitor in a sorted order based off a given field either in ascending or descending order.
+
+**Format**: `sort FIELD ORDER`
+
+**Info**:
+* The only accepted fields are `name`, `phone`, `email`, `major`, `star`, `bolt`
+* The only accepted orders are `asc` for ascending order of the specific field or `desc` for descending order of the specific field
+* The field and orders can have a combinations of capital and lower case letters
+  e.g. `sort name ASc` and `sort Major desc` are valid
+* For tie breaking between students that have the same value for a given field, name will be used as a tiebreaker
+ 
+
+**Examples**:
+
+**Command Input**:`sort bolt desc`
+
+**Assumptions**:
+* ClassMonitor contains three students **Alex Yeoh** with 3 bolts, **Bernice Yu** with 3 bolts, and **David Li** with 0 bolts
+
+**Command Output**: `Sorted all persons by bolt in descending order.`
+* `sort bolt desc` displays **David Li** on the top of the students displayed, then **Alex Yeoh**, followed by **Bernice Yu**
+
+<img src="images/sortBoltDesc.png" alt="result for 'sort bolt desc'" style="width: 400px; height: 160px;">
+
 ### Deleting a student's particulars : `delete`
 
 Deletes the specified student from the address book.
@@ -301,7 +302,7 @@ AddressBook data are saved in the hard disk automatically after any command that
 
 ### Editing the data file
 
-AddressBook data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are welcome to update data directly by editing that data file.
+AddressBook data are saved automatically as a JSON file `[JAR file location]/data/classmonitor.json`. Advanced users are welcome to update data directly by editing that data file.
 
 <div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
 If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.<br>
@@ -329,13 +330,15 @@ _Details coming soon ..._
 
 ## Command summary
 
-| Action      | Format, Examples                                                                                                                                                      |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**     | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague` |
-| **Clear**   | `clear`                                                                                                                                                               |
-| **Delete**  | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                   |
-| **Edit**    | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                           |
-| **Star**    | `star INDEX [s/STAR]` <br> e.g., `star 1 s/5`                                                                                                                         |
-| **Find**    | `find FIELD CRITERIA`<br> e.g., `find name James Jake`                                                                                                            |
-| **List**    | `list`                                                                                                                                                                |
-| **Help**    | `help`                                                                                                                                                                |
+Action | Format, Examples
+--------|------------------
+**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
+**Clear** | `clear`
+**Delete** | `delete INDEX`<br> e.g., `delete 3`
+**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
+**Star** | `star INDEX [s/STAR]` <br> e.g., `star 1 s/5`
+**Find** | `find FIELD CRITERIA`<br> e.g., `find name alex david`
+**Sort** | `sort FIELD ORDER`<br> e.g., `sort star asc`
+**List** | `list`
+**Help** | `help`
+

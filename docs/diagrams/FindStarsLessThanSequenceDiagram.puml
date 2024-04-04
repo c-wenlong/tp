@@ -4,7 +4,7 @@ skinparam ArrowFontStyle plain
 
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
-participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
+participant ":ClassMonitorParser" as AddressBookParser LOGIC_COLOR
 participant ":FindCommandParser" as FindCommandParser LOGIC_COLOR
 participant "d:FindCommand" as FindCommand LOGIC_COLOR
 participant "r:CommandResult" as CommandResult LOGIC_COLOR
@@ -17,17 +17,18 @@ end box
 [-> LogicManager : execute("find name Alex")
 activate LogicManager
 
-LogicManager -> AddressBookParser : parseCommand("find name Alex")
+
+LogicManager -> ClassMonitorParser : parseCommand("find name Alex")
 activate AddressBookParser
 
 create FindCommandParser
-AddressBookParser -> FindCommandParser
+ClassMonitorParser -> FindCommandParser
 activate FindCommandParser
 
-FindCommandParser --> AddressBookParser
+FindCommandParser --> ClassMonitorParser
 deactivate FindCommandParser
 
-AddressBookParser -> FindCommandParser : parse(" name Alex")
+ClassMonitorParser -> FindCommandParser : parse(" name Alex")
 activate FindCommandParser
 
 FindCommandParser --> FindCommandParser : parseFindName("Alex")
@@ -46,15 +47,16 @@ activate FindCommand
 FindCommand --> FindCommandParser :
 deactivate FindCommand
 
-FindCommandParser --> AddressBookParser : d
+FindCommandParser --> ClassMonitorParser : d
 deactivate FindCommandParser
 'Hidden arrow to position the destroy marker below the end of the activation bar.
-FindCommandParser -[hidden]-> AddressBookParser
+FindCommandParser -[hidden]-> ClassMonitorParser
 destroy FindCommandParser
 deactivate FindCommandParser
 
-AddressBookParser --> LogicManager : d
-deactivate AddressBookParser
+
+ClassMonitorParser --> LogicManager : d
+deactivate ClassMonitorParser
 
 LogicManager -> FindCommand : execute(m)
 activate FindCommand
