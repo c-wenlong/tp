@@ -257,5 +257,5 @@ FoodRem does not already contain a tag called "Vegetables".
 include command-format.md
 notes=notes
 input="newtag n/Vegetables"
-commandOutputBox="images/tagCommands/commandOutputBox/newtag.png"
+commandOutputBox="images/kwuunnn.png"
 %}
