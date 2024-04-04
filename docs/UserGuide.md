@@ -125,15 +125,14 @@ Examples:
 
 ### Awarding a student stars for participation : `star`
 
-**Format**: `star INDEX [s/STAR]`
+**Format:** `star INDEX [s/STAR]`
 
 > Awards a student stars for good participation in class.
 
-```info
+**Info:**
 * Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. The index **must be a positive integer** 1, 2, 3, …​
 * The `STAR` is given as an unsigned integer, meaning it **has to be a whole number** starting from 0, 1, 2, …​
 * The `STAR` will add onto existing number of stars the student already has.
-```
 
 **Example:**
 
@@ -149,13 +148,13 @@ Examples:
 
 **Format**: `bolt INDEX [b/BOLT]`
 
-> Awards a student bolts for being absent in class. The number of bolts corresponds to the number of times the student is absent.
+> Awards a student bolts for being absent in class.  
+> The number of bolts corresponds to the number of times the student is absent.
 
-```info
+**Info:**
 * Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. The index **must be a positive integer** 1, 2, 3, …​
 * The `BOLT` is given as an unsigned integer, meaning it **has to be a whole number** starting from 0, 1, 2, …​
 * The `BOLT` will add onto existing number of stars the student already has.
-```
 
 **Example:**
 
