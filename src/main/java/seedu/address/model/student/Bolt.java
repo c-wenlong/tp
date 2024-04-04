@@ -6,7 +6,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 /**
  * Represents a Student's bolts in the address book.
  */
-public class Bolt {
+public class Bolt implements Comparable<Bolt> {
 
     public static final String MESSAGE_CONSTRAINTS =
             "Bolts given should be more than or equal to 0.";
@@ -51,6 +51,12 @@ public class Bolt {
 
         Bolt otherPhone = (Bolt) other;
         return numOfBolts.equals(otherPhone.numOfBolts);
+    }
+
+    @Override
+    public int compareTo(Bolt other) {
+        int otherStars = other.numOfBolts;
+        return this.numOfBolts.compareTo(otherStars);
     }
 
     @Override
