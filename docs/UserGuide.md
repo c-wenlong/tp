@@ -77,7 +77,7 @@ This User Guide provides an in-depth documentation so you can easily use and int
 
 ### Viewing help : `help`
 
-Shows a message explaning how to access the help page.
+Shows a message explaining how to access the help page.
 
 ![help message](images/helpMessage.png)
 
@@ -86,7 +86,7 @@ Format: `help`
 
 ### Adding a student to contact book: `add`
 
-Adds a student to the address book.
+> Adds a student to the address book.
 
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR [t/TAG]…​`
 
@@ -95,12 +95,17 @@ A student can have any number of tags (including 0)
 </div>
 
 Examples:
-* `add n/John Doe p/98765432 e/johnd@u.nus.edu m/Computer Science`
-* `add n/Betsy Crowe t/friend e/betsycrowe@u.nus.edu m/life sciences p/84459350 t/Exchange Student`
+
+**Command Input**: `add n/John Doe p/98765432 e/johnd@u.nus.edu m/Computer Science`
+
+**Assumptions**:
+* A student by the name of `John Doe` (case-sensitive) does not already exist. 
+
+**Command Output**: `New student added: John Doe; Phone: 98765432; Email: johnd@u.nus.edu; Major: Computer Science; Tags: `
 
 ### Listing all students : `list`
 
-Shows a list of all students in the address book.
+>Shows a list of all students in the address book.
 
 Format: `list`
 
@@ -217,23 +222,52 @@ Format: `list`
 
 ![bolt added example](images/bolt.png)
 
-### Locating students by name: `find`
+### Find all students by an attribute: `find`
 
-Finds students whose names contain any of the given keywords.
 
-Format: `find KEYWORD [MORE_KEYWORDS]`
+> Finds all students who fulfill the given criteria for the specified field.
 
-* The search is case-insensitive. e.g `hans` will match `Hans`
-* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
-* Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
-* Students matching at least one keyword will be returned (i.e. `OR` search).
-  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+**Format**: `find FIELD CRITERIA`
 
-Examples:
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+**The parameters for `CRITERIA` depends on the `FIELD` specified:**
+* `find name KEYWORD [MORE KEYWORDS]`: Finds students with names that match **any** of the given keywords.
+    * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
+    * Only full words will be matched. e.g. `Han` will not match `Hans`
+    * Students matching at least one keyword will be returned (i.e. `OR` search).
+      e.g. `find name Hans Bo` will return `Hans Gruber`, `Bo Yang`
+* `find major KEYWORD`: Finds students with majors that **contain** the given keyword.
+    * e.g. `find major Science` will return `Computer Science` majors and `Science` majors.
+* `find star OPERATOR NUMBER`: Finds students with stars within the bounds as specified by the given operator and number.
+    * e.g. `find star = 0` will return students with **0** stars.
+* `find bolt OPERATOR NUMBER`: Finds students with bolts within the bounds as specified by the given operator and number.
+    * e.g. `find bolt < 5` will return students with less than 5 stars.
+* `find tag KEYWORD`: Finds students with tags that **contain** the given keyword.
+    * e.g. `find tag friend` will return students that are tagged `friend` or `friends`.
+
+**Info:**
+* Accepted fields are `name`, `major`, `star`, `bolt`, and `tag`.
+* Accepted operators for `find star` and `find bolt` are:
+  * < (strictly less than)
+  * <= (less than or equal to)
+  * \> (strictly more than)
+  * \>= (more than or equal to)
+  * = (equal to)
+* Matching is case-insensitive.
+
+**Examples**:
+
+**Command Input**: `find name alex david`
+
+**Assumptions**:
+* **Alex Yeoh** is the only student whose name includes a word that matches `alex`.
+* **David Li** is the only student whose name includes a word that matches `david`.
+
+**Command Output**: `2 students listed!`
+* `find name alex david` returns `Alex Yeoh`, `David Li`
+
+
+<img src="images/findNameAlexDavidResult.png" alt="result for 'find name alex david'" style="width: 400px; height: 160px;">
+
 
 ### Deleting a student's particulars : `delete`
 
@@ -308,14 +342,14 @@ _Details coming soon ..._
 
 ## Command summary
 
-Action | Format, Examples
---------|------------------
-**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
-**Clear** | `clear`
-**Delete** | `delete INDEX`<br> e.g., `delete 3`
-**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
-**Star** | `star INDEX [s/STAR]` <br> e.g., `star 1 s/5`
-**Find** | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
-**FindTag** | `findtag TAG`<br> e.g., `find Friend`
-**List** | `list`
-**Help** | `help`
+| Action      | Format, Examples                                                                                                                                                      |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**     | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague` |
+| **Clear**   | `clear`                                                                                                                                                               |
+| **Delete**  | `delete INDEX`<br> e.g., `delete 3`                                                                                                                                   |
+| **Edit**    | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                           |
+| **Star**    | `star INDEX [s/STAR]` <br> e.g., `star 1 s/5`                                                                                                                         |
+| **Find**    | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                                            |
+| **FindTag** | `findtag TAG`<br> e.g., `find Friend`                                                                                                                                 |
+| **List**    | `list`                                                                                                                                                                |
+| **Help**    | `help`                                                                                                                                                                |
