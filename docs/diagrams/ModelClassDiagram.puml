@@ -4,53 +4,60 @@ skinparam arrowThickness 1.1
 skinparam arrowColor MODEL_COLOR
 skinparam classBackgroundColor MODEL_COLOR
 
-Package Model as ModelPackage <<Rectangle>>{
-Class "<<interface>>\nReadOnlyAddressBook" as ReadOnlyAddressBook
+Package Model <<Rectangle>>{
+Class "<<interface>>\nReadOnlyFoodRem" as ReadOnlyFoodRem
 Class "<<interface>>\nReadOnlyUserPrefs" as ReadOnlyUserPrefs
 Class "<<interface>>\nModel" as Model
-Class AddressBook
+Class FoodRem
 Class ModelManager
 Class UserPrefs
 
-Class UniqueStudentList
-Class Student
-Class Major
-Class Email
-Class Name
-Class Phone
-Class Star
+Class UniqueItemList
+Class UniqueTagList
+Class Item
+Class ItemName
+Class ItemQuantity
+Class ItemUnit
+Class ItemBoughtDate
+Class ItemExpiryDate
+Class ItemPrice
+Class ItemRemark
 Class Tag
-
-Class I #FFFFFF
+Class TagName
 }
 
 Class HiddenOutside #FFFFFF
 HiddenOutside ..> Model
 
-AddressBook .up.|> ReadOnlyAddressBook
+FoodRem .up.|> ReadOnlyFoodRem
 
 ModelManager .up.|> Model
 Model .right.> ReadOnlyUserPrefs
-Model .left.> ReadOnlyAddressBook
-ModelManager -left-> "1" AddressBook
+Model .left.> ReadOnlyFoodRem
+ModelManager -left-> "1" FoodRem
 ModelManager -right-> "1" UserPrefs
 UserPrefs .up.|> ReadOnlyUserPrefs
 
-AddressBook *--> "1" UniqueStudentList
-UniqueStudentList --> "~* all" Student
-Student *--> Name
-Student *--> Phone
-Student *--> Email
-Student *--> Major
-Student *--> Star
-Student *--> "*" Tag
+FoodRem *--> "1" UniqueItemList
+FoodRem *--> "1" UniqueTagList
+UniqueItemList --> "~* all" Item
+Item *--> ItemUnit
+Item *--> ItemBoughtDate
+Item *--> ItemExpiryDate
+Item *--> ItemQuantity
+Item *--> ItemName
+Item *--> ItemPrice
+Item *--> ItemRemark
+Item *--> "*" Tag
+Tag *--> TagName
 
-Student -[hidden]up--> I
-UniqueStudentList -[hidden]right-> I
+UniqueTagList --> "~* all" Tag
 
-Name -[hidden]right-> Phone
-Phone -[hidden]right-> Major
-Major -[hidden]right-> Email
+ItemUnit -[hidden]right-> ItemBoughtDate
+ItemBoughtDate -[hidden]right-> ItemName
+ItemName -[hidden]right-> ItemQuantity
 
-ModelManager --> "~* filtered" Student
+ModelManager -->"~* filtered" Item
+ModelManager -->"~* filtered" Tag
+
 @enduml

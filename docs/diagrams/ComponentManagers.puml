@@ -4,17 +4,17 @@ skinparam arrowThickness 1.1
 skinparam arrowColor LOGIC_COLOR_T4
 skinparam classBackgroundColor LOGIC_COLOR
 
-package Logic as LogicPackage {
+package Logic {
 Class "<<interface>>\nLogic" as Logic
 Class LogicManager
 }
 
-package Model as ModelPackage {
+package Model{
 Class "<<interface>>\nModel" as Model
 Class ModelManager
 }
 
-package Storage as StoragePackage {
+package Storage{
 Class "<<interface>>\nStorage" as Storage
 Class StorageManager
 }

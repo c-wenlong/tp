@@ -2,61 +2,54 @@
 layout: page
 title: About Us
 ---
+<!-- Due to grading script explicitly checking for an `img` tag -->
+<!-- markdownlint-disable-file no-inline-html -->
 
-We are a team based in the [School of Computing, National University of Singapore](http://www.comp.nus.edu.sg).
-
-You can reach us at the email `e0959970@u.nus.edu`
+We are a team based in the [School of Computing, National University of Singapore](https://comp.nus.edu.sg).
 
 ## Project team
 
-### Evelyn
+### Mai Ting Kai
 
-<img src="images/evedaktyl.png" height="200px">
+<img src="images/ferusel.png" width="200px">
 
-[[github](https://github.com/evedaktyl)]
-[[portfolio](team/evedaktyl.md)]
+[[github](https://github.com/ferusel)]
+[[portfolio](team/ferusel)]
 
-* Role: Developer
-* Responsiblity: README
+* Role: Team Lead
 
-### Ryan Chia
+### Bryan Lim Jing Xiang
 
-<img src="images/chiaryan.png" height="200px">
+<img src="images/bryanljx.png" width="200px">
 
-[[github](http://github.com/chiaryan)]
-[[portfolio](team/chiaryan.md)]
+[[github](https://github.com/bryanljx)]
+[[portfolio](team/bryanljx)]
 
+* Role: Tech Lead
 
-* Role: Developer
-* Responsibilities: Create issues
+### Richard Dominick
 
-### Laksh
+<img src="images/richdom2185.png" width="200px">
 
-<img src="images/r-laksh.png" height="200px">
+[[github](https://github.com/RichDom2185)]
+[[portfolio](team/richdom2185)]
 
-[[github](http://github.com/r-laksh)]
-[[portfolio](team/r-laksh.md)]
+* Role: Tech Lead
 
-* Role: Developer
-* Responsibilities: About Us
+### Tan Wei Lie Eugene
 
-### Kai
+<img src="images/eugenetanwl3881.png" width="200px">
 
-<img src="images/c-wenlong.png" height="200px">
+[[github](https://github.com/eugenetanwl3881)]
+[[portfolio](team/eugenetanwl3881)]
 
-[[github](http://github.com/c-wenlong)]
-[[portfolio](team/c-wenlong.md)]
-[[Personal Website](https://capyscript.super.site/)]
+* Role: Documentation
 
-* Role: Developer
-* Responsibilities: UI Design
+### Tan Yi Xian
 
-### Kwun
+<img src="images/yixiann.png" width="200px">
 
-<img src="images/kwuunnn.png" height="200px">
+[[github](https://github.com/yixiann)]
+[[portfolio](team/yixiann)]
 
-[[github](http://github.com/kwuunnn)]
-[[portfolio](team/kwuunnn.md)]
-
-* Role: Developer
-* Responsibilities: User Stories
+* Role: Secretary

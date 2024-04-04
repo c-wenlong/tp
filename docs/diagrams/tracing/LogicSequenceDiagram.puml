@@ -1,6 +1,5 @@
 @startuml
 !include ../style.puml
-skinparam ArrowFontStyle plain
 
 Participant ":LogicManager" as logic LOGIC_COLOR
 Participant ":AddressBookParser" as abp LOGIC_COLOR
@@ -14,7 +13,7 @@ create ecp
 abp -> ecp
 abp -> ecp ++: parse(arguments)
 create ec
-ecp -> ec ++: index, editStudentDescriptor
+ecp -> ec ++: index, editPersonDescriptor
 ec --> ecp --
 ecp --> abp --: command
 abp --> logic --: command
