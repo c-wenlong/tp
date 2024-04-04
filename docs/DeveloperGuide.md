@@ -146,7 +146,7 @@ The `Storage` component,
 
 ### Common classes
 
-Classes used by multiple components are in the `seedu.addressbook.commons` package.
+Classes used by multiple components are in the `seedu..commons` package.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -183,7 +183,7 @@ Step 3. The `AddressBookParser` calls `StarCommandParser.parse()`, which returns
 
 </div>
 
-Step 4. `LogicManager` calls on `StarCommand.execute()`, which updates the addressbook with the new number of stars.
+Step 4. `LogicManager` calls on `StarCommand.execute()`, which updates the  with the new number of stars.
 
 #### Design considerations:
 
@@ -226,7 +226,7 @@ then it will raise a parse error.
 
 </div>
 
-Step 4. `LogicManager` calls on `SortCommand.execute()`, which updates the addressbook with the new sorted list.
+Step 4. `LogicManager` calls on `SortCommand.execute()`, which updates the  with the new sorted list.
 
 ### Awarding Bolts to a Student
 
@@ -257,7 +257,7 @@ Step 3. The `AddressBookParser` calls `BoltCommandParser.parse()`, which returns
 
 </div>
 
-Step 4. `LogicManager` calls on `BoltCommand.execute()`, which updates the addressbook with the new number of bolts.
+Step 4. `LogicManager` calls on `BoltCommand.execute()`, which updates the  with the new number of bolts.
 
 #### Design considerations:
 
