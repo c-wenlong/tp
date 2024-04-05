@@ -9,7 +9,7 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class Bolt implements Comparable<Bolt> {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Bolts given should be more than or equal to 0.";
+            "Total bolts should be between and inclusive of 0 and 50000.";
 
     public static final Bolt NO_BOLT = new Bolt(0);
 
@@ -27,10 +27,10 @@ public class Bolt implements Comparable<Bolt> {
     }
 
     /**
-     * Returns true if a given string is a valid number.
+     * Returns true if a given string is a valid number. This should be within the range of 0 and 50000 inclusive.
      */
     public static boolean isValidBolt(Integer numOfBolts) {
-        return numOfBolts >= 0;
+        return (numOfBolts >= 0 && numOfBolts <= 50000);
     }
 
     @Override
