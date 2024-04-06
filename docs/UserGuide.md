@@ -122,7 +122,7 @@ Format: `list`
 
 
 **Note:**
-* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ </li>
+* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​
 * `STAR` **must be a positive integer between 1 and 50,000** (e.g. 1, 2, ..., 50,000) ​ 
 * A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars. ​ 
 
