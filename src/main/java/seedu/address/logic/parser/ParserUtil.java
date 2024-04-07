@@ -142,20 +142,41 @@ public class ParserUtil {
      * Parses a {@code String bolt} into a {@code Bolt}.
      * Leading and trailing whitespaces will be trimmed.
      *
-     * @throws ParseException if the given {@code Bolt} is invalid.
+     * @throws ParseException if the given {@code Bolt} is invalid. In this case, Bolt should be >0 and <10.
      */
     public static Bolt parseBolt(String bolt) throws ParseException {
         requireNonNull(bolt);
-        String trimmedBolt = bolt.trim(); // trim the string to only get the number
-        if (!StringUtil.isUnsignedInteger(trimmedBolt)) {
+        String trimmedBolt = bolt.trim();
+        if (!StringUtil.isNonZeroUnsignedInteger(trimmedBolt)) { // Bolt should be a positive integer
             throw new ParseException(MESSAGE_INVALID_BOLT);
-        } // checks if Bolt is in fact an Integer
+        }
         Integer boltCount = Integer.parseInt(trimmedBolt);
-        if (!Bolt.isValidBolt(boltCount)) { // check whether bolt is a valid Integer >= 0
+        if (boltCount > 10) { // Bolt given should be <11
+            throw new ParseException(MESSAGE_INVALID_BOLT);
+        }
+        return new Bolt(boltCount);
+    }
+
+
+    /**
+     * Parses a {@code String bolt} into a {@code Bolt}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code Bolt} is invalid. In this case, Bolt should be >=0 and <50000.
+     */
+    public static Bolt parseBoltEdit(String bolt) throws ParseException {
+        requireNonNull(bolt);
+        String trimmedBolt = bolt.trim();
+        if (!StringUtil.isUnsignedInteger(trimmedBolt)) { // Bolt should be a positive integer
+            throw new ParseException(Bolt.MESSAGE_CONSTRAINTS);
+        }
+        Integer boltCount = Integer.parseInt(trimmedBolt);
+        if (!Bolt.isValidBolt(boltCount)) { // Bolt given should be >=0 and <50000
             throw new ParseException(Bolt.MESSAGE_CONSTRAINTS);
         }
         return new Bolt(boltCount);
     }
+
 
     /**
      * Parses a {@code String tag} into a {@code Tag}.
