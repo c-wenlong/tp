@@ -14,7 +14,7 @@ import seedu.address.model.student.Bolt;
 import seedu.address.model.student.Student;
 
 /**
- * Adds a bolt to a student in the address book.
+ * Adds a bolt to a student in ClassMonitor.
  * @code bolt 1 b/3
  */
 public class BoltCommand extends Command {

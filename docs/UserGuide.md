@@ -105,6 +105,7 @@ Examples:
 
 **Warning**:
 * Names must have alphanumeric characters! Please avoid using special characters such as `\`. If such special characters in the person's name, please remove the character before adding the student into ClassMonitor.
+* Please avoid specifying _any_ additional tags for the add commands besides the ones specified in the command format
 
 **Command Output**: `New student added: John Doe; Phone: 98765432; Email: johnd@u.nus.edu; Major: Computer Science; Tags: `
 
@@ -258,8 +259,9 @@ Format: `list`
 **Info**:
 * The only accepted fields are `name`, `phone`, `email`, `major`, `star`, `bolt`
 * The only accepted orders are `asc` for ascending order of the specific field or `desc` for descending order of the specific field
+* `name` and `email` are sorted in lexicographical order while `phone`,`star` and `bolt` are sorted in numeric order
 * The field and orders can have a combinations of capital and lower case letters
-  e.g. `sort name ASc` and `sort Major desc` are valid
+  e.g. `sort star asc`, `sort name ASc` and `sort Major desc` are valid
 * For tie breaking between students that have the same value for a given field, name will be used as a tiebreaker
  
 
