@@ -66,7 +66,7 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 * Items with `…`​ after them can be used multiple times including zero times.<br>
   e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
 
-* Command outputs with `[...]` refers to a truncated output for brevity in the User Guide. Within the app, additional details may be displayed
+* Command outputs with `[...]` refers to a truncated output for brevity in the User Guide. Within the app, additional details may be displayed.
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
@@ -104,7 +104,7 @@ Examples:
 * A student by the name of `John Doe` (case-sensitive) does not already exist. 
 
 **Warning**:
-* Names must have alphanumeric characters! Please avoid using special characters such as `\`. If such special characters in the person's name, please remove the character before adding the student into ClassMonitor.
+* Names must have alphanumeric characters! Please avoid using special characters such as `\`. If such special characters exists in the person's name, please remove the character before adding the student into ClassMonitor.
 * Please avoid specifying _any_ additional tags for the add commands besides the ones specified in the command format
 
 **Command Output**: `New student added: John Doe; Phone: 98765432; Email: johnd@u.nus.edu; Major: Computer Science; Tags: `
