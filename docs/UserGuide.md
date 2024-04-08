@@ -344,4 +344,5 @@ Action | Format, Examples
 **Sort** | `sort FIELD ORDER`<br> e.g., `sort star asc`
 **List** | `list`
 **Help** | `help`
+**Exit** | `exit`
 
