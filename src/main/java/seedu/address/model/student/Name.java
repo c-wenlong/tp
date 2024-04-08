@@ -4,7 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents a Student's name in the address book.
+ * Represents a Student's name in ClassMonitor.
  * Guarantees: immutable; is valid as declared in {@link #isValidName(String)}
  */
 public class Name implements Comparable<Name> {
@@ -61,8 +61,8 @@ public class Name implements Comparable<Name> {
 
     @Override
     public int compareTo(Name other) {
-        String otherName = other.fullName;
-        return this.fullName.compareTo(otherName);
+        String otherName = other.fullName.toUpperCase();
+        return this.fullName.toUpperCase().compareTo(otherName);
     }
 
     @Override

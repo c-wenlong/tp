@@ -4,7 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents a Student's major in the address book.
+ * Represents a Student's major in ClassMonitor.
  * Guarantees: immutable; is valid as declared in {@link #isValidMajor(String)}
  */
 public class Major implements Comparable<Major> {
@@ -79,7 +79,7 @@ public class Major implements Comparable<Major> {
 
     @Override
     public int compareTo(Major other) {
-        String otherMajor = other.value;
-        return this.value.compareTo(otherMajor);
+        String otherMajor = other.value.toUpperCase();
+        return this.value.toUpperCase().compareTo(otherMajor);
     }
 }

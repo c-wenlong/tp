@@ -4,7 +4,7 @@ skinparam ArrowFontStyle plain
 
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
-participant ":ClassMonitorParser" as AddressBookParser LOGIC_COLOR
+participant ":ClassMonitorParser" as ClassMonitorParser LOGIC_COLOR
 participant ":FindCommandParser" as FindCommandParser LOGIC_COLOR
 participant "d:FindCommand" as FindCommand LOGIC_COLOR
 participant "r:CommandResult" as CommandResult LOGIC_COLOR
@@ -19,7 +19,7 @@ activate LogicManager
 
 
 LogicManager -> ClassMonitorParser : parseCommand("find name Alex")
-activate AddressBookParser
+activate ClassMonitorParser
 
 create FindCommandParser
 ClassMonitorParser -> FindCommandParser

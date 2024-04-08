@@ -60,7 +60,7 @@ public class ClassMonitor implements ReadOnlyClassMonitor {
     //// student-level operations
 
     /**
-     * Returns true if a student with the same identity as {@code student} exists in the address book.
+     * Returns true if a student with the same identity as {@code student} exists in ClassMonitor.
      */
     public boolean hasStudent(Student student) {
         requireNonNull(student);
@@ -68,8 +68,8 @@ public class ClassMonitor implements ReadOnlyClassMonitor {
     }
 
     /**
-     * Adds a student to the address book.
-     * The student must not already exist in the address book.
+     * Adds a student to ClassMonitor.
+     * The student must not already exist in ClassMonitor.
      */
     public void addStudent(Student p) {
         students.add(p);
@@ -77,7 +77,7 @@ public class ClassMonitor implements ReadOnlyClassMonitor {
 
     /**
      * Replaces the given student {@code target} in the list with {@code editedStudent}.
-     * {@code target} must exist in the address book.
+     * {@code target} must exist in ClassMonitor.
      * The student identity of {@code editedStudent} must not be the same as another existing student in the address
      * book.
      */
@@ -89,7 +89,7 @@ public class ClassMonitor implements ReadOnlyClassMonitor {
 
     /**
      * Removes {@code key} from this {@code ClassMonitor}.
-     * {@code key} must exist in the address book.
+     * {@code key} must exist in ClassMonitor.
      */
     public void removeStudent(Student key) {
         students.remove(key);

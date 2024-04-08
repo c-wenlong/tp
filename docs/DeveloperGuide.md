@@ -99,7 +99,7 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 
 How the `Logic` component works:
 
-1. When `Logic` is called upon to execute a command, it is passed to an `AddressBookParser` object which in turn creates a parser that matches the command (e.g., `FindStarsLessThanCommandParser`) and uses it to parse the command.
+1. When `Logic` is called upon to execute a command, it is passed to `ClassMonitorParser` object which in turn creates a parser that matches the command (e.g., `FindStarsLessThanCommandParser`) and uses it to parse the command.
 1. This results in a `Command` object (more precisely, an object of one of its subclasses e.g., `FindStarsLessThanCommand`) which is executed by the `LogicManager`.
 1. The command can communicate with the `Model` when it is executed (e.g. to return students with number of stars less than specified number).<br>
    Note that although this is shown as a single step in the diagram above (for simplicity), in the code it can take several interactions (between the command object and the `Model`) to achieve.
@@ -110,7 +110,7 @@ Here are the other classes in `Logic` (omitted from the class diagram above) tha
 <img src="images/ParserClasses.png" width="600"/>
 
 How the parsing works:
-* When called upon to parse a user command, the `AddressBookParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `AddressBookParser` returns back as a `Command` object.
+* When called upon to parse a user command, the `ClassMonitorParser` class creates an `XYZCommandParser` (`XYZ` is a placeholder for the specific command name e.g., `AddCommandParser`) which uses the other classes shown above to parse the user command and create a `XYZCommand` object (e.g., `AddCommand`) which the `ClassMonitorParser` returns back as a `Command` object.
 * All `XYZCommandParser` classes (e.g., `AddCommandParser`, `DeleteCommandParser`, ...) inherit from the `Parser` interface so that they can be treated similarly where possible e.g, during testing.
 
 ### Model component
@@ -121,12 +121,12 @@ How the parsing works:
 
 The `Model` component,
 
-* stores the address book data i.e., all `Student` objects (which are contained in a `UniqueStudentList` object).
+* stores ClassMonitor data i.e., all `Student` objects (which are contained in a `UniqueStudentList` object).
 * stores the currently 'selected' `Student` objects (e.g., results of a search query) as a separate _filtered_ list which is exposed to outsiders as an unmodifiable `ObservableList<Student>` that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `AddressBook`, which `Student` references. This allows `AddressBook` to only require one `Tag` object per unique tag, instead of each `Student` needing their own `Tag` objects.<br>
+<div markdown="span" class="alert alert-info">:information_source: **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `ClassMonitor`, which `Student` references. This allows `ClassMonitor` to only require one `Tag` object per unique tag, instead of each `Student` needing their own `Tag` objects.<br>
 
 <img src="images/BetterModelClassDiagram.png" width="450" />
 
@@ -140,8 +140,8 @@ The `Model` component,
 <img src="images/StorageClassDiagram.png" width="550" />
 
 The `Storage` component,
-* can save both address book data and user preference data in JSON format, and read them back into corresponding objects.
-* inherits from both `AddressBookStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
+* can save both ClassMonitor data and user preference data in JSON format, and read them back into corresponding objects.
+* inherits from both `ClassMonitorStorage` and `UserPrefStorage`, which means it can be treated as either one (if only the functionality of only one is needed).
 * depends on some classes in the `Model` component (because the `Storage` component's job is to save/retrieve objects that belong to the `Model`)
 
 ### Common classes
@@ -161,7 +161,7 @@ This section describes some noteworthy details on how certain features are imple
 The star mechanism is facilitated by `StarCommand`, which is called by its `execute` method to add stars to a `Student`.
 
 * `StarCommandParser#parse()` — Parses the parameters of the star command from its command-line String input.
-* `StarCommand#execute()` — Updates the `AddressBook` with the added stars.
+* `StarCommand#execute()` — Updates the `ClassMonitor` with the added stars.
 
 #### Feature Details
 
@@ -175,9 +175,9 @@ Here is the sequence diagram showing how a star operation goes through the `Logi
 
 Step 1. The user launches the application for the first time and enters in command: `star 1 s/2`.
 
-Step 2. The `LogicManager` calls on `AddressBookParser` to parse the String.
+Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 
-Step 3. The `AddressBookParser` calls `StarCommandParser.parse()`, which returns a `StarCommand`.
+Step 3. The `ClassMonitorParser` calls `StarCommandParser.parse()`, which returns a `StarCommand`.
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** If the number of stars is negative (i.e. < 1), then it will raise a parse error.
 
@@ -205,7 +205,7 @@ The sorting mechanism is facilitated by `SortCommand`, which is called by its `e
 based on one of its fields either in ascending or descending order
 
 * `SortCommandParser#parse()` — Parses the parameters of the sort command from its command-line String input.
-* `SortCommand#execute()` — Updates the `AddressBook` to display the sorted list.
+* `SortCommand#execute()` — Updates the `ClassMonitor` to display the sorted list.
 
 #### Feature Details
 
@@ -217,9 +217,9 @@ Here is the sequence diagram showing how a sort operation goes through the `Logi
 
 Step 1. The user launches the application for the first time and enters in command: `sort name desc`.
 
-Step 2. The `LogicManager` calls on `AddressBookParser` to parse the String.
+Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 
-Step 3. The `AddressBookParser` calls `SortCommandParser.parse()`, which returns a `SortCommand`.
+Step 3. The `ClassMonitorParser` calls `SortCommandParser.parse()`, which returns a `SortCommand`.
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** If either the field `field` or sorting order `isAscending`, 
 then it will raise a parse error.
@@ -235,7 +235,7 @@ Step 4. `LogicManager` calls on `SortCommand.execute()`, which updates the class
 The bolt mechanism is facilitated by `BoltCommand`, which is called by its `execute` method to add bolts to a `Student`.
 
 * `BoltCommandParser#parse()` — Parses the parameters of the bolt command from its command-line String input.
-* `BoltCommand#execute()` — Updates the `AddressBook` with the added bolts.
+* `BoltCommand#execute()` — Updates the `ClassMonitor` with the added bolts.
 
 #### Feature Details
 
@@ -249,9 +249,9 @@ Here is the sequence diagram showing how a bolt operation goes through the `Logi
 
 Step 1. The user launches the application for the first time and enters in command: `bolt 1 b/2`.
 
-Step 2. The `LogicManager` calls on `AddressBookParser` to parse the String.
+Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 
-Step 3. The `AddressBookParser` calls `BoltCommandParser.parse()`, which returns a `BoltCommand`.
+Step 3. The `ClassMonitorParser` calls `BoltCommandParser.parse()`, which returns a `BoltCommand`.
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** If the number of bolts is negative (i.e. < 1), then it will raise a parse error.
 
@@ -279,7 +279,7 @@ The find mechanism is facilitated by `FindCommand`, which is called by its `exec
 based on one of its fields and a given criteria
 
 * `FindCommandParser#parse()` — Parses the parameters of the find command from its command-line String input.
-* `FindCommand#execute()` — Updates the `AddressBook` to display the filtered list.
+* `FindCommand#execute()` — Updates the `ClassMonitor` to display the filtered list.
 
 #### Feature Details
 
@@ -291,9 +291,9 @@ Here is the sequence diagram showing how a find operation goes through the `Logi
 
 Step 1. The user launches the application and enters in command: `find name Alex`.
 
-Step 2. The `LogicManager` calls on `AddressBookParser` to parse the String.
+Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 
-Step 3. The `AddressBookParser` calls `FindCommandParser.parse()`, which then calls `FindCommandParser.parseFindName()`, which returns a `FindCommand`.
+Step 3. The `ClassMonitorParser` calls `FindCommandParser.parse()`, which then calls `FindCommandParser.parseFindName()`, which returns a `FindCommand`.
 
 <div markdown="span" class="alert alert-info">:information_source: **Note:** If either the field `field` or sorting order `isAscending`, 
 then it will raise a parse error.
@@ -310,37 +310,37 @@ Step 4. `LogicManager` calls on `SortCommand.execute()`, which updates the addre
 
 #### Proposed Implementation
 
-The proposed undo/redo mechanism is facilitated by `VersionedAddressBook`. It extends `AddressBook` with an undo/redo history, stored internally as an `classMonitorStateList` and `currentStatePointer`. Additionally, it implements the following operations:
+The proposed undo/redo mechanism is facilitated by `VersionedClassMonitor`. It extends `ClassMonitor` with an undo/redo history, stored internally as an `classMonitorStateList` and `currentStatePointer`. Additionally, it implements the following operations:
 
-* `VersionedAddressBook#commit()` — Saves the current address book state in its history.
-* `VersionedAddressBook#undo()` — Restores the previous address book state from its history.
-* `VersionedAddressBook#redo()` — Restores a previously undone address book state from its history.
+* `VersionedClassMonitor#commit()` — Saves the current ClassMonitor state in its history.
+* `VersionedClassMonitor#undo()` — Restores the previous ClassMonitor state from its history.
+* `VersionedClassMonitor#redo()` — Restores a previously undone ClassMonitor state from its history.
 
-These operations are exposed in the `Model` interface as `Model#commitAddressBook()`, `Model#undoAddressBook()` and `Model#redoAddressBook()` respectively.
+These operations are exposed in the `Model` interface as `Model#commitClassMonitor()`, `Model#undoClassMonitor()` and `Model#redoClassMonitor()` respectively.
 
 Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.
 
-Step 1. The user launches the application for the first time. The `VersionedAddressBook` will be initialized with the initial address book state, and the `currentStatePointer` pointing to that single address book state.
+Step 1. The user launches the application for the first time. The `VersionedClassMonitor` will be initialized with the initial ClassMonitor state, and the `currentStatePointer` pointing to that single ClassMonitor state.
 
 ![UndoRedoState0](images/UndoRedoState0.png)
 
-Step 2. The user executes `delete 5` command to delete the 5th student in the address book. The `delete` command calls `Model#commitAddressBook()`, causing the modified state of the address book after the `delete 5` command executes to be saved in the `classMonitorStateList`, and the `currentStatePointer` is shifted to the newly inserted address book state.
+Step 2. The user executes `delete 5` command to delete the 5th student in ClassMonitor. The `delete` command calls `Model#commitClassMonitor()`, causing the modified state of ClassMonitor after the `delete 5` command executes to be saved in the `classMonitorStateList`, and the `currentStatePointer` is shifted to the newly inserted ClassMonitor state.
 
 ![UndoRedoState1](images/UndoRedoState1.png)
 
-Step 3. The user executes `add n/David …​` to add a new student. The `add` command also calls `Model#commitAddressBook()`, causing another modified address book state to be saved into the `classMonitorStateList`.
+Step 3. The user executes `add n/David …​` to add a new student. The `add` command also calls `Model#commitClassMonitor()`, causing another modified ClassMonitor state to be saved into the `classMonitorStateList`.
 
 ![UndoRedoState2](images/UndoRedoState2.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If a command fails its execution, it will not call `Model#commitAddressBook()`, so the address book state will not be saved into the `classMonitorStateList`.
+<div markdown="span" class="alert alert-info">:information_source: **Note:** If a command fails its execution, it will not call `Model#commitClassMonitor()`, so ClassMonitor state will not be saved into the `classMonitorStateList`.
 
 </div>
 
-Step 4. The user now decides that adding the student was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoAddressBook()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous address book state, and restores the address book to that state.
+Step 4. The user now decides that adding the student was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoClassMonitor()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous ClassMonitor state, and restores ClassMonitor to that state.
 
 ![UndoRedoState3](images/UndoRedoState3.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index 0, pointing to the initial AddressBook state, then there are no previous AddressBook states to restore. The `undo` command uses `Model#canUndoAddressBook()` to check if this is the case. If so, it will return an error to the user rather
+<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index 0, pointing to the initial ClassMonitor state, then there are no previous ClassMonitor states to restore. The `undo` command uses `Model#canUndoClassMonitor()` to check if this is the case. If so, it will return an error to the user rather
 than attempting to perform the undo.
 
 </div>
@@ -357,17 +357,17 @@ Similarly, how an undo operation goes through the `Model` component is shown bel
 
 ![UndoSequenceDiagram](images/UndoSequenceDiagram-Model.png)
 
-The `redo` command does the opposite — it calls `Model#redoAddressBook()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores the address book to that state.
+The `redo` command does the opposite — it calls `Model#redoClassMonitor()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores ClassMonitor to that state.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index `classMonitorStateList.size() - 1`, pointing to the latest address book state, then there are no undone AddressBook states to restore. The `redo` command uses `Model#canRedoAddressBook()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index `classMonitorStateList.size() - 1`, pointing to the latest ClassMonitor state, then there are no undone ClassMonitor states to restore. The `redo` command uses `Model#canRedoClassMonitor()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
 
 </div>
 
-Step 5. The user then decides to execute the command `list`. Commands that do not modify the address book, such as `list`, will usually not call `Model#commitAddressBook()`, `Model#undoAddressBook()` or `Model#redoAddressBook()`. Thus, the `classMonitorStateList` remains unchanged.
+Step 5. The user then decides to execute the command `list`. Commands that do not modify ClassMonitor, such as `list`, will usually not call `Model#commitClassMonitor()`, `Model#undoClassMonitor()` or `Model#redoClassMonitor()`. Thus, the `classMonitorStateList` remains unchanged.
 
 ![UndoRedoState4](images/UndoRedoState4.png)
 
-Step 6. The user executes `clear`, which calls `Model#commitAddressBook()`. Since the `currentStatePointer` is not pointing at the end of the `classMonitorStateList`, all address book states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.
+Step 6. The user executes `clear`, which calls `Model#commitClassMonitor()`. Since the `currentStatePointer` is not pointing at the end of the `classMonitorStateList`, all ClassMonitor states after the `currentStatePointer` will be purged. Reason: It no longer makes sense to redo the `add n/David …​` command. This is the behavior that most modern desktop applications follow.
 
 ![UndoRedoState5](images/UndoRedoState5.png)
 
@@ -379,7 +379,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 **Aspect: How undo & redo executes:**
 
-* **Alternative 1 (current choice):** Saves the entire address book.
+* **Alternative 1 (current choice):** Saves the entire ClassMonitor.
   * Pros: Easy to implement.
   * Cons: May have performance issues in terms of memory usage.
 
@@ -475,7 +475,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* *`    | TA                                       | check who's work I havent graded yet              | remember to do so                                                                         |
 | `* * `   | TA                                       | exit the program                                  |                                                                                           |
 | `* `     | TA                                       | clear all students' details                       | remove all entries quickly                                                                |
-| `*`      | TA with many students in the address book | sort students by name                             | locate a student easily                                                                   |
+| `*`      | TA with many students in ClassMonitor | sort students by name                             | locate a student easily                                                                   |
 
 *{More to be added}*
 

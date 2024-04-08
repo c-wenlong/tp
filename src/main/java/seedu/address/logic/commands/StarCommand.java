@@ -14,7 +14,7 @@ import seedu.address.model.student.Star;
 import seedu.address.model.student.Student;
 
 /**
- * Adds a star to a student in the address book.
+ * Adds a star to a student in ClassMonitor.
  * @code star 1 s/3
  */
 public class StarCommand extends Command {
