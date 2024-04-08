@@ -11,12 +11,12 @@ ClassMonitor is a **desktop app for managing student performances, optimized for
 --------------------------------------------------------------------------------------------------------------------
 
 ## Introduction
-ClassMonitor is an Student Management System that empowers Teaching Assistants(TA) and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good performance and bolts for bad performance!
+ClassMonitor is a Student Management System that empowers Teaching Assistants(TA) and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good performance and bolts for bad performance!
 
 For a more detailed view of ClassMonitor’s features, you can refer to the Features section below!
 With a focus on efficiency, you can interact with ClassMonitor without ever reaching for your mouse or moving away from your keyboard! With a focus on user-friendliness, ClassMonitor is easy to learn!
 
-This User Guide provides an in-depth documentation so you can easily use and integrate ClassMonitor into your day-to-day classes as a Professor or TA. It covers how to launch ClassMonitor, core ClassMonitor features and commands, common terms and definitions used in ClassMonitor, and some troubleshooting recommendations. Head over to How to use the User Guide to get started!
+This User Guide provides an in-depth documentation, so you can easily use and integrate ClassMonitor into your day-to-day classes as a Professor or TA. It covers how to launch ClassMonitor, core ClassMonitor features and commands, common terms and definitions used in ClassMonitor, and some troubleshooting recommendations. Head over to How to use the User Guide to get started!
 
 ## Quick start
 
@@ -66,6 +66,8 @@ This User Guide provides an in-depth documentation so you can easily use and int
 * Items with `…`​ after them can be used multiple times including zero times.<br>
   e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
 
+* Command outputs with `[...]` refers to a truncated output for brevity in the User Guide. Within the app, additional details may be displayed
+
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
@@ -100,6 +102,9 @@ Examples:
 
 **Assumptions**:
 * A student by the name of `John Doe` (case-sensitive) does not already exist. 
+
+**Warning**:
+* Names must have alphanumeric characters! Please avoid using special characters such as `\`. If such special characters in the person's name, please remove the character before adding the student into ClassMonitor.
 
 **Command Output**: `New student added: John Doe; Phone: 98765432; Email: johnd@u.nus.edu; Major: Computer Science; Tags: `
 
@@ -266,7 +271,7 @@ Format: `list`
 * ClassMonitor contains three students **Alex Yeoh** with 3 bolts, **Bernice Yu** with 3 bolts, and **David Li** with 0 bolts
 
 **Command Output**: `Sorted all persons by bolt in descending order.`
-* `sort bolt desc` displays **David Li** on the top of the students displayed, then **Alex Yeoh**, followed by **Bernice Yu**
+* `sort bolt desc` displays **Alex Yeoh** on the top of the students displayed, then **Bernice Yu**, followed by **David Li**
 
 <img src="images/sortBoltDesc.png" alt="result for 'sort bolt desc'" style="width: 400px; height: 160px;">
 
@@ -317,9 +322,11 @@ _Details coming soon ..._
 
 ## FAQ
 
-**Q**: How do I transfer my data to another Computer?<br>
+**Q**: How do I transfer my data to another Computer? <br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous ClassMonitor home folder.
 
+**Q**: How do I deduct stars from a student? <br>
+**A**: While explicitly deducting is currently not possible, the edit command can be used in the interim to 'deduct stars'. First identify the index of the student, INDEX. Then decide what the student's updated star count should be, STAR. Then run `edit INDEX s/STAR` as a way to reduce a students star count.
 --------------------------------------------------------------------------------------------------------------------
 
 ## Known issues

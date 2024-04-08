@@ -79,7 +79,7 @@ public class Major implements Comparable<Major> {
 
     @Override
     public int compareTo(Major other) {
-        String otherMajor = other.value;
-        return this.value.compareTo(otherMajor);
+        String otherMajor = other.value.toUpperCase();
+        return this.value.toUpperCase().compareTo(otherMajor);
     }
 }

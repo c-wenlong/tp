@@ -73,8 +73,8 @@ public class Email implements Comparable<Email> {
 
     @Override
     public int compareTo(Email other) {
-        String otherEmail = other.value;
-        return this.value.compareTo(otherEmail);
+        String otherEmail = other.value.toUpperCase();
+        return this.value.toUpperCase().compareTo(otherEmail);
     }
 
     @Override
