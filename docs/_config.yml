@@ -8,8 +8,22 @@ header_pages:
 
 markdown: kramdown
 
+collections:
+  - glossary
+
 repository: "AY2324S2-CS2103T-F13-4/tp"
 github_icon: "images/github-icon.png"
+
+enable_features:
+  admonitions: true
+  autoglossary: true
+
+defaults:
+  - scope:
+      path: "" # Site-wide default
+    values:
+      master_branch: "https://github.com/AY2324S2-CS2103T-F13-4/tp/tree/master"
+      main_src: "src/main/java/seedu/classmonitor"
 
 plugins:
   - jemoji
