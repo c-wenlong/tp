@@ -4,7 +4,7 @@ import seedu.address.model.ClassMonitor;
 import seedu.address.model.student.Student;
 
 /**
- * A utility class to help with building Addressbook objects.
+ * A utility class to help with building ClassMonitor objects.
  * Example usage: <br>
  *     {@code ClassMonitor ab = new ClassMonitorBuilder().withStudent("John", "Doe").build();}
  */

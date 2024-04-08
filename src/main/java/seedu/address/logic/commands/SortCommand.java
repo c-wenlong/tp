@@ -6,13 +6,13 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.model.Model;
 
 /**
- * Sorts all students in the address book based on any given field
+ * Sorts all students in ClassMonitor based on any given field
  */
 public class SortCommand extends Command {
 
     public static final String COMMAND_WORD = "sort";
     public static final String MESSAGE_SUCCESS = "Sorted all persons by %s in %s order.";
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": sorts all students in the address book "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": sorts all students in ClassMonitor "
             + "based on any given field (case-insensitive) of the student in either ascending or descending order"
             + "Parameters: <Field>(email, major, name, phone, star) <asc/desc> \n"
             + "Example: " + COMMAND_WORD + " name" + " asc";

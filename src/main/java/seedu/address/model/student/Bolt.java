@@ -4,7 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents a Student's bolts in the address book.
+ * Represents a Student's bolts in ClassMonitor.
  */
 public class Bolt implements Comparable<Bolt> {
 
