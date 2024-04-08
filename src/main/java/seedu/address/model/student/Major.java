@@ -11,7 +11,7 @@ public class Major implements Comparable<Major> {
 
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Majors should be at least 2 characters long";
+            "Majors should contain only alphabetic characters or spaces and be at least 2 characters long";
 
     /**
      * Regular expression for validating strings containing alphabetic characters and spaces with a
