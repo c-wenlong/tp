@@ -10,7 +10,7 @@ ClassMonitor is a **desktop app for managing student performances, optimized for
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Introduction
+# Introduction
 ClassMonitor is a Student Management System that empowers Teaching Assistants(TA) and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good performance and bolts for bad performance!
 
 For a more detailed view of ClassMonitor’s features, you can refer to the Features section below!
