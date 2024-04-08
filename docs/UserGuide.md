@@ -141,7 +141,7 @@ Format: `list`
 
 > Awards a student stars for good participation in class.
 
-**Format:** `star INDEX [s/STAR]`
+**Format:** `star INDEX s/STAR`
 
 **Info:**
 * Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ 
@@ -169,8 +169,8 @@ Format: `list`
 ### Awarding a student bolts for being absent : `bolt`
 
 > Awards a student bolts for being absent in class.
-> 
-**Format**: `bolt INDEX [b/BOLT]`
+
+**Format**: `bolt INDEX b/BOLT`
 
 **Info:**
 * The number of bolts corresponds to the number of times the student is absent. ​
@@ -334,13 +334,15 @@ _Details coming soon ..._
 
 Action | Format, Examples
 --------|------------------
-**Add** | `add [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [m/MAJOR] [t/TAG]…​` <br> e.g., `add n/James Ho p/83482048 e/jamesho@u.nus.edu m/Computer Science t/CS2103T t/G18`
+**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR [t/TAG]…​` <br> e.g., `add n/James Ho p/83482048 e/jamesho@u.nus.edu m/Computer Science t/CS2103T t/G18`
 **Clear** | `clear`
 **Delete** | `delete INDEX`<br> e.g., `delete 3`
 **Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [m/MAJOR] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@u.nus.edu m/Psychology`
-**Star** | `star INDEX [s/STAR]` <br> e.g., `star 1 s/5`
+**Star** | `star INDEX s/STAR` <br> e.g., `star 1 s/5`
+**Bolt** | `bolt INDEX b/BOLT` <br> e.g., `bolt 1 b/5`
 **Find** | `find FIELD CRITERIA`<br> e.g., `find name alex david`
 **Sort** | `sort FIELD ORDER`<br> e.g., `sort star asc`
 **List** | `list`
 **Help** | `help`
+**Exit** | `exit`
 
