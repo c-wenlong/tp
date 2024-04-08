@@ -10,7 +10,7 @@ import seedu.address.model.Model;
 import seedu.address.model.student.Student;
 
 /**
- * Finds and lists all persons in address book who matches the given predicate.
+ * Finds and lists all persons in ClassMonitor who matches the given predicate.
  * Text matching is case-insensitive.
  */
 public class FindCommand extends Command {

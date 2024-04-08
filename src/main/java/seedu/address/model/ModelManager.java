@@ -16,7 +16,7 @@ import seedu.address.commons.core.LogsCenter;
 import seedu.address.model.student.Student;
 
 /**
- * Represents the in-memory model of the address book data.
+ * Represents the in-memory model of ClassMonitor data.
  */
 public class ModelManager implements Model {
     private static final Logger logger = LogsCenter.getLogger(ModelManager.class);
@@ -32,7 +32,7 @@ public class ModelManager implements Model {
     public ModelManager(ReadOnlyClassMonitor classMonitor, ReadOnlyUserPrefs userPrefs) {
         requireAllNonNull(classMonitor, userPrefs);
 
-        logger.fine("Initializing with address book: " + classMonitor + " and user prefs " + userPrefs);
+        logger.fine("Initializing with ClassMonitor: " + classMonitor + " and user prefs " + userPrefs);
 
         this.classMonitor = new ClassMonitor(classMonitor);
         this.userPrefs = new UserPrefs(userPrefs);

@@ -10,7 +10,7 @@ start
 
 if () then ([command commits ClassMonitor])
     :Purge redundant states;
-    :Save AddressBook to
+    :Save ClassMonitor to
     :Save ClassMonitor to
     classMonitorStateList;
 else ([else])
