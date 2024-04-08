@@ -24,7 +24,7 @@ This User Guide provides an in-depth documentation so you can easily use and int
 
 1. Download the latest `classmonitor.jar` from [here](https://github.com/AY2324S2-CS2103T-F13-4/tp/releases).
 
-1. Copy the file to the folder you want to use as the _home folder_ for your AddressBook.
+1. Copy the file to the folder you want to use as the _home folder_ for your ClassMonitor.
 
 1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar classmonitor.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
@@ -35,7 +35,7 @@ This User Guide provides an in-depth documentation so you can easily use and int
 
    * `list` : Lists all contacts.
 
-   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to the Address Book.
+   * `add n/John Doe p/98765432 e/johnd@example.com m/Computer Science` : Adds a contact named `John Doe` to the list.
 
    * `star 1 s/3` : Adds 3 stars to the first person on the list.
 
@@ -86,7 +86,7 @@ Format: `help`
 
 ### Adding a student to contact book: `add`
 
-> Adds a student to the address book.
+> Adds a student to the list.
 
 Format: `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR [t/TAG]…​`
 
@@ -105,13 +105,13 @@ Examples:
 
 ### Listing all students : `list`
 
->Shows a list of all students in the address book.
+>Shows a list of all students in the list.
 
 Format: `list`
 
 ### Editing a student's information : `edit`
 
-> Edits an existing student in the address book.
+> Edits an existing student in the list.
 
 **Format:** `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [m/MAJOR] [s/STAR] [b/BOLT] [t/TAG]…​`
 
@@ -272,7 +272,7 @@ Format: `list`
 
 ### Deleting a student's particulars : `delete`
 
-Deletes the specified student from the address book.
+Deletes the specified student from the list.
 
 Format: `delete INDEX`
 
@@ -281,12 +281,12 @@ Format: `delete INDEX`
 * The index **must be a positive integer** 1, 2, 3, …​
 
 Examples:
-* `list` followed by `delete 2` deletes the 2nd student in the address book.
+* `list` followed by `delete 2` deletes the 2nd student in the list.
 * `find Betsy` followed by `delete 1` deletes the 1st student in the results of the `find` command.
 
 ### Clearing all entries : `clear`
 
-Clears all entries from the address book.
+Clears all entries from the list.
 
 Format: `clear`
 
@@ -298,15 +298,15 @@ Format: `exit`
 
 ### Saving the data
 
-AddressBook data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+ClassMonitor data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
 ### Editing the data file
 
-AddressBook data are saved automatically as a JSON file `[JAR file location]/data/classmonitor.json`. Advanced users are welcome to update data directly by editing that data file.
+ClassMonitor data are saved automatically as a JSON file `[JAR file location]/data/classmonitor.json`. Advanced users are welcome to update data directly by editing that data file.
 
 <div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
-If your changes to the data file makes its format invalid, AddressBook will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.<br>
-Furthermore, certain edits can cause the AddressBook to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
+If your changes to the data file makes its format invalid, ClassMonitor will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.<br>
+Furthermore, certain edits can cause the ClassMonitor to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </div>
 
 ### Archiving data files `[coming in v2.0]`
@@ -318,7 +318,7 @@ _Details coming soon ..._
 ## FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous AddressBook home folder.
+**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous ClassMonitor home folder.
 
 --------------------------------------------------------------------------------------------------------------------
 
