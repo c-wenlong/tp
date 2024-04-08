@@ -122,7 +122,7 @@ Format: `list`
 
 
 **Note:**
-* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ </li>
+* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​
 * `STAR` **must be a positive integer between 1 and 50,000** (e.g. 1, 2, ..., 50,000) ​ 
 * A student can only be awarded a maximum of 50,000 stars, with a minimum of 0 stars. ​ 
 
@@ -330,12 +330,14 @@ _Details coming soon ..._
 
 ## Command summary
 
+**All eve**
+
 Action | Format, Examples
 --------|------------------
-**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
+**Add** | `add [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [m/MAJOR] [t/TAG]…​` <br> e.g., `add n/James Ho p/83482048 e/jamesho@u.nus.edu m/Computer Science t/CS2103T t/G18`
 **Clear** | `clear`
 **Delete** | `delete INDEX`<br> e.g., `delete 3`
-**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
+**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [m/MAJOR] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@u.nus.edu m/Psychology`
 **Star** | `star INDEX [s/STAR]` <br> e.g., `star 1 s/5`
 **Find** | `find FIELD CRITERIA`<br> e.g., `find name alex david`
 **Sort** | `sort FIELD ORDER`<br> e.g., `sort star asc`
