@@ -9,6 +9,8 @@ ClassMonitor is a **desktop app for managing student performances, optimized for
 * Table of Contents
 {:toc}
 
+{% include toc.md header=true show-in-toc=true ordered=true %}
+
 --------------------------------------------------------------------------------------------------------------------
 
 # Introduction
