@@ -21,15 +21,15 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 
 1. Ensure you have Java `11` or above installed in your Computer. You can download it [here](https://docs.oracle.com/en/java/javase/11/install/overview-jdk-installation.html#GUID-8677A77F-231A-40F7-98B9-1FD0B48C346A).
 
-2. Download the latest `classmonitor.jar` from [here](https://github.com/AY2324S2-CS2103T-F13-4/tp/releases).
+1. Download the latest `classmonitor.jar` from [here](https://github.com/AY2324S2-CS2103T-F13-4/tp/releases).
 
-3. Copy the file to the folder you want to use as the _home folder_ for your ClassMonitor.
+1. Copy the file to the folder you want to use as the _home folder_ for your ClassMonitor.
 
-4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar classmonitor.jar` command to run the application.<br>
+1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar classmonitor.jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![Ui](images/Ui_v1.3.png)
 
-5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
    * `list` : Lists all contacts.
@@ -52,16 +52,17 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 
    * `exit` : Exits the app.
 
-6. Refer to the [Features](#features) below for details of each command.
+1. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
 
-#### Features
+## Features
 
 <div markdown="block" class="alert alert-info">
 
 **:information_source: Notes about the command format:**<br>
 
+```info
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
   e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
 
@@ -81,8 +82,9 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
+```
 
-## **`help` - to view help**
+#### `help` - to view help
 
 > Format: **`help`**
 
@@ -90,7 +92,7 @@ Shows a message explaining how to access the help page.
 
 ![help message](images/helpMessage.png)
 
-## `add` - to add a student to ClassMonitor
+#### `add` - to add a student to ClassMonitor
 
 > Format: `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR [t/TAG]…`
 
@@ -111,7 +113,7 @@ Examples:
 
 **Command Output**: `New student added: John Doe; Phone: 98765432; Email: johnd@u.nus.edu; Major: Computer Science; Tags: `
 
-## `list` - lists all students
+#### `list` - lists all students
 
 > Format: `list`
 
@@ -119,7 +121,7 @@ Examples:
 `list` sorts students' names in ascending order
 </div>
 
-## `edit` : edits a student's information
+#### `edit` : edits a student's information
 
 > Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [m/MAJOR] [s/STAR] [b/BOLT] [t/TAG]…​`
 
@@ -147,7 +149,7 @@ Examples:
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd student to be `Betsy Crower` and clears all existing tags.
 *  `edit 3 s/0 b/0` Edits both the total number of stars and the total number of bolts received by student to be `0`. 
 
-## `star` - awards for good participation :
+#### `star` - awards for good participation :
 
 > Format: `star INDEX s/STAR`
 
@@ -174,7 +176,7 @@ Examples:
 
 ![star added example](images/star.png)
 
-## `bolt` - records late coming and absence for class
+#### `bolt` - records late coming and absence for class
 
 **Format**: `bolt INDEX b/BOLT`
 
@@ -201,7 +203,7 @@ Examples:
 
 ![bolt added example](images/bolt.png)
 
-## `find` - finds all students that has an attribute
+#### `find` - finds all students that has an attribute
 
 > Format: `find FIELD CRITERIA`
 
@@ -245,7 +247,7 @@ Examples:
 <img src="images/findNameAlexDavidResult.png" alt="result for 'find name alex david'" style="width: 400px; height: 160px;">
 
 
-## `sort` - sorts all students by a specified field
+#### `sort` - sorts all students by a specified field
 > Format: `sort FIELD ORDER`
 
 **Info**:
@@ -268,7 +270,7 @@ Examples:
 
 <img src="images/sortBoltDesc.png" alt="result for 'sort bolt desc'" style="width: 400px; height: 160px;">
 
-## `delete` - deletes a student's particulars
+#### `delete` - deletes a student's particulars
 
 Deletes the specified student from the list.
 
@@ -282,25 +284,25 @@ Examples:
 * `list` followed by `delete 2` deletes the 2nd student in the list.
 * `find Betsy` followed by `delete 1` deletes the 1st student in the results of the `find` command.
 
-## `clear` - Clears all students' particulars
+#### `clear` - Clears all students' particulars
 > Format: `clear`
 
 <div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
 This is **NOT** an undo-able process. Once you `clear` ClassMonitor, it your data will be lost. So be careful and only use this once the semester is over and the previous semester's student data is no longer needed.
 </div>
 
-## `exit` - exits the program
+#### `exit` - exits the program
 > Format: `exit`
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 You can also close the program by closing the tab using the x circle at the top left of the application interface.
 </div>
 
-# Additional Information
-## Saving the data
+## Additional Information
+#### Saving the data
 
 ClassMonitor data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
-## Editing the data file
+#### Editing the data file
 
 ClassMonitor data are saved automatically as a JSON file `[JAR file location]/data/classmonitor.json`. Advanced users are welcome to update data directly by editing that data file.
 
@@ -309,13 +311,13 @@ If your changes to the data file makes its format invalid, ClassMonitor will dis
 Furthermore, certain edits can cause the ClassMonitor to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </div>
 
-## Archiving data files `[coming in v2.0]`
+#### Archiving data files `[coming in v2.0]`
 
 _Details coming soon ..._
 
 --------------------------------------------------------------------------------------------------------------------
 
-# FAQ
+## FAQ
 
 **Q**: How do I transfer my data to another Computer? <br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous ClassMonitor home folder.
@@ -324,13 +326,13 @@ _Details coming soon ..._
 **A**: While explicitly deducting is currently not possible, the edit command can be used in the interim to 'deduct stars'. First identify the index of the student, INDEX. Then decide what the student's updated star count should be, STAR. Then run `edit INDEX s/STAR` as a way to reduce a students star count.
 --------------------------------------------------------------------------------------------------------------------
 
-# Known issues
+## Known issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
 --------------------------------------------------------------------------------------------------------------------
 
-# Command summary
+## Command summary
 
 Action | Format, Examples
 --------|------------------
