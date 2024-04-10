@@ -1,9 +1,12 @@
 ---
 layout: page
 title: Developer Guide
+show-toc: true
 ---
-* Table of Contents
-{:toc}
+
+## About ClassMonitor
+
+{% include toc.md header=true show-in-toc=true ordered=true %}
 
 --------------------------------------------------------------------------------------------------------------------
 
