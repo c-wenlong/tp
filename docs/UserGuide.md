@@ -17,6 +17,8 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 {% include toc.md header=true show-in-toc=true ordered=true %}
 --------------------------------------------------------------------------------------------------------------------
 
+## Features
+
 ## Quick start
 
 1. Ensure you have Java `11` or above installed in your Computer. You can download it [here](https://docs.oracle.com/en/java/javase/11/install/overview-jdk-installation.html#GUID-8677A77F-231A-40F7-98B9-1FD0B48C346A).
@@ -55,8 +57,6 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 1. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
-
-## Features
 
 ## Commands
 
@@ -341,8 +341,6 @@ Furthermore, certain edits can cause the ClassMonitor to behave in unexpected wa
 
 _Details coming soon ..._
 
---------------------------------------------------------------------------------------------------------------------
-
 ## FAQ
 
 **Q**: How do I transfer my data to another Computer? <br>
@@ -351,13 +349,10 @@ _Details coming soon ..._
 **Q**: How do I deduct stars from a student? <br>
 **A**: While explicitly deducting is currently not possible, the edit command can be used in the interim to 'deduct stars'. First identify the index of the student, INDEX. Then decide what the student's updated star count should be, STAR. Then run `edit INDEX s/STAR` as a way to reduce a students star count.
 
---------------------------------------------------------------------------------------------------------------------
-
 ## Known issues
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
---------------------------------------------------------------------------------------------------------------------
 ## Acknowledgements
 
 ## Glossary
