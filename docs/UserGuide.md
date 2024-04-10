@@ -324,11 +324,11 @@ You can also close the program by closing the tab using the x circle at the top 
 
 ## Additional Information
 
-#### Saving the data
+### Saving the data
 
 ClassMonitor data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
-#### Editing the data file
+### Editing the data file
 
 ClassMonitor data are saved automatically as a JSON file `[JAR file location]/data/classmonitor.json`. Advanced users are welcome to update data directly by editing that data file.
 
@@ -337,7 +337,7 @@ If your changes to the data file makes its format invalid, ClassMonitor will dis
 Furthermore, certain edits can cause the ClassMonitor to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </div>
 
-#### Archiving data files `[coming in v2.0]`
+### Archiving data files `[coming in v2.0]`
 
 _Details coming soon ..._
 
