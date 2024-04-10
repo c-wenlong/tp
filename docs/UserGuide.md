@@ -1,6 +1,7 @@
 ---
 layout: page
 title: User Guide
+show-toc: true
 ---
 
 ClassMonitor is a **desktop app for managing student performances, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, ClassMonitor can get your contact management tasks done faster than traditional GUI apps.
