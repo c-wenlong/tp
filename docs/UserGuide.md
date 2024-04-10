@@ -58,6 +58,8 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 
 ## Features
 
+## Commands
+
 ```note
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
   e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
@@ -77,16 +79,9 @@ This User Guide provides an in-depth documentation, so you can easily use and in
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
-</div>
 ```
 
-#### `help` - to view help
-
-> Format: **`help`**
-
-Shows a message explaining how to access the help page.
-
-![help message](images/helpMessage.png)
+### Student Commands
 
 #### `add` - to add a student to ClassMonitor
 
@@ -121,12 +116,13 @@ Examples:
 
 > Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [m/MAJOR] [s/STAR] [b/BOLT] [t/TAG]…​`
 
-**Info:**
+```info
 * Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
+```
 
-**Note:**
+```note
 * `INDEX` *must be a positive integer* (e.g. 1, 2, 3, …) ​
 * `NAME` *must **ONLY** contain alphabets and spaces*
 * `PHONE` *should be a valid phone number*
@@ -134,11 +130,13 @@ Examples:
 * `MAJOR` *must **ONLY** contain alphabets and spaces and should be a valid major*
 * `STAR/BOLT` *must be a positive integer between 1 and 50,000* (e.g. 1, 2, …, 50,000) ​
 * `TAG` **should be a valid course code or class code**
+```
 
-**Tip:**
+```tip
 * When editing tags, the existing tags of the student will be removed i.e adding of tags is not cumulative.
 * You can remove all the student’s tags by typing `t/` without specifying any tags after it.
 * Editing the number of stars of a student replaces the existing value.
+```
 
 **Examples:**
 *  `edit 1 p/98765432 e/johndoe@u.nus.edu` Edits the phone number and email address of the 1st student to be `91234567` and `johndoe@example.com` respectively.
@@ -149,16 +147,17 @@ Examples:
 
 > Format: `star INDEX s/STAR`
 
-**Info:**
+```info
 * Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ 
 * `STAR` refers to the number of stars to be awarded to the student. ​ 
+```
 
-
-**Note:**
+```note
 * `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …)
 * `STAR` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10)
 * The `STAR` will add onto existing number of stars the student already has.
 * A student can only hold a accumulative maximum of 50,000 stars, with a minimum of 0 stars.
+```
 
 **Example:**
 
@@ -176,16 +175,18 @@ Examples:
 
 **Format**: `bolt INDEX b/BOLT`
 
-**Info:**
+```info
 * The number of bolts corresponds to the number of times the student is absent. ​
 * Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ 
 * `BOLT` refers to the number of bolts to be awarded to the student. ​
+```
 
-**Note:**
+```note
 `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ 
 * `BOLT` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​ 
 * The `BOLT` will add onto existing number of bolts the student already has. ​ 
 * A student can only hold a accumulative maximum of 50,000 bolts, with a minimum of 0 bolts. ​
+```
 
 **Example:**
 
@@ -218,7 +219,7 @@ Examples:
 * `find tag KEYWORD`: Finds students with tags that **contain** the given keyword.
     * e.g. `find tag friend` will return students that are tagged `friend` or `friends`.
 
-**Info:**
+```info
 * Accepted fields are `name`, `major`, `star`, `bolt`, and `tag`.
 * Accepted operators for `find star` and `find bolt` are:
   * < (strictly less than)
@@ -227,6 +228,7 @@ Examples:
   * \>= (more than or equal to)
   * = (equal to)
 * Matching is case-insensitive.
+```
 
 **Examples**:
 
@@ -246,13 +248,14 @@ Examples:
 #### `sort` - sorts all students by a specified field
 > Format: `sort FIELD ORDER`
 
-**Info**:
+```info
 * The only accepted fields are `name`, `phone`, `email`, `major`, `star`, `bolt`
 * The only accepted orders are `asc` for ascending order of the specific field or `desc` for descending order of the specific field
 * `name` and `email` are sorted in lexicographical order while `phone`,`star` and `bolt` are sorted in numeric order
 * The field and orders can have a combinations of capital and lower case letters
   e.g. `sort star asc`, `sort name ASc` and `sort Major desc` are valid
 * For tie breaking between students that have the same value for a given field, name will be used as a tiebreaker
+```
 
 **Examples**:
 
@@ -287,13 +290,40 @@ Examples:
 This is **NOT** an undo-able process. Once you `clear` ClassMonitor, it your data will be lost. So be careful and only use this once the semester is over and the previous semester's student data is no longer needed.
 </div>
 
+### General Commands
+
+#### `help` - to view help
+
+> Format: **`help`**
+
+Shows a message explaining how to access the help page.
+
+![help message](images/helpMessage.png)
+
 #### `exit` - exits the program
 > Format: `exit`
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 You can also close the program by closing the tab using the x circle at the top left of the application interface.
 </div>
 
+## Command summary
+
+| Action     | Format, Examples                                                                                                                                    |
+|------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**    | `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR [t/TAG]…​` <br> e.g., `add n/James Ho p/83482048 e/jamesho@u.nus.edu m/Computer Science t/CS2103T t/G18` |
+| **Clear**  | `clear`                                                                                                                                             |
+| **Delete** | `delete INDEX`<br> e.g., `delete 3`                                                                                                                 |
+| **Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [m/MAJOR] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@u.nus.edu m/Psychology`                |
+| **Star**   | `star INDEX s/STAR` <br> e.g., `star 1 s/5`                                                                                                         |
+| **Bolt**   | `bolt INDEX b/BOLT` <br> e.g., `bolt 1 b/5`                                                                                                         |
+| **Find**   | `find FIELD CRITERIA`<br> e.g., `find name alex david`                                                                                              |
+| **Sort**   | `sort FIELD ORDER`<br> e.g., `sort star asc`                                                                                                        |
+| **List**   | `list`                                                                                                                                              |
+| **Help**   | `help`                                                                                                                                              |
+| **Exit**   | `exit`                                                                                                                                              |
+
 ## Additional Information
+
 #### Saving the data
 
 ClassMonitor data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
@@ -320,6 +350,7 @@ _Details coming soon ..._
 
 **Q**: How do I deduct stars from a student? <br>
 **A**: While explicitly deducting is currently not possible, the edit command can be used in the interim to 'deduct stars'. First identify the index of the student, INDEX. Then decide what the student's updated star count should be, STAR. Then run `edit INDEX s/STAR` as a way to reduce a students star count.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Known issues
@@ -327,20 +358,7 @@ _Details coming soon ..._
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 
 --------------------------------------------------------------------------------------------------------------------
+## Acknowledgements
 
-## Command summary
-
-Action | Format, Examples
---------|------------------
-**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR [t/TAG]…​` <br> e.g., `add n/James Ho p/83482048 e/jamesho@u.nus.edu m/Computer Science t/CS2103T t/G18`
-**Clear** | `clear`
-**Delete** | `delete INDEX`<br> e.g., `delete 3`
-**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [m/MAJOR] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@u.nus.edu m/Psychology`
-**Star** | `star INDEX s/STAR` <br> e.g., `star 1 s/5`
-**Bolt** | `bolt INDEX b/BOLT` <br> e.g., `bolt 1 b/5`
-**Find** | `find FIELD CRITERIA`<br> e.g., `find name alex david`
-**Sort** | `sort FIELD ORDER`<br> e.g., `sort star asc`
-**List** | `list`
-**Help** | `help`
-**Exit** | `exit`
+## Glossary
 
