@@ -6,14 +6,7 @@ show-toc: true
 
 ClassMonitor is a **desktop app for managing student performances, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, ClassMonitor can get your contact management tasks done faster than traditional GUI apps.
 
-* Table of Contents
-{:toc}
-
-{% include toc.md header=true show-in-toc=true ordered=true %}
-
---------------------------------------------------------------------------------------------------------------------
-
-# Introduction
+## Introduction
 ClassMonitor is a Student Management System that empowers Teaching Assistants(TA) and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good performance and bolts for bad performance!
 
 For a more detailed view of ClassMonitor’s features, you can refer to the Features section below!
@@ -21,7 +14,14 @@ With a focus on efficiency, you can interact with ClassMonitor without ever reac
 
 This User Guide provides an in-depth documentation, so you can easily use and integrate ClassMonitor into your day-to-day classes as a Professor or TA. It covers how to launch ClassMonitor, core ClassMonitor features and commands, common terms and definitions used in ClassMonitor, and some troubleshooting recommendations. Head over to How to use the User Guide to get started!
 
-# Quick start
+* Table of Contents
+{:toc}
+
+{% include toc.md header=true show-in-toc=true ordered=true %}
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Quick start
 
 1. Ensure you have Java `11` or above installed in your Computer. You can download it [here](https://docs.oracle.com/en/java/javase/11/install/overview-jdk-installation.html#GUID-8677A77F-231A-40F7-98B9-1FD0B48C346A).
 
@@ -60,7 +60,7 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 
 --------------------------------------------------------------------------------------------------------------------
 
-# Features
+#### Features
 
 <div markdown="block" class="alert alert-info">
 
