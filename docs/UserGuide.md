@@ -14,11 +14,8 @@ With a focus on efficiency, you can interact with ClassMonitor without ever reac
 
 This User Guide provides an in-depth documentation, so you can easily use and integrate ClassMonitor into your day-to-day classes as a Professor or TA. It covers how to launch ClassMonitor, core ClassMonitor features and commands, common terms and definitions used in ClassMonitor, and some troubleshooting recommendations. Head over to How to use the User Guide to get started!
 
-* Table of Contents
+## Table of Contents
 {:toc}
-
-{% include toc.md header=true show-in-toc=true ordered=true %}
-
 --------------------------------------------------------------------------------------------------------------------
 
 ## Quick start
