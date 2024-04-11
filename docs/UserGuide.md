@@ -3,6 +3,22 @@ layout: page
 title: User Guide
 show-toc: true
 ---
+{% capture notes %}
+**Assumption:**
+
+Initially, FoodRem only contains the following items:
+
+1. Sugarcane Juice Box
+1. Brown Sugar
+1. Tomato
+1. Carrot
+   {% endcapture %}
+   {%
+   include command-format.md
+   notes=notes
+   input="find b sug"
+   itemListBox="images/evedaktyl.png"
+   %}
 
 ClassMonitor is a **desktop app for managing student performances, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, ClassMonitor can get your contact management tasks done faster than traditional GUI apps.
 
