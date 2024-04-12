@@ -204,30 +204,38 @@ Examples:
 
 > Format: `find FIELD CRITERIA`
 
-**The parameters for `CRITERIA` depends on the `FIELD` specified:**
-* `find name KEYWORD [MORE KEYWORDS]`: Finds students with names that match **any** of the given keywords.
-    * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
-    * Only full words will be matched. e.g. `Han` will not match `Hans`
-    * Students matching at least one keyword will be returned (i.e. `OR` search).
-      e.g. `find name Hans Bo` will return `Hans Gruber`, `Bo Yang`
-* `find major KEYWORD`: Finds students with majors that **contain** the given keyword.
-    * e.g. `find major Science` will return `Computer Science` majors and `Science` majors.
-* `find star OPERATOR NUMBER`: Finds students with stars within the bounds as specified by the given operator and number.
-    * e.g. `find star = 0` will return students with **0** stars.
-* `find bolt OPERATOR NUMBER`: Finds students with bolts within the bounds as specified by the given operator and number.
-    * e.g. `find bolt < 5` will return students with less than 5 stars.
-* `find tag KEYWORD`: Finds students with tags that **contain** the given keyword.
-    * e.g. `find tag friend` will return students that are tagged `friend` or `friends`.
+**The parameters for `CRITERIA` depend on the `FIELD` specified:**
+
+```note
+Accepted fields are `name`, `major`, `star`, `bolt`, and `tag`.
+```
+
+| Field  | Criteria                     | Format, Examples                                                         |
+|--------|---------------------------------------------------------------------------------------------------------|
+| name   | KEYWORD [MORE_KEYWORDS]…​ | `find name KEYWORD [MORE_KEYWORDS]…​` <br> e.g. `find name Alex David`| 
+| major  | SUBSTRING                    | `find major SUBSTRING` e.g. `find major Science`                         | 
+| star   | OPERATOR OPERAND             | `find star OPERATOR OPERAND` e.g. `find star = 0`                        |
+| bolt   | OPERATOR OPERAND             | `find bolt OPERATOR OPERAND` e.g. `find bolt > 5`                        |
+| tag    | SUBSTRING                    | `find tag SUBSTRING` e.g. `find tag CS2103T`                             |
 
 ```info
-* Accepted fields are `name`, `major`, `star`, `bolt`, and `tag`.
-* Accepted operators for `find star` and `find bolt` are:
-  * < (strictly less than)
-  * <= (less than or equal to)
-  * \> (strictly more than)
-  * \>= (more than or equal to)
-  * = (equal to)
-* Matching is case-insensitive.
+`find name` finds students with names that match **any** of the given keywords.
+    * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans` 
+    * Only full words will be matched. e.g. `Han` will not match `Hans` 
+    * Students matching at least one keyword will be returned (i.e. `OR` search)
+
+`find major` and `find tag` find students with majors/tags that **contain** the given keyword.
+    * `find major Science` will return students with `Computer Science` majors and `Science` majors
+    * `find tag CS` will return students with `CS2103T` tags and `CS2100` tags
+
+`find star` and `find bolt` find students with stars/bolts within the bounds as specified by the given operator and number.
+    * Accepted operators are:
+        * < (strictly less than)
+        * <= (less than or equal to)
+        * \> (strictly more than)
+        * \>= (more than or equal to)
+        * = (equal to)
+    * Accepted operands are non-negative integers
 ```
 
 **Example**:
