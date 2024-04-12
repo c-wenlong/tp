@@ -23,7 +23,7 @@ Initially, FoodRem only contains the following items:
 ClassMonitor is a **desktop app for managing student performances, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, ClassMonitor can get your contact management tasks done faster than traditional GUI apps.
 
 ## Introduction
-ClassMonitor is a Student Management System that empowers Teaching Assistants(TA) and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good performance and bolts for bad performance!
+ClassMonitor is a Student Management System that empowers Teaching Assistants (TA) and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good class participation and bolts for absenteeism!
 
 For a more detailed view of ClassMonitor’s features, you can refer to the Features section below!
 With a focus on efficiency, you can interact with ClassMonitor without ever reaching for your mouse or moving away from your keyboard! With a focus on user-friendliness, ClassMonitor is easy to learn!
@@ -187,7 +187,7 @@ Examples:
 
 ![star added example](images/star.png)
 
-#### `bolt` - records late coming and absence for class
+#### `bolt` - records absenteeism of student
 
 **Format**: `bolt INDEX b/BOLT`
 
