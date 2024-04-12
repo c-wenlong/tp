@@ -214,28 +214,30 @@ Accepted fields are `name`, `major`, `star`, `bolt`, and `tag`.
 |--------|---------------------------------------------------------------------------------------------------------|
 | name   | KEYWORD [MORE_KEYWORDS]…​ | `find name KEYWORD [MORE_KEYWORDS]…​` <br> e.g. `find name Alex David`| 
 | major  | SUBSTRING                    | `find major SUBSTRING` e.g. `find major Science`                         | 
-| star   | OPERATOR OPERAND             | `find star OPERATOR OPERAND` e.g. `find star = 0`                        |
-| bolt   | OPERATOR OPERAND             | `find bolt OPERATOR OPERAND` e.g. `find bolt > 5`                        |
+| star   | OPERATOR NUMBER              | `find star OPERATOR NUMBER` e.g. `find star = 0`                        |
+| bolt   | OPERATOR NUMBER              | `find bolt OPERATOR NUMBER` e.g. `find bolt > 5`                        |
 | tag    | SUBSTRING                    | `find tag SUBSTRING` e.g. `find tag CS2103T`                             |
 
 ```info
 `find name` finds students with names that match **any** of the given keywords.
-    * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans` 
-    * Only full words will be matched. e.g. `Han` will not match `Hans` 
-    * Students matching at least one keyword will be returned (i.e. `OR` search)
+* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans` 
+* Only full words will be matched. e.g. `Han` will not match `Hans` 
+* Students matching at least one keyword will be returned (i.e. `OR` search)
+
 
 `find major` and `find tag` find students with majors/tags that **contain** the given keyword.
-    * `find major Science` will return students with `Computer Science` majors and `Science` majors
-    * `find tag CS` will return students with `CS2103T` tags and `CS2100` tags
+* `find major Science` will return students with `Computer Science` majors and `Science` majors
+* `find tag CS` will return students with `CS2103T` tags and `CS2100` tags
+
 
 `find star` and `find bolt` find students with stars/bolts within the bounds as specified by the given operator and number.
-    * Accepted operators are:
-        * < (strictly less than)
-        * <= (less than or equal to)
-        * \> (strictly more than)
-        * \>= (more than or equal to)
-        * = (equal to)
-    * Accepted operands are non-negative integers
+* Accepted operators are:
+  * < (strictly less than)
+  * <= (less than or equal to)
+  * \> (strictly more than)
+  * \>= (more than or equal to)
+  * = (equal to)
+* Accepted operands are non-negative integers
 ```
 
 **Example**:
