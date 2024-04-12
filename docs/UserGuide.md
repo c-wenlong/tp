@@ -177,15 +177,18 @@ Examples:
 
 **Example:**
 
-**Command Input**: `star 1 s/5`
+{% capture notes %}
+**Assumption:**
 
-**Assumptions**:
-* Alex Yeoh is the student at Index 1
-* He currently has 0 stars
-
-**Command Output**: `Added stars to Student: Alex Yeoh; [...]`
-
-![star added example](images/star.png)
+1. Alex Yeoh is the student at Index 1
+2. He currently has 0 stars
+   {% endcapture %}
+   {%
+   include command-format.md
+   notes=notes
+   input="star 1 s/5"
+   commandOutputBox="images/star.png"
+   %}
 
 #### `bolt` - records late coming and absence for class
 
@@ -206,15 +209,18 @@ Examples:
 
 **Example:**
 
-**Command Input**: `bolt 1 b/5`
+{% capture notes %}
+**Assumption:**
 
-**Assumptions**:
-* Alex Yeoh is the student at Index 1
-* He currently has 0 bolts
-
-**Command Output**: `Added bolts to Student: Alex Yeoh; [...]`
-
-![bolt added example](images/bolt.png)
+1. Alex Yeoh is the student at Index 1
+2. He currently has 0 bolts
+   {% endcapture %}
+   {%
+   include command-format.md
+   notes=notes
+   input="bolt 1 b/5"
+   commandOutputBox="images/bolt.png"
+   %}
 
 #### `find` - finds all students that has an attribute
 
