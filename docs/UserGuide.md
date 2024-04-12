@@ -75,12 +75,19 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 --------------------------------------------------------------------------------------------------------------------
 ## How to Use User Guide
 Thank you for choosing ClassMonitor! We are delighted to have you as a user.
+```info
+We **highly recommend** that you read through the User Guide in a **sequential order**. Please note the importance of the [Quick Reference Guide](#quick-reference-guide) section, which covers how to use FoodRem!
+```
+
+```tip
+This User Guide is highly navigable; simply click on any item in the [Table of Contents](#markdown-toc-toc-heading) and be directed to it! Clicking on the respective headings will bring you back to the Table of Contents, so it's easy to jump across sections!
+```
 
 If you have not installed ClassMonitor head over to the [Quick Start](#quick-start) section.
 
 If you are an experienced user, you can refer to the [Command Summary](#command-summary) for a quick overview of all of ClassMonitor's commands.
 
-If you are stuck, refer to the section on [Troubleshooting](#troubleshooting) or [FAQ](#faq).
+If you are stuck, refer to the section on [FAQ](#faq).
 
 ### Admonition Boxes
 
@@ -93,6 +100,57 @@ Throughout this guide, you may find coloured boxes containing highlighted pieces
 | ![Info](images/Info.png)       | Something that provides information useful in that context. |
 | ![Warning](images/Warning.png) | Something you should be cautious about.                     |
 | ![Danger](images/Danger.png)   | Something you should pay a lot of attention to.             |
+
+
+## Reference Guide
+This section covers all you should know about ClassMonitor. Of special note is the [Key Definitions](#key-definitions) section, which covers essential knowledge to using ClassMonitor's features.
+
+### [Key Definitions](#key-definitions)
+
+#### Student
+
+A student in ClassMonitor represents a student in one of your classes.
+
+The following are the fields for each student:
+
+* Student's Name
+* Student's Major
+* Student's Phone Number
+* Student's Email
+* Student's Stars (a measure of their class participation)
+* Student's Bolts (a measure of the classes the student was late or absent for)
+* Student's Tags
+
+Students are unique by name but are currently case-insensitive. This means you cannot add two or more students with the same name if they have the same case for this current version.
+
+#### Tag
+
+A Tag in ClassMonitor serves as a means to categorise students.
+
+Each student can have multiple tags. These Tags are optional.
+
+Feel free to add tags as you see fit to organize your inventory. Examples of how you may use a tag can include:
+
+* Labelling the tutorial group of the student, e.g. `t18`, `t09`, `t6`
+* Labelling the course code for the class the student is in, e.g. `CS1101S`, `UTW1101A`, `HY2220`
+* Noting important student particulars, e.g. `Dyslexic`
+
+The tags assigned to a student can be edited and these changes would be reflected for the student immediately.
+
+#### Flags
+
+Flags are delimiters that enable ClassMonitor to distinguish different parameters without ambiguity.
+
+| Flag | Corresponding Placeholder |
+|------|---------------------------|
+| n/   | NAME                      |
+| p/   | PHONE                     |
+| e/   | EMAIL                     |
+| m/   | MAJOR                     |
+| s/   | STAR                      |
+| b/   | BOLT                      |
+| t/   | TAG                       |
+
 
 ## Commands
 
