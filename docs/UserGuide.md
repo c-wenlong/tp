@@ -223,12 +223,14 @@ Accepted fields are `name`, `major`, `star`, `bolt`, and `tag`.
 * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans` 
 * Only full words will be matched. e.g. `Han` will not match `Hans` 
 * Students matching at least one keyword will be returned (i.e. `OR` search)
-<br>
+
+
 
 `find major` and `find tag` find students with majors/tags that **contain** the given keyword.
 * `find major Science` will return students with `Computer Science` majors and `Science` majors
 * `find tag CS` will return students with `CS2103T` tags and `CS2100` tags
-<br>
+
+
 
 `find star` and `find bolt` find students with stars/bolts within the bounds as specified by the given operator and number.
 * Accepted operators are:
