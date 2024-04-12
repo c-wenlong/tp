@@ -35,7 +35,7 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 
 ## Features
 
-## [Quick Start](#quick-start)
+## Quick Start
 
 1. Ensure you have Java `11` or above installed in your Computer. You can download it [here](https://docs.oracle.com/en/java/javase/11/install/overview-jdk-installation.html#GUID-8677A77F-231A-40F7-98B9-1FD0B48C346A).
 
@@ -105,7 +105,7 @@ Throughout this guide, you may find coloured boxes containing highlighted pieces
 ## Reference Guide
 This section covers all you should know about ClassMonitor. Of special note is the [Key Definitions](#key-definitions) section, which covers essential knowledge to using ClassMonitor's features.
 
-### [Key Definitions](#key-definitions)
+### Key Definitions
 
 #### Student
 
