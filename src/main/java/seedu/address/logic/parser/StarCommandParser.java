@@ -26,11 +26,12 @@ public class StarCommandParser implements Parser<StarCommand> {
         ArgumentMultimap argMultimap =
                 ArgumentTokenizer.tokenize(args, PREFIX_STAR); // tokenize args by PREFIX_STAR
 
-
         if (!arePrefixesPresent(argMultimap, PREFIX_STAR)
                 || argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, StarCommand.MESSAGE_USAGE));
         } // if no PREFIX used, or if the Preamble is empty, we throw a ParseException
+
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_STAR);
 
         Index index = ParserUtil.parseIndex(argMultimap.getPreamble());
         Star star = ParserUtil.parseStar(argMultimap.getValue(PREFIX_STAR).get());
