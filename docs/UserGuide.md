@@ -213,10 +213,10 @@ Accepted fields are `name`, `major`, `star`, `bolt`, and `tag`.
 | Field  | Criteria                     | Format, Examples                                                         |
 |--------|---------------------------------------------------------------------------------------------------------|
 | name   | KEYWORD [MORE_KEYWORDS]…​ | `find name KEYWORD [MORE_KEYWORDS]…​` <br> e.g. `find name Alex David`| 
-| major  | SUBSTRING                    | `find major SUBSTRING`                 e.g. `find major Science`                         | 
-| star   | OPERATOR NUMBER              | `find star OPERATOR NUMBER`            e.g. `find star = 0`                        |
-| bolt   | OPERATOR NUMBER              | `find bolt OPERATOR NUMBER`            e.g. `find bolt > 5`                        |
-| tag    | SUBSTRING                    | `find tag SUBSTRING`                   e.g. `find tag CS2103T`                             |
+| major  | SUBSTRING                    | `find major SUBSTRING` <br> e.g. `find major Science`                         | 
+| star   | OPERATOR NUMBER              | `find star OPERATOR NUMBER` <br> e.g. `find star = 0`                        |
+| bolt   | OPERATOR NUMBER              | `find bolt OPERATOR NUMBER` <br> e.g. `find bolt > 5`                        |
+| tag    | SUBSTRING                    | `find tag SUBSTRING` <br> e.g. `find tag CS2103T`                             |
 
 ```info
 `find name` finds students with names that match **any** of the given keywords.
