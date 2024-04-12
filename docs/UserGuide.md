@@ -228,7 +228,7 @@ Accepted fields are `name`, `major`, `star`, `bolt`, and `tag`.
    * `find major Science` will return students with `Computer Science` majors and `Science` majors
    * `find tag CS` will return students with `CS2103T` tags and `CS2100` tags
 
-* `find star`/`find bolt`: Find students with stars/bolts within the bounds as specified by the given operator and number
+* `find star`/`find bolt`: Find students with stars/bolts **within the bounds** as specified by the given operator and number
    * Accepted operators are:
      * < (strictly less than)
      * <= (less than or equal to)
