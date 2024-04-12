@@ -648,7 +648,51 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 * **Teaching Assistant (TA)**: A tutor attached to class
 
 --------------------------------------------------------------------------------------------------------------------
+## **Appendix: Planned Enhancements**
 
+The following are planned enhancements that have been proposed by early testers to improve the user experience.
+
+Team size: 5
+
+### Further validation of student details
+
+Some of the properties of a `Student` can be further restricted to be more representative of their real-life counterparts.
+
+* Currently, the `Phone` property is a string with unlimited length. It should have a limit of 8 to 15 characters, since some international phone numbers can go up to 15 characters.
+  * Phone numbers in Singapore should start with `8` or `9`.
+* `Email` addresses should follow the _local_@_domain_.com format.
+* Students should have unique contact details.
+  * This means that `add` or `edit` command will fail if it results in 
+* Student `Name`s should not be case sensitive.
+  * This means that `UniqueStudentList` should treat `Tan Ah Beng` and `tan ah beng` as the same student and these two names will never exist simultaneously
+  * One possible implementation is to store `Name` as a lowercase string regardless of how the user enters it, e.g. entering `add n/Tan Ah Beng` will reduce the name to `tan ah beng` before adding it to the list.
+
+Cons: Such additional constraints may restrict the user too much 
+
+**Alternative 1**
+* Have as toggleable 'Strict Mode' option that the user can enable of they want ClassMonitor to ensure that they cannot enter fields that do not fulfil the limitations.
+* Otherwise, only limit fields by string length in 'Unstrict Mode'.
+
+### Enhanced Name Input
+* Allow for ways to input names not are not normally allowed as command parameters, specifically the `/` character in 'S/O'
+* Proposed Change: Have an alternative way to input the name using  `"`
+  * e.g. `add n/"A S/O B"` will allow the user to enter a name with a `/`.
+
+### Further input validation for commands
+Command inputs can be further restricted to align with the field constraints
+* the `find` command can detect inputs that are out of range (e.g. `find star > 50000` will throw an error because ClassMonitor can never have more than 50000 stars) 
+
+### More granular error messages.
+Currently, ClassMonitor uses a generic 'try-catch' approach to handling errors in user input and execution. This has a some issues:
+* Having a generic error message can confuse users as they will not know which part of the input they have entered wrongly
+* The command will throw an error message if it encounters at least one error, which would result in the user having to retry the command repeatedly if there are multiple errors.
+
+
+**Proposed changes**
+1. Have the parser capture the preamble/prefix content that is causing the error and display it to the user.
+   1. e.g. `star i/1 s/3` could throw the error `invalid index/preamble 'i/1' given.`
+2. Have the command throw an error message for each option/preamble that is invalid or missing.
+   1. e.g. `edit 1 n/s*m p/` will throw an error message with the concatenation for the invalid name and missing phone number.
 ## **Appendix: Instructions for manual testing**
 
 Given below are instructions to test the app manually.
