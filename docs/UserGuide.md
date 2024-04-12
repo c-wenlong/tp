@@ -141,15 +141,15 @@ The tags assigned to a student can be edited and these changes would be reflecte
 
 Flags are delimiters that enable ClassMonitor to distinguish different parameters without ambiguity.
 
-| Flag | Corresponding Placeholder |
-|------|---------------------------|
-| n/   | NAME                      |
-| p/   | PHONE                     |
-| e/   | EMAIL                     |
-| m/   | MAJOR                     |
-| s/   | STAR                      |
-| b/   | BOLT                      |
-| t/   | TAG                       |
+| Flag | Corresponding Field |
+|------|---------------------|
+| n/   | NAME                |
+| p/   | PHONE               |
+| e/   | EMAIL               |
+| m/   | MAJOR               |
+| s/   | STAR                |
+| b/   | BOLT                |
+| t/   | TAG                 |
 
 
 ## Commands
