@@ -219,27 +219,23 @@ Accepted fields are `name`, `major`, `star`, `bolt`, and `tag`.
 | tag    | SUBSTRING                    | `find tag SUBSTRING` <br> e.g. `find tag CS2103T`                             |
 
 ```info
-`find name` finds students with names that match **any** of the given keywords.
-* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans` 
-* Only full words will be matched. e.g. `Han` will not match `Hans` 
-* Students matching at least one keyword will be returned (i.e. `OR` search)
+* `find name`: Find students with names that match **any** of the given keywords
+   * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans` 
+   * Only full words will be matched. e.g. `Han` will not match `Hans` 
+   * Students matching at least one keyword will be returned (i.e. `OR` search)
+   
+* `find major`/`find tag`: Find students with majors/tags that **contain** the given keyword
+   * `find major Science` will return students with `Computer Science` majors and `Science` majors
+   * `find tag CS` will return students with `CS2103T` tags and `CS2100` tags
 
-
-
-`find major` and `find tag` find students with majors/tags that **contain** the given keyword.
-* `find major Science` will return students with `Computer Science` majors and `Science` majors
-* `find tag CS` will return students with `CS2103T` tags and `CS2100` tags
-
-
-
-`find star` and `find bolt` find students with stars/bolts within the bounds as specified by the given operator and number.
-* Accepted operators are:
-  * < (strictly less than)
-  * <= (less than or equal to)
-  * \> (strictly more than)
-  * \>= (more than or equal to)
-  * = (equal to)
-* Accepted numbers are non-negative integers
+* `find star`/`find bolt`: Find students with stars/bolts within the bounds as specified by the given operator and number
+   * Accepted operators are:
+     * < (strictly less than)
+     * <= (less than or equal to)
+     * \> (strictly more than)
+     * \>= (more than or equal to)
+     * = (equal to)
+   * Accepted numbers are integers in range [0, 2147483647]
 ```
 
 **Example**:
