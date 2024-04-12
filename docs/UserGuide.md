@@ -222,7 +222,7 @@ Accepted fields are `name`, `major`, `star`, `bolt`, and `tag`.
 * `find name`: Find students with names that match **any** of the given keywords
    * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans` 
    * Only full words will be matched. e.g. `Han` will not match `Hans` 
-   * Students matching at least one keyword will be returned (i.e. `OR` search)
+   * Students matching at least one keyword will be returned (i.e. **OR** search)
    
 * `find major`/`find tag`: Find students with majors/tags that **contain** the given keyword
    * `find major Science` will return students with `Computer Science` majors and `Science` majors
