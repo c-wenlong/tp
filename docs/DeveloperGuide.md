@@ -222,7 +222,7 @@ Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 
 Step 3. The `ClassMonitorParser` calls `SortCommandParser.parse()`, which returns a `SortCommand`.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If either the field `field` or sorting order `isAscending`, 
+<div markdown="span" class="alert alert-info">:information_source: **Note:** If either the field `field` or sorting order `isAscending`,
 then it will raise a parse error.
 
 </div>
@@ -296,7 +296,7 @@ Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 
 Step 3. The `ClassMonitorParser` calls `FindCommandParser.parse()`, which then calls `FindCommandParser.parseFindName()`, which returns a `FindCommand`.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If either the field `field` or sorting order `isAscending`, 
+<div markdown="span" class="alert alert-info">:information_source: **Note:** If either the field `field` or sorting order `isAscending`,
 then it will raise a parse error.
 
 </div>
@@ -413,7 +413,7 @@ the `edit` command will also be extended to allow users to edit the comments.
 
 Usage: `edit INDEX ...c/INDEX2 COMMENT...`
 
-The command will edit the comment at the student with index `INDEX` with comment index `INDEX2`. 
+The command will edit the comment at the student with index `INDEX` with comment index `INDEX2`.
 
 #### UI Modifications
 
@@ -421,7 +421,7 @@ The command will edit the comment at the student with index `INDEX` with comment
 * Users will be able to view the comments they have left for each student in a separate **window**. The components of the window will track changes to the student comments in the model.
 
 **Alternative 2**
-* Users will be able to view the comments they have left for each student in a separate display in the same window. 
+* Users will be able to view the comments they have left for each student in a separate display in the same window.
 
 
 ![Proposed UI](images\StarCommentUiClassDiagram.png).

@@ -190,7 +190,7 @@ Examples:
 **Command Input**: `add n/John Doe p/98765432 e/johnd@u.nus.edu m/Computer Science`
 
 **Assumptions**:
-* A student by the name of `John Doe` **(case-sensitive)** does not already exist. 
+* A student by the name of `John Doe` **(case-sensitive)** does not already exist.
 
 **Warning**:
 * Names must have alphanumeric characters! Please avoid using special characters such as `\`. If such special characters exists in the person's name, please remove the character before adding the student into ClassMonitor.
@@ -235,15 +235,15 @@ Examples:
 **Examples:**
 *  `edit 1 p/98765432 e/johndoe@u.nus.edu` Edits the phone number and email address of the 1st student to be `91234567` and `johndoe@example.com` respectively.
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd student to be `Betsy Crower` and clears all existing tags.
-*  `edit 3 s/0 b/0` Edits both the total number of stars and the total number of bolts received by student to be `0`. 
+*  `edit 3 s/0 b/0` Edits both the total number of stars and the total number of bolts received by student to be `0`.
 
 #### `star` - awards for good participation :
 
 > Format: `star INDEX s/STAR`
 
 ```info
-* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ 
-* `STAR` refers to the number of stars to be awarded to the student. ​ 
+* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
+* `STAR` refers to the number of stars to be awarded to the student. ​
 ```
 
 ```note
@@ -271,14 +271,14 @@ Examples:
 
 ```info
 * The number of bolts corresponds to the number of times the student is absent. ​
-* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ 
+* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
 * `BOLT` refers to the number of bolts to be awarded to the student. ​
 ```
 
 ```note
-`INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ 
-* `BOLT` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​ 
-* The `BOLT` will add onto existing number of bolts the student already has. ​ 
+`INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​
+* `BOLT` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​
+* The `BOLT` will add onto existing number of bolts the student already has. ​
 * A student can only hold a accumulative maximum of 50,000 bolts, with a minimum of 0 bolts. ​
 ```
 
