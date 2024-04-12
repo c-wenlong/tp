@@ -76,7 +76,7 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 ## How to Use User Guide
 Thank you for choosing ClassMonitor! We are delighted to have you as a user.
 ```info
-We **highly recommend** that you read through the User Guide in a **sequential order**. Please note the importance of the [Quick Reference Guide](#quick-reference-guide) section, which covers how to use FoodRem!
+We **highly recommend** that you read through the User Guide in a **sequential order**. Please note the importance of the [Reference Guide](#reference-guide) section, which covers how to use ClassMonitor!
 ```
 
 ```tip
