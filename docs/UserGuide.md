@@ -35,7 +35,7 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 
 ## Features
 
-## Quick start
+## [Quick Start](#quick-start)
 
 1. Ensure you have Java `11` or above installed in your Computer. You can download it [here](https://docs.oracle.com/en/java/javase/11/install/overview-jdk-installation.html#GUID-8677A77F-231A-40F7-98B9-1FD0B48C346A).
 
@@ -73,6 +73,26 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 1. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
+## How to Use User Guide
+Thank you for choosing ClassMonitor! We are delighted to have you as a user.
+
+If you have not installed ClassMonitor head over to the [Quick Start](#quick-start) section.
+
+If you are an experienced user, you can refer to the [Command Summary](#command-summary) for a quick overview of all of ClassMonitor's commands.
+
+If you are stuck, refer to the section on [Troubleshooting](#troubleshooting) or [FAQ](#faq).
+
+### Admonition Boxes
+
+Throughout this guide, you may find coloured boxes containing highlighted pieces of text. These are known as admonition boxes, or simply, admonitions. Please take note of the content within.
+
+| Icon                           | Meaning                                                     |
+|--------------------------------|-------------------------------------------------------------|
+| ![Note](images/Note.png)       | Something you should keep in mind.                          |
+| ![Tip](images/Tip.png)         | Something you might find useful.                            |
+| ![Info](images/Info.png)       | Something that provides information useful in that context. |
+| ![Warning](images/Warning.png) | Something you should be cautious about.                     |
+| ![Danger](images/Danger.png)   | Something you should pay a lot of attention to.             |
 
 ## Commands
 
@@ -322,7 +342,7 @@ Shows a message explaining how to access the help page.
 You can also close the program by closing the tab using the x circle at the top left of the application interface.
 </div>
 
-## Command summary
+## [Command summary](#command-summary)
 
 | Action     | Format, Examples                                                                                                                                    |
 |------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -357,7 +377,7 @@ Furthermore, certain edits can cause the ClassMonitor to behave in unexpected wa
 
 _Details coming soon ..._
 
-## FAQ
+## [FAQ](#faq)
 
 **Q**: How do I transfer my data to another Computer? <br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous ClassMonitor home folder.
