@@ -3,22 +3,6 @@ layout: page
 title: User Guide
 show-toc: true
 ---
-{% capture notes %}
-**Assumption:**
-
-Initially, FoodRem only contains the following items:
-
-1. Sugarcane Juice Box
-1. Brown Sugar
-1. Tomato
-1. Carrot
-   {% endcapture %}
-   {%
-   include command-format.md
-   notes=notes
-   input="find b sug"
-   itemListBox="images/evedaktyl.png"
-   %}
 
 ClassMonitor is a **desktop app for managing student performances, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, ClassMonitor can get your contact management tasks done faster than traditional GUI apps.
 
@@ -246,19 +230,20 @@ Examples:
 * Matching is case-insensitive.
 ```
 
-**Examples**:
+**Example**:
 
-**Command Input**: `find name alex david`
+{% capture notes %}
+**Assumption:**
 
-**Assumptions**:
-* **Alex Yeoh** is the only student whose name includes a word that matches `alex`.
-* **David Li** is the only student whose name includes a word that matches `david`.
-
-**Command Output**: `2 students listed!`
-* `find name alex david` returns `Alex Yeoh`, `David Li`
-
-
-<img src="images/findNameAlexDavidResult.png" alt="result for 'find name alex david'" style="width: 400px; height: 160px;">
+1. **Alex Yeoh** is the only student whose name includes a word that matches `alex`.
+1. **David Li** is the only student whose name includes a word that matches `david`.
+{% endcapture %}
+{%
+include command-format.md
+notes=notes
+input="find name alex david"
+itemListBox="images/findNameAlexDavidResult.png"
+%}
 
 
 #### `sort` - sorts all students by a specified field
