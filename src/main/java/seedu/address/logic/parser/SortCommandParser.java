@@ -27,7 +27,7 @@ public class SortCommandParser implements Parser<SortCommand> {
         for (int i = 0; i < words.length; i++) {
             words[i] = words[i].toLowerCase();
         }
-      
+
         if (words.length != 2) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, SortCommand.MESSAGE_USAGE));
         }
