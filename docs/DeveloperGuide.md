@@ -222,7 +222,7 @@ Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 
 Step 3. The `ClassMonitorParser` calls `SortCommandParser.parse()`, which returns a `SortCommand`.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If either the field `field` or sorting order `isAscending`, 
+<div markdown="span" class="alert alert-info">:information_source: **Note:** If either the field `field` or sorting order `isAscending`,
 then it will raise a parse error.
 
 </div>
@@ -296,7 +296,7 @@ Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 
 Step 3. The `ClassMonitorParser` calls `FindCommandParser.parse()`, which then calls `FindCommandParser.parseFindName()`, which returns a `FindCommand`.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If either the field `field` or sorting order `isAscending`, 
+<div markdown="span" class="alert alert-info">:information_source: **Note:** If either the field `field` or sorting order `isAscending`,
 then it will raise a parse error.
 
 </div>
