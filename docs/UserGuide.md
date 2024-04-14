@@ -3,22 +3,6 @@ layout: page
 title: User Guide
 show-toc: true
 ---
-{% capture notes %}
-**Assumption:**
-
-Initially, FoodRem only contains the following items:
-
-1. Sugarcane Juice Box
-1. Brown Sugar
-1. Tomato
-1. Carrot
-   {% endcapture %}
-   {%
-   include command-format.md
-   notes=notes
-   input="find b sug"
-   itemListBox="images/evedaktyl.png"
-   %}
 
 ClassMonitor is a **desktop app for managing student performances, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, ClassMonitor can get your contact management tasks done faster than traditional GUI apps.
 
@@ -247,45 +231,54 @@ Examples:
 
 > Format: `find FIELD CRITERIA`
 
-**The parameters for `CRITERIA` depends on the `FIELD` specified:**
-* `find name KEYWORD [MORE KEYWORDS]`: Finds students with names that match **any** of the given keywords.
-    * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
-    * Only full words will be matched. e.g. `Han` will not match `Hans`
-    * Students matching at least one keyword will be returned (i.e. `OR` search).
-      e.g. `find name Hans Bo` will return `Hans Gruber`, `Bo Yang`
-* `find major KEYWORD`: Finds students with majors that **contain** the given keyword.
-    * e.g. `find major Science` will return `Computer Science` majors and `Science` majors.
-* `find star OPERATOR NUMBER`: Finds students with stars within the bounds as specified by the given operator and number.
-    * e.g. `find star = 0` will return students with **0** stars.
-* `find bolt OPERATOR NUMBER`: Finds students with bolts within the bounds as specified by the given operator and number.
-    * e.g. `find bolt < 5` will return students with less than 5 stars.
-* `find tag KEYWORD`: Finds students with tags that **contain** the given keyword.
-    * e.g. `find tag friend` will return students that are tagged `friend` or `friends`.
+**The parameters for `CRITERIA` depend on the `FIELD` specified:**
 
-```info
-* Accepted fields are `name`, `major`, `star`, `bolt`, and `tag`.
-* Accepted operators for `find star` and `find bolt` are:
-  * < (strictly less than)
-  * <= (less than or equal to)
-  * \> (strictly more than)
-  * \>= (more than or equal to)
-  * = (equal to)
-* Matching is case-insensitive.
+```note
+Accepted fields are `name`, `major`, `star`, `bolt`, and `tag`.
 ```
 
-**Examples**:
+| Field  | Criteria                     | Format, Examples                                                         |
+|--------|---------------------------------------------------------------------------------------------------------|
+| name   | KEYWORD [MORE_KEYWORDS]…​ | `find name KEYWORD [MORE_KEYWORDS]…​` <br> e.g. `find name Alex David`| 
+| major  | SUBSTRING                    | `find major SUBSTRING` <br> e.g. `find major Science`                         | 
+| star   | OPERATOR NUMBER              | `find star OPERATOR NUMBER` <br> e.g. `find star = 0`                        |
+| bolt   | OPERATOR NUMBER              | `find bolt OPERATOR NUMBER` <br> e.g. `find bolt > 5`                        |
+| tag    | SUBSTRING                    | `find tag SUBSTRING` <br> e.g. `find tag CS2103T`                             |
 
-**Command Input**: `find name alex david`
+```info
+* `find name`: Find students with names that match **any** of the given keywords
+   * The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans` 
+   * Only full words will be matched. e.g. `Han` will not match `Hans` 
+   * Students matching at least one keyword will be returned (i.e. **OR** search)
+   
+* `find major`/`find tag`: Find students with majors/tags that **contain** the given keyword
+   * `find major Science` will return students with `Computer Science` majors and `Science` majors
+   * `find tag CS` will return students with `CS2103T` tags and `CS2100` tags
 
-**Assumptions**:
-* **Alex Yeoh** is the only student whose name includes a word that matches `alex`.
-* **David Li** is the only student whose name includes a word that matches `david`.
+* `find star`/`find bolt`: Find students with stars/bolts **within the bounds** as specified by the given operator and number
+   * Accepted operators are:
+     * < (strictly less than)
+     * <= (less than or equal to)
+     * \> (strictly more than)
+     * \>= (more than or equal to)
+     * = (equal to)
+   * Accepted numbers are integers in range [0, 2147483647]
+```
 
-**Command Output**: `2 students listed!`
-* `find name alex david` returns `Alex Yeoh`, `David Li`
+**Example**:
 
+{% capture notes %}
+**Assumption:**
 
-<img src="images/findNameAlexDavidResult.png" alt="result for 'find name alex david'" style="width: 400px; height: 160px;">
+1. **Alex Yeoh** is the only student whose name includes a word that matches `alex`.
+1. **David Li** is the only student whose name includes a word that matches `david`.
+{% endcapture %}
+{%
+include command-format.md
+notes=notes
+input="find name alex david"
+itemListBox="images/findNameAlexDavidResult.png"
+%}
 
 
 #### `sort` - sorts all students by a specified field
