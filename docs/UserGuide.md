@@ -137,7 +137,7 @@ This section guides you through the precise execution of each command.
 ```note
 * `NAME` *must **ONLY** contain alphanumeric characters and spaces*
 * `PHONE_NUMBER` *must **ONLY** consist of numbers and be at least 3 digits long*
-* `EMAIL` *must **ONLY** contain alphanumeric characters and follow the format of a valid email address, which is [**local-part@domain**]()*
+* `EMAIL` *must **ONLY** contain alphanumeric characters and follow the format of a valid email address, which is [**local-part@domain**](#glossary)*
 * `MAJOR` *must **ONLY** contain alphabets and spaces*
 * A student can have any number of tags (including 0)
 ```
@@ -188,7 +188,7 @@ commandOutputBox="images/add.png"
 * `INDEX` *must be a positive integer* (e.g. 1, 2, 3, …) ​
 * `NAME` *must **ONLY** contain alphanumeric characters and spaces*
 * `PHONE_NUMBER` *must **ONLY** consist of numbers and be at least 3 digits long*
-* `EMAIL` *must **ONLY** contain alphanumeric characters and follow the format of a valid email address, which is [**local-part@domain**]()*
+* `EMAIL` *must **ONLY** contain alphanumeric characters and follow the format of a valid email address, which is [**local-part@domain**](#glossary)*
 * `MAJOR` *must **ONLY** contain alphabets and spaces*
 * `STAR/BOLT` *must be an integer between 0 and 50,000* (e.g. 0, 1, 2, …, 50,000) ​
 ```
