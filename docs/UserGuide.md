@@ -153,8 +153,6 @@ input="add n/John Doe p/98765432 e/johnd@u.nus.edu m/Computer Science"
 commandOutputBox="images/add.png"
 %}
 
-**Command Output**: `New student added: John Doe; Phone: 98765432; Email: johnd@u.nus.edu; Major: Computer Science; Tags: `
-
 #### `list` - lists all students
 
 **Format:** `list`
