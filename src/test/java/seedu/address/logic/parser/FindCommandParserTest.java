@@ -62,7 +62,7 @@ public class FindCommandParserTest {
 
         // invalid operand
         assertParseFailure(parser, "star < a",
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindCommand.getSpecificMessageUsage("star")));
+                "Number should be an integer in range [0, 2147483647].");
         assertParseFailure(parser, "star = -1",
                 String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindCommand.getSpecificMessageUsage("star")));
 
@@ -83,7 +83,7 @@ public class FindCommandParserTest {
 
         //invalid operand
         assertParseFailure(parser, "bolt < a",
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindCommand.getSpecificMessageUsage("bolt")));
+                "Number should be an integer in range [0, 2147483647].");
         assertParseFailure(parser, "bolt = -1",
                 String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindCommand.getSpecificMessageUsage("bolt")));
 
