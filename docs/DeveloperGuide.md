@@ -647,13 +647,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 4.  All user operations should be completed within 100 milliseconds.
 5.  The project must adhere to a bi-weekly iterative development schedule, ensuring continuous delivery or improvement of a working product every two weeks.
 
-### Glossary
-
-* **Mainstream OS**: Windows, Linux, Unix, MacOS
-* **Course**: A course with a program and syllabus. e.g. CS2030S
-* **Tutorial Group (TG)**: A group of students from a particular course. e.g. G13
-* **Teaching Assistant (TA)**: A tutor attached to class
-
 --------------------------------------------------------------------------------------------------------------------
 
 ## Appendix: Instructions for manual testing
@@ -705,3 +698,7 @@ These instructions only provide a starting point for testers to work on; testers
    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
 
 1. _{ more test cases …​ }_
+
+## Glossary 
+
+{% include glossary.md type="dg" %}
