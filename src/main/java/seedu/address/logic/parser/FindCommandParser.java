@@ -105,7 +105,7 @@ public class FindCommandParser implements Parser<FindCommand> {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
                     FindCommand.getSpecificMessageUsage("star")));
         } catch (NumberFormatException e) {
-            throw new ParseException("Number should be an integer in range [0,  2147483647].");
+            throw new ParseException("Number should be an integer in range [0, 2147483647].");
         }
     }
 
