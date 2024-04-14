@@ -11,7 +11,7 @@ show-toc: true
 * capacity to remember .... memory ... 
 to effectively manage your class, we have a solution for you.
 
-## About CLassMonitor
+## About ClassMonitor
 ClassMonitor is a Student Management System that empowers TAs and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good class participation and bolts for absenteeism!
 
 For a more detailed view of ClassMonitor’s features, you can refer to the Features section below!
@@ -120,7 +120,7 @@ ClassMonitor collects and tracks the following data, allowing you to tailor your
 
 #### `add` - to add a student to ClassMonitor
 
-> Format: `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR [t/TAG]…`
+**Format:** `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR [t/TAG]…`
 
 ```tip
 A student can have any number of tags (including 0)
@@ -139,18 +139,23 @@ For the best user experience,
 so that the fields are fully visible on the screen. 
 ```
 
-Examples:
+**Example:**
 
-**Command Input**: `add n/John Doe p/98765432 e/johnd@u.nus.edu m/Computer Science`
+{% capture notes %}
+**Assumption:**
 
-**Assumptions**:
-* A student by the name of `John Doe` **(case-sensitive)** does not already exist.
-
-**Command Output**: `New student added: John Doe; Phone: 98765432; Email: johnd@u.nus.edu; Major: Computer Science; Tags: `
+1. A student by the name of `John Doe` **(case-sensitive)** does not already exist.
+{% endcapture %}
+{%
+include command-format.md
+notes=notes
+input="add n/John Doe p/98765432 e/johnd@u.nus.edu m/Computer Science"
+commandOutputBox="images/add.png"
+%}
 
 #### `list` - lists all students
 
-> Format: `list`
+**Format:** `list`
 
 ```info
 `list` displays all students, clearing existing filters on the student list
@@ -158,7 +163,7 @@ Examples:
 
 #### `edit` - edits a student's information
 
-> Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [m/MAJOR] [s/STAR] [b/BOLT] [t/TAG]…​`
+**Format:** `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [m/MAJOR] [s/STAR] [b/BOLT] [t/TAG]…​`
 
 ```info
 * Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
@@ -169,7 +174,7 @@ Examples:
 ```note
 * `INDEX` *must be a positive integer* (e.g. 1, 2, 3, …) ​
 * `NAME` *must **ONLY** contain alphabets and spaces*
-* `PHONE` *should be a valid phone number*
+* `PHONE_NUMBER` *should be a valid phone number*
 * `EMAIL` *must **ONLY** contain alphanumerical characters and should be a valid email*
 * `MAJOR` *must **ONLY** contain alphabets and spaces and should be a valid major*
 * `STAR/BOLT` *must be a positive integer between 1 and 50,000* (e.g. 1, 2, …, 50,000) ​
@@ -186,9 +191,9 @@ Examples:
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd student to be `Betsy Crower` and clears all existing tags.
 *  `edit 3 s/0 b/0` Edits both the total number of stars and the total number of bolts received by student to be `0`. 
 
-#### `star` - awards for good participation :
+#### `star` - awards for good participation
 
-> Format: `star INDEX s/STAR`
+**Format:** `star INDEX s/STAR`
 
 ```info
 * Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ 
@@ -209,13 +214,13 @@ Examples:
 
 1. Alex Yeoh is the student at Index 1
 2. He currently has 0 stars
-   {% endcapture %}
-   {%
-   include command-format.md
-   notes=notes
-   input="star 1 s/5"
-   commandOutputBox="images/star.png"
-   %}
+{% endcapture %}
+{%
+include command-format.md
+notes=notes
+input="star 1 s/5"
+commandOutputBox="images/star.png"
+%}
 
 #### `bolt` - records absenteeism of student
 
@@ -241,17 +246,17 @@ Examples:
 
 1. Alex Yeoh is the student at Index 1
 2. He currently has 0 bolts
-   {% endcapture %}
-   {%
-   include command-format.md
-   notes=notes
-   input="bolt 1 b/5"
-   commandOutputBox="images/bolt.png"
-   %}
+{% endcapture %}
+{%
+include command-format.md
+notes=notes
+input="bolt 1 b/5"
+commandOutputBox="images/bolt.png"
+%}
 
-#### `find` - finds all students that has an attribute
+#### `find` - finds all students by a specified field
 
-> Format: `find FIELD CRITERIA`
+**Format:** `find FIELD CRITERIA`
 
 **The parameters for `CRITERIA` depend on the `FIELD` specified:**
 
@@ -299,12 +304,13 @@ Accepted fields are `name`, `major`, `star`, `bolt`, and `tag`.
 include command-format.md
 notes=notes
 input="find name alex david"
-itemListBox="images/findNameAlexDavidResult.png"
+commandOutputBox="images/findNameAlexDavidResult.png"
 %}
 
 
 #### `sort` - sorts all students by a specified field
-> Format: `sort FIELD ORDER`
+
+**Format:** `sort FIELD ORDER`
 
 ```info
 * The only accepted fields are `name`, `phone`, `email`, `major`, `star`, `bolt`
@@ -317,52 +323,58 @@ itemListBox="images/findNameAlexDavidResult.png"
 
 **Examples**:
 
-**Command Input**:`sort bolt desc`
+{% capture notes %}
+**Assumption:**
 
-**Assumptions**:
-* ClassMonitor contains three students **Alex Yeoh** with 3 bolts, **Bernice Yu** with 3 bolts, and **David Li** with 0 bolts
-
-**Command Output**: `Sorted all persons by bolt in descending order.`
-* `sort bolt desc` displays **Alex Yeoh** on the top of the students displayed, then **Bernice Yu**, followed by **David Li**
-
-<img src="images/sortBoltDesc.png" alt="result for 'sort bolt desc'" style="width: 400px; height: 160px;">
+1. Your current student lists consists of only 3 students, **Alex Yeoh**, **Bernice Yu**, and **David Li**.
+1. **Alex Yeoh** has 3 stars
+1. **Bernice Yu** has 2 stars
+1. **David Li** has 1 star
+{% endcapture %}
+{%
+include command-format.md
+notes=notes
+input="sort star desc"
+commandOutputBox="images/sort.png"
+%}
 
 #### `delete` - deletes a student's particulars
 
-Deletes the specified student from the list.
-
-Format: `delete INDEX`
+**Format:** `delete INDEX`
 
 * Deletes the student at the specified `INDEX`.
 * The index refers to the index number shown in the displayed students list.
 * The index **must be a positive integer** 1, 2, 3, …​
 
-Examples:
+**Examples:**
 * `list` followed by `delete 2` deletes the 2nd student in the list.
-* `find Betsy` followed by `delete 1` deletes the 1st student in the results of the `find` command.
+* `find name Alex` followed by `delete 1` deletes the 1st student in the results of the `find` command.
 
 #### `clear` - Clears all students' particulars
-> Format: `clear`
 
-<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
-This is **NOT** an undo-able process. Once you `clear` ClassMonitor, it your data will be lost. So be careful and only use this once the semester is over and the previous semester's student data is no longer needed.
-</div>
+**Format:** `clear`
+
+```warning
+This is **NOT** an undo-able process. Once you `clear` ClassMonitor, your data will be lost. So be careful and only use this once the semester is over and the previous semester's student data is no longer needed.
+```
 
 ### General Commands
 
 #### `help` - to view help
 
-> Format: **`help`**
+**Format:** `help`
 
 Shows a message explaining how to access the help page.
 
 ![help message](images/helpMessage.png)
 
 #### `exit` - exits the program
-> Format: `exit`
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+
+**Format:** `exit`
+
+```tip
 You can also close the program by closing the tab using the x circle at the top left of the application interface.
-</div>
+```
 
 ## Command summary
 
@@ -390,10 +402,10 @@ ClassMonitor data are saved in the hard disk automatically after any command tha
 
 ClassMonitor data are saved automatically as a JSON file `[JAR file location]/data/classmonitor.json`. Advanced users are welcome to update data directly by editing that data file.
 
-<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
+```danger
 If your changes to the data file makes its format invalid, ClassMonitor will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the ClassMonitor to behave in unexpected ways (e.g., if a value entered is outside of the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
-</div>
+```
 
 ### Archiving data files `[coming in v2.0]`
 
