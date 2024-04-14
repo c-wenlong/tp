@@ -6,8 +6,12 @@ show-toc: true
 
 ## About ClassMonitor
 
-{% include toc.md header=true show-in-toc=true ordered=true %}
+ClassMonitor is a Student Management System that empowers TAs and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good class participation and bolts for absenteeism!
 
+The Developer Guide offers comprehensive documentation on the design and implementation of ClassMonitor. It includes details on the architecture of ClassMonitor, specifications for individual components, and an overview of the software's functionality and operation.
+
+{% include toc.md header=true show-in-toc=true ordered=true %}
+--------------------------------------------------------------------------------------------------------------------
 
 ## Acknowledgements
 
@@ -21,10 +25,9 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 ## Design
 
-<div markdown="span" class="alert alert-primary">
-
+```tip
 :bulb: **Tip:** The `.puml` files used to create diagrams in this document `docs/diagrams` folder. Refer to the [_PlantUML Tutorial_ at se-edu/guides](https://se-education.org/guides/tutorials/plantUml.html) to learn how to create and edit diagrams.
-</div>
+```
 
 ### Architecture
 
@@ -95,8 +98,9 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 
 ![Interactions Inside the Logic Component for the `delete 1` Command](images/FindStarsLessThanSequenceDiagram.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `FindStarsLessThanCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
-</div>
+```note
+The lifeline for `FindStarsLessThanCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
+```
 
 How the `Logic` component works:
 
@@ -127,11 +131,12 @@ The `Model` component,
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `ClassMonitor`, which `Student` references. This allows `ClassMonitor` to only require one `Tag` object per unique tag, instead of each `Student` needing their own `Tag` objects.<br>
+```note
+An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `ClassMonitor`, which `Student` references. This allows `ClassMonitor` to only require one `Tag` object per unique tag, instead of each `Student` needing their own `Tag` objects.<br>
+
 
 <img src="images/BetterModelClassDiagram.png" width="450" />
-
-</div>
+```
 
 
 ### Storage component
@@ -151,7 +156,7 @@ Classes used by multiple components are in the `seedu.classmonitor.commons` pack
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Implementation**
+## Implementation
 
 This section describes some noteworthy details on how certain features are implemented.
 
@@ -180,9 +185,10 @@ Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 
 Step 3. The `ClassMonitorParser` calls `StarCommandParser.parse()`, which returns a `StarCommand`.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the number of stars is negative (i.e. < 1), then it will raise a parse error.
+```note
+If the number of stars is negative (i.e. < 1), then it will raise a parse error.
+```
 
-</div>
 
 Step 4. `LogicManager` calls on `StarCommand.execute()`, which updates the classmonitor with the new number of stars.
 
@@ -198,36 +204,6 @@ Step 4. `LogicManager` calls on `StarCommand.execute()`, which updates the class
     * Pros: Able to edit the number of stars however one desires.
     * Cons: Command is not modularised, user have to calculate the number of stars themselves when updating.
 
-### Sorting Students
-
-#### Overview
-
-The sorting mechanism is facilitated by `SortCommand`, which is called by its `execute` method to sort the students
-based on one of its fields either in ascending or descending order
-
-* `SortCommandParser#parse()` — Parses the parameters of the sort command from its command-line String input.
-* `SortCommand#execute()` — Updates the `ClassMonitor` to display the sorted list.
-
-#### Feature Details
-
-Here is the activity diagram showing the process of the `Sort` command:
-
-Here is the sequence diagram showing how a sort operation goes through the `Logic`, `Model` and `Storage` components.
-
-![SortSequenceDiagram](images/SortCommandSequenceDiagram.png)
-
-Step 1. The user launches the application for the first time and enters in command: `sort name desc`.
-
-Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
-
-Step 3. The `ClassMonitorParser` calls `SortCommandParser.parse()`, which returns a `SortCommand`.
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If either the field `field` or sorting order `isAscending`,
-then it will raise a parse error.
-
-</div>
-
-Step 4. `LogicManager` calls on `SortCommand.execute()`, which updates the classmonitor with the new sorted list.
 
 ### Awarding Bolts to a Student
 
@@ -254,9 +230,9 @@ Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 
 Step 3. The `ClassMonitorParser` calls `BoltCommandParser.parse()`, which returns a `BoltCommand`.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the number of bolts is negative (i.e. < 1), then it will raise a parse error.
-
-</div>
+```note
+If the number of bolts is negative (i.e. < 1), then it will raise a parse error.
+```
 
 Step 4. `LogicManager` calls on `BoltCommand.execute()`, which updates the classmonitor with the new number of bolts.
 
@@ -271,6 +247,37 @@ Step 4. `LogicManager` calls on `BoltCommand.execute()`, which updates the class
 * **Method 2:** Updates the number of bolts using `Edit` command.
     * Pros: Able to edit the number of bolts however one desires.
     * Cons: Command is not modularised, user have to calculate the number of bolts themselves when updating.
+
+
+### Sorting Students
+
+#### Overview
+
+The sorting mechanism is facilitated by `SortCommand`, which is called by its `execute` method to sort the students
+based on one of its fields either in ascending or descending order
+
+* `SortCommandParser#parse()` — Parses the parameters of the sort command from its command-line String input.
+* `SortCommand#execute()` — Updates the `ClassMonitor` to display the sorted list.
+
+#### Feature Details
+
+Here is the activity diagram showing the process of the `Sort` command:
+
+Here is the sequence diagram showing how a sort operation goes through the `Logic`, `Model` and `Storage` components.
+
+![SortSequenceDiagram](images/SortCommandSequenceDiagram.png)
+
+Step 1. The user launches the application for the first time and enters in command: `sort name desc`.
+
+Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
+
+Step 3. The `ClassMonitorParser` calls `SortCommandParser.parse()`, which returns a `SortCommand`.
+
+```note
+If either the field `field` or sorting order `isAscending`, then it will raise a parse error.
+```
+
+Step 4. `LogicManager` calls on `SortCommand.execute()`, which updates the classmonitor with the new sorted list.
 
 ### Finding Students
 
@@ -296,10 +303,10 @@ Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 
 Step 3. The `ClassMonitorParser` calls `FindCommandParser.parse()`, which then calls `FindCommandParser.parseFindName()`, which returns a `FindCommand`.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If either the field `field` or sorting order `isAscending`,
-then it will raise a parse error.
+```note
+If either the field `field` or sorting order `isAscending`, then it will raise a parse error.
+```
 
-</div>
 
 Step 4. `LogicManager` calls on `SortCommand.execute()`, which updates the addressbook with the new filtered list.
 
@@ -333,26 +340,25 @@ Step 3. The user executes `add n/David …​` to add a new student. The `add` c
 
 ![UndoRedoState2](images/UndoRedoState2.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If a command fails its execution, it will not call `Model#commitClassMonitor()`, so ClassMonitor state will not be saved into the `classMonitorStateList`.
-
-</div>
+```note
+The Developer Guide offers comprehensive documentation on the design and implementation of ClassMonitor. It includes details on the architecture of ClassMonitor, specifications for individual components, and an overview of the software's functionality and operation.If a command fails its execution, it will not call `Model#commitClassMonitor()`, so ClassMonitor state will not be saved into the `classMonitorStateList`.
+```
 
 Step 4. The user now decides that adding the student was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoClassMonitor()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous ClassMonitor state, and restores ClassMonitor to that state.
 
 ![UndoRedoState3](images/UndoRedoState3.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index 0, pointing to the initial ClassMonitor state, then there are no previous ClassMonitor states to restore. The `undo` command uses `Model#canUndoClassMonitor()` to check if this is the case. If so, it will return an error to the user rather
-than attempting to perform the undo.
-
-</div>
+```note
+If the `currentStatePointer` is at index 0, pointing to the initial ClassMonitor state, then there are no previous ClassMonitor states to restore. The `undo` command uses `Model#canUndoClassMonitor()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
+```
 
 The following sequence diagram shows how an undo operation goes through the `Logic` component:
 
 ![UndoSequenceDiagram](images/UndoSequenceDiagram-Logic.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-
-</div>
+```note
+The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+```
 
 Similarly, how an undo operation goes through the `Model` component is shown below:
 
@@ -360,9 +366,9 @@ Similarly, how an undo operation goes through the `Model` component is shown bel
 
 The `redo` command does the opposite — it calls `Model#redoClassMonitor()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores ClassMonitor to that state.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index `classMonitorStateList.size() - 1`, pointing to the latest ClassMonitor state, then there are no undone ClassMonitor states to restore. The `redo` command uses `Model#canRedoClassMonitor()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-
-</div>
+```note
+If the `currentStatePointer` is at index `classMonitorStateList.size() - 1`, pointing to the latest ClassMonitor state, then there are no undone ClassMonitor states to restore. The `redo` command uses `Model#canRedoClassMonitor()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+```
 
 Step 5. The user then decides to execute the command `list`. Commands that do not modify ClassMonitor, such as `list`, will usually not call `Model#commitClassMonitor()`, `Model#undoClassMonitor()` or `Model#redoClassMonitor()`. Thus, the `classMonitorStateList` remains unchanged.
 
@@ -429,7 +435,7 @@ The command will edit the comment at the student with index `INDEX` with comment
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Documentation, logging, testing, configuration, dev-ops**
+## Documentation, logging, testing, configuration, dev-ops
 
 * [Documentation guide](Documentation.md)
 * [Testing guide](Testing.md)
@@ -439,7 +445,7 @@ The command will edit the comment at the student with index `INDEX` with comment
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Requirements**
+## Appendix: Requirements
 
 ### Product scope
 
@@ -650,14 +656,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Instructions for manual testing**
+## Appendix: Instructions for manual testing
 
 Given below are instructions to test the app manually.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** These instructions only provide a starting point for testers to work on;
-testers are expected to do more *exploratory* testing.
-
-</div>
+```note
+These instructions only provide a starting point for testers to work on; testers are expected to do more *exploratory* testing.
+```
 
 ### Launch and shutdown
 
