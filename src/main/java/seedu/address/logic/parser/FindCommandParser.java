@@ -101,9 +101,11 @@ public class FindCommandParser implements Parser<FindCommand> {
             }
 
             return new FindCommand(new StarWithinBoundsPredicate(sOperator, sOperand));
-        } catch (IndexOutOfBoundsException | NumberFormatException e) {
+        } catch (IndexOutOfBoundsException e) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
                     FindCommand.getSpecificMessageUsage("star")));
+        } catch (NumberFormatException e) {
+            throw new ParseException("Number should be an integer in range [0,  2147483647].");
         }
     }
 
@@ -125,9 +127,11 @@ public class FindCommandParser implements Parser<FindCommand> {
             }
 
             return new FindCommand(new BoltWithinBoundsPredicate(bOperator, bOperand));
-        } catch (IndexOutOfBoundsException | NumberFormatException e) {
+        } catch (IndexOutOfBoundsException e) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
                     FindCommand.getSpecificMessageUsage("bolt")));
+        } catch (NumberFormatException e) {
+            throw new ParseException("Number should be an integer in range [0, 2147483647].");
         }
     }
 
