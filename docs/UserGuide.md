@@ -11,7 +11,7 @@ show-toc: true
 * capacity to remember .... memory ... 
 to effectively manage your class, we have a solution for you.
 
-## About CLassMonitor
+## About ClassMonitor
 ClassMonitor is a Student Management System that empowers TAs and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good class participation and bolts for absenteeism!
 
 For a more detailed view of ClassMonitor’s features, you can refer to the Features section below!
@@ -63,10 +63,9 @@ ClassMonitor collects and tracks the following data, allowing you to tailor your
    ```
    java -jar classmonitor.jar
    ```
-   This command launches ClassMonitor. After a few seconds, a graphical user interface (GUI) similar to the one shown in the image should appear. You'll see some sample data in the app.
-   ![Ui](images/Ui_v1.3.png)
-
-1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+   This command launches ClassMonitor. After a few seconds, a Graphical User Interface (GUI) similar to the one shown in the image should appear. You'll see some sample data in the app.
+   ![Ui](images/Ui_v1.4.png)
+1. Type the command in the command box and press Enter to execute it. E.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
 
    * `list` : Lists all contacts.
@@ -81,9 +80,9 @@ ClassMonitor collects and tracks the following data, allowing you to tailor your
 
    * `bolt 1 b/3` : Adds 3 bolts to the first student on the list. Use this only after you have populated your student list.
 
-   * `sort major asc` : Sorts the students list based on the `major` field in ascending order.
+   * `sort major asc` : Sorts the student list based on the `major` field in ascending order.
 
-   * `find name Chitra` : Finds all the students who have the name `Chitra`.
+   * `find name Chitra` : Finds all students who have the name `Chitra`.
 
    * `clear` : Deletes all students. Use this responsibly.
 
@@ -97,49 +96,55 @@ ClassMonitor collects and tracks the following data, allowing you to tailor your
 
 ```note
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
-  e.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
+  E.g. in `add n/NAME`, `NAME` is a parameter which can be used as `add n/John Doe`.
 
 * Items in square brackets are optional.<br>
-  e.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
+  E.g `n/NAME [t/TAG]` can be used as `n/John Doe t/friend` or as `n/John Doe`.
 
 * Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+  E.g. `[t/TAG]…​` can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
 
 * Command outputs with `[...]` refers to a truncated output for brevity in the User Guide. Within the app, additional details may be displayed.
 
 * Parameters can be in any order.<br>
-  e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
+  E.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
 * Extraneous parameters for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
-  e.g. if the command specifies `help 123`, it will be interpreted as `help`.
+  E.g. if the command specifies `help 123`, it will be interpreted as `help`.
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 ```
 
 ### Student Commands
 
-#### `add` - to add a student to ClassMonitor
+#### `add` - adds a student to ClassMonitor
 
 > Format: `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR [t/TAG]…`
 
-```tip
+```note
+* `NAME` *must **ONLY** contain alphanumeric characters and spaces*
+* `PHONE` *must **ONLY** consist of numbers and be at least 3 digits long*
+* `EMAIL` *must **ONLY** contain alphanumerical characters and should be a valid email*
+* `MAJOR` *must **ONLY** contain alphabets and spaces and should be a valid major*
+* `STAR/BOLT` *must be a positive integer between 1 and 50,000* (e.g. 1, 2, …, 50,000) ​
+
 A student can have any number of tags (including 0)
 ```
 
 ```danger
-* Names must have alphanumeric characters! Please avoid using special characters such as `\`. If such special characters exists in the person's name, please remove the character before adding the student into ClassMonitor.
-* Please avoid specifying _any_ additional flags for the add commands besides the ones specified in the command format.
-* Phone numbers must consist of numbers and be at least 3 digits long.
+* `NAME` must only have alphanumeric characters! Please avoid using special characters such as `\`. If such special characters exists in the person's name, please remove the character before adding the student into ClassMonitor.
+* `PHONE_NUMBER` must only consist of numbers and be at least 3 digits long.
+* Please avoid specifying _any_ additional flags besides the ones specified in the command format.
 ```
 
 ```warning
 For the best user experience,
 * `PHONE_NUMBER`, `MAJOR`, `EMAIL`, `TAG` should be less than 50 characters
-* `NAME` should be less than 30 characters
+* `NAME` should be less than 30 characters<br>
 so that the fields are fully visible on the screen. 
 ```
 
-Examples:
+Example:
 
 **Command Input**: `add n/John Doe p/98765432 e/johnd@u.nus.edu m/Computer Science`
 
