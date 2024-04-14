@@ -3,13 +3,14 @@ layout: page
 title: User Guide
 show-toc: true
 ---
-**_Greetings Teaching Assistants (TAs)!_** We understand that teaching is ... and it is difficult to If you feel like current student management systems are
-* tedious?
-* non-centralized
+**_Greetings Teaching Assistants (TAs)!_** 
 
-* time to ... 
-* capacity to remember .... memory ... 
-to effectively manage your class, we have a solution for you.
+We are a team of 5 TAs from the National University of Singapore majoring in Computer Science. We have taught classes and managed students and understand that administration can a burden. Perhaps you might feel that the current student management systems are
+* Tedious?
+* Non-centralized?
+* Overly complicated?
+
+Well, we had the same thoughts! Which is why we decided to come together to build ClassMonitor for you. We hope that you can try out our desktop application and experience the productivity boost yourself! 😊
 
 ## About ClassMonitor
 ClassMonitor is a Student Management System that empowers TAs and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good class participation and bolts for absenteeism!
