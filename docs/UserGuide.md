@@ -69,7 +69,7 @@ ClassMonitor collects and tracks the following data, allowing you to tailor your
    ```
    java -jar classmonitor.jar
    ```
-   This command launches ClassMonitor. After a few seconds, a Graphical User Interface (GUI) similar to the one shown in the image should appear. You'll see some sample data in the app.
+   This command launches ClassMonitor. After a few seconds, a Graphical User Interface (GUI) similar to the one shown below should appear. You'll see some sample data in the app.
    ![Ui](images/Ui_v1.4.png)
 
 1. Type the command in the command box and press Enter to execute it. E.g. typing **`help`** and pressing Enter will open the help window.<br>
@@ -95,13 +95,13 @@ ClassMonitor collects and tracks the following data, allowing you to tailor your
 
    * `exit` : Exits ClassMonitor.
 
-1. Refer to the [Commands](#commands) below for details of each command.
+1. Refer to the [Commands](#commands) section for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Commands
 
-This section guides you through the precise execution of each command, ensuring optimal utilization.
+This section guides you through the precise execution of each command.
 
 ```note
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
@@ -131,7 +131,7 @@ This section guides you through the precise execution of each command, ensuring 
 **Format:** `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR [t/TAG]…`
 
 ```info
-* Adds a new student to ClassMonitor using the provided details and sets their initial star and bolt values to 0.
+* Adds a new student to ClassMonitor using the provided details and sets the student's initial star and bolt values to 0.
 ```
 
 ```note
@@ -146,6 +146,7 @@ This section guides you through the precise execution of each command, ensuring 
 For the best user experience,
 * `PHONE_NUMBER`, `MAJOR`, `EMAIL`, `TAG` should be limited to 50 characters  or fewer
 * `NAME` should be limited to 30 characters or fewer<br>
+
 to ensure that all fields are fully visible on the screen without being cut off or truncated.
 
 Please also avoid specifying _any_ additional flags besides the ones specified in the command format.
@@ -481,3 +482,4 @@ Other acknowledgments:
  
 ## Glossary
 
+{% include glossary.md type="ug" %}
