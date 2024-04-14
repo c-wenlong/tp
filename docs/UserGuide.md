@@ -5,7 +5,7 @@ show-toc: true
 ---
 **_Greetings Teaching Assistants (TAs)!_** 
 
-We are a team of 5 TAs from the National University of Singapore majoring in Computer Science. We have taught classes and managed students and understand that administration can a burden. Perhaps you might feel that the current student management systems are
+We are a team of 5 ex-TAs from the National University of Singapore majoring in Computer Science. We have taught classes and managed students and understand that administration can a burden. Perhaps you feel that the current student management systems are
 * Tedious?
 * Non-centralized?
 * Overly complicated?
