@@ -3,16 +3,21 @@ layout: page
 title: User Guide
 show-toc: true
 ---
+**_Greetings Teaching Assistants (TAs)!_** We understand that teaching is ... and it is difficult to If you feel like current student management systems are
+* tedious?
+* non-centralized
 
-ClassMonitor is a **desktop app for managing student performances, optimized for use via a Command Line Interface** (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, ClassMonitor can get your contact management tasks done faster than traditional GUI apps.
+* time to ... 
+* capacity to remember .... memory ... 
+to effectively manage your class, we have a solution for you.
 
-## Introduction
-ClassMonitor is a Student Management System that empowers Teaching Assistants (TA) and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good class participation and bolts for absenteeism!
+## About CLassMonitor
+ClassMonitor is a Student Management System that empowers TAs and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good class participation and bolts for absenteeism!
 
 For a more detailed view of ClassMonitor’s features, you can refer to the Features section below!
 With a focus on efficiency, you can interact with ClassMonitor without ever reaching for your mouse or moving away from your keyboard! With a focus on user-friendliness, ClassMonitor is easy to learn!
 
-This User Guide provides an in-depth documentation, so you can easily use and integrate ClassMonitor into your day-to-day classes as a Professor or TA. It covers how to launch ClassMonitor, core ClassMonitor features and commands, common terms and definitions used in ClassMonitor, and some troubleshooting recommendations. Head over to How to use the User Guide to get started!
+This User Guide provides an in-depth documentation, so you can easily use and integrate ClassMonitor into your day-to-day classes as a Professor or TA. It covers how to launch ClassMonitor, core ClassMonitor features and commands, common terms and definitions used in ClassMonitor, and some troubleshooting recommendations. Head over to [How to Use User Guide](#how-to-use-user-guide) to get started!
 
 {% include toc.md header=true show-in-toc=true ordered=true %}
 --------------------------------------------------------------------------------------------------------------------
@@ -30,12 +35,12 @@ ClassMonitor allows you to manage your classes and keep track of your student de
 
 1. Efficiently **create, view, edit and delete** your students' details.
 2. **Sort** your students by their name, phone number, email address, major, number of stars and number of bolts.
-3. **Tag** students in your current list using an efficient tagging system where you can create and delete existing tags.
+3. **Tag** students in your current list using an efficient tagging system where you can create and edit existing tags.
 4. **Filter** your students by their name, major, tags, number of stars and number of bolts.
 
 ### Student Analysis Tool
 
-ClassMonitor collects and tracks data which allows you to gain insights into your pedagogy through **statistical analysis**:
+ClassMonitor collects and tracks the following data, allowing you to tailor your pedagogy for more effective teaching through **statistical analysis**:
 
 1. Track students' **level of participation in class**.
 2. Record your students' **attendance**.
@@ -48,8 +53,17 @@ ClassMonitor collects and tracks data which allows you to gain insights into you
 
 1. Copy the file to the folder you want to use as the _home folder_ for your ClassMonitor.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar classmonitor.jar` command to run the application.<br>
-   A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
+1. Open a command terminal. You can do this by searching for "Command Prompt" (for Windows) or "Terminal" (for Mac) in your computer's search bar.
+
+1. In the command terminal, navigate to the folder where you placed the classmonitor.jar file. You can do this by using the "cd" command followed by the folder path. For example, if your file is in the "Downloads" folder, you would type: 
+    ```
+    cd Downloads
+    ```
+1. After navigating to the correct folder, type the following command and press Enter:
+   ```
+   java -jar classmonitor.jar
+   ```
+   This command launches ClassMonitor. After a few seconds, a graphical user interface (GUI) similar to the one shown in the image should appear. You'll see some sample data in the app.
    ![Ui](images/Ui_v1.3.png)
 
 1. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
@@ -57,23 +71,23 @@ ClassMonitor collects and tracks data which allows you to gain insights into you
 
    * `list` : Lists all contacts.
 
-   * `add n/John Doe p/98765432 e/johnd@example.com m/Computer Science` : Adds a contact named `John Doe` to the list.
+   * `add n/Damith p/98765432 e/damith@uml.com m/Computer Science` : Adds a student named `Damith` to the list.
 
-   * `edit 1 n/John Damith` : Edits the name of the first person in the student list to be John Damith.
+   * `edit 1 n/Damith Dalegend` : Edits the name of the first person in the student list to be `Damith Dalegend`.
 
-   * `delete 3` : Deletes the 3rd contact shown in the current list. Use this only after you have populated your student list.
+   * `delete 1` : Deletes the 1st student shown in the current list. Use this only after you have populated your student list.
 
-   * `star 1 s/3` : Adds 3 stars to the first person on the list. Use this only after you have populated your student list.
+   * `star 1 s/3` : Adds 3 stars to the first student on the list. Use this only after you have populated your student list.
 
-   * `bolt 1 b/3` : Adds 3 bolts to the first person on the list. Use this only after you have populated your student list.
+   * `bolt 1 b/3` : Adds 3 bolts to the first student on the list. Use this only after you have populated your student list.
 
-   * `sort major asc` : Sorts the students list based on the `major` fields in an ascending order.
+   * `sort major asc` : Sorts the students list based on the `major` field in ascending order.
 
-   * `find name Alex` : Finds all the students who has the the Alex, either as their first or last name.
+   * `find name Chitra` : Finds all the students who have the name `Chitra`.
 
-   * `clear` : Deletes all contacts. Use this responsibly.
+   * `clear` : Deletes all students. Use this responsibly.
 
-   * `exit` : Exits the app.
+   * `exit` : Exits ClassMonitor.
 
 1. Refer to the [Features](#features) below for details of each command.
 
@@ -108,20 +122,29 @@ ClassMonitor collects and tracks data which allows you to gain insights into you
 
 > Format: `add n/NAME p/PHONE_NUMBER e/EMAIL m/MAJOR [t/TAG]…`
 
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+```tip
 A student can have any number of tags (including 0)
-</div>
+```
+
+```danger
+* Names must have alphanumeric characters! Please avoid using special characters such as `\`. If such special characters exists in the person's name, please remove the character before adding the student into ClassMonitor.
+* Please avoid specifying _any_ additional flags for the add commands besides the ones specified in the command format.
+* Phone numbers must consist of numbers and be at least 3 digits long.
+```
+
+```warning
+For the best user experience,
+* `PHONE_NUMBER`, `MAJOR`, `EMAIL`, `TAG` should be less than 50 characters
+* `NAME` should be less than 30 characters
+so that the fields are fully visible on the screen. 
+```
 
 Examples:
 
 **Command Input**: `add n/John Doe p/98765432 e/johnd@u.nus.edu m/Computer Science`
 
 **Assumptions**:
-* A student by the name of `John Doe` **(case-sensitive)** does not already exist. 
-
-**Warning**:
-* Names must have alphanumeric characters! Please avoid using special characters such as `\`. If such special characters exists in the person's name, please remove the character before adding the student into ClassMonitor.
-* Please avoid specifying _any_ additional tags for the add commands besides the ones specified in the command format
+* A student by the name of `John Doe` **(case-sensitive)** does not already exist.
 
 **Command Output**: `New student added: John Doe; Phone: 98765432; Email: johnd@u.nus.edu; Major: Computer Science; Tags: `
 
@@ -129,11 +152,11 @@ Examples:
 
 > Format: `list`
 
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-`list` sorts students' names in ascending order
-</div>
+```info
+`list` displays all students, clearing existing filters on the student list
+```
 
-#### `edit` : edits a student's information
+#### `edit` - edits a student's information
 
 > Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [m/MAJOR] [s/STAR] [b/BOLT] [t/TAG]…​`
 
@@ -150,7 +173,6 @@ Examples:
 * `EMAIL` *must **ONLY** contain alphanumerical characters and should be a valid email*
 * `MAJOR` *must **ONLY** contain alphabets and spaces and should be a valid major*
 * `STAR/BOLT` *must be a positive integer between 1 and 50,000* (e.g. 1, 2, …, 50,000) ​
-* `TAG` **should be a valid course code or class code**
 ```
 
 ```tip
