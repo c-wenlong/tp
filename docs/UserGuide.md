@@ -35,6 +35,27 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 
 ## Features
 
+ClassMonitor provides two core features:
+
+* Student Management System
+* Student Analysis Tool
+
+### Student Management System
+
+ClassMonitor allows you to manage your classes and keep track of your student details.
+
+1. Efficiently **create, view, edit and delete** your students' details.
+2. **Sort** your students by their name, phone number, email address, major, number of stars and number of bolts.
+3. **Tag** students in your current list using an efficient tagging system where you can create and delete existing tags.
+4. **Filter** your students by their name, major, tags, number of stars and number of bolts.
+
+### Student Analysis Tool
+
+ClassMonitor collects and tracks data which allows you to gain insights into your pedagogy through **statistical analysis**:
+
+1. Track students' **level of participation in class**.
+2. Record your students' **attendance**.
+
 ## Quick start
 
 1. Ensure you have Java `11` or above installed in your Computer. You can download it [here](https://docs.oracle.com/en/java/javase/11/install/overview-jdk-installation.html#GUID-8677A77F-231A-40F7-98B9-1FD0B48C346A).
