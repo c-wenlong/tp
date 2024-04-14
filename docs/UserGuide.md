@@ -246,7 +246,7 @@ commandOutputBox="images/star.png"
 ```
 
 ```note
-`INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ 
+* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ 
 * `BOLT` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​ 
 * The specified number of bolts will be added to the student's current bolt count.
 * A student can only accumulate a maximum of 50,000 bolts and a minimum of 0 bolts.
@@ -333,9 +333,9 @@ Use the `list` command to view all students again.
 * Accepted orders are 
    * `asc` for ascending order of the specific field
    * `desc` for descending order of the specific field
-* `name` and `email` are sorted in **lexicographical** order while `phone`,`star`, and `bolt` are sorted in **numeric** order
+* `name` and `email` are sorted in **lexicographical** order while `phone`,`star`, and `bolt` are sorted in **numeric** order.
 * The field and order can have combinations of capital and lower case letters.<br>
-   E.g. `sort star asc`, `sort name ASc` and `sort Major desc` are valid
+   E.g. `sort star asc`, `sort name ASc` and `sort Major desc` are valid.
 * For tie breaking between students that have the same value for a given field, name will be used as a tiebreaker.
 ```
 
@@ -383,7 +383,7 @@ This is **NOT** an undo-able process. Once you `clear` ClassMonitor, your data w
 **Format:** `help`
 
 ```info
-Shows a message explaining how to access the help page.
+Shows a pop-up message like below explaining how to access the help page.
 ```
 
 ![help message](images/helpMessage.png)
@@ -393,7 +393,7 @@ Shows a message explaining how to access the help page.
 **Format:** `exit`
 
 ```tip
-You can also close the program by using the **x** circle at the top left of the application GUI.
+You can also close the program by using the **x** circle at the top left of the application's GUI.
 ```
 
 ## Command summary
