@@ -165,7 +165,7 @@ commandOutputBox="images/add.png"
 
 #### `edit` - edits a student's information
 
-**Format:** `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [m/MAJOR] [s/STAR] [b/BOLT] [t/TAG]…​`
+**Format:** `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [m/MAJOR] [s/STAR] [b/BOLT] [t/TAG]…​`
 
 ```info
 * Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
@@ -176,7 +176,7 @@ commandOutputBox="images/add.png"
 ```note
 * `INDEX` *must be a positive integer* (e.g. 1, 2, 3, …) ​
 * `NAME` *must **ONLY** contain alphabets and spaces*
-* `PHONE` *should be a valid phone number*
+* `PHONE_NUMBER` *should be a valid phone number*
 * `EMAIL` *must **ONLY** contain alphanumerical characters and should be a valid email*
 * `MAJOR` *must **ONLY** contain alphabets and spaces and should be a valid major*
 * `STAR/BOLT` *must be a positive integer between 1 and 50,000* (e.g. 1, 2, …, 50,000) ​
