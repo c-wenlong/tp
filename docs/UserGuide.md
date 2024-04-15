@@ -144,7 +144,7 @@ The following are the fields for each student:
 * Student's Phone Number
 * Student's Email
 * Student's Stars (a measure of their class participation)
-* Student's Bolts (a measure of the classes the student was late or absent for)
+* Student's Bolts (a measure of the classes the student was late for)
 * Student's Tags
 
 Students are unique by name but are currently case-insensitive. This means you cannot add two or more students with the same name if they have the same case for this current version.
@@ -226,7 +226,7 @@ For the best user experience,
 * `PHONE_NUMBER`, `MAJOR`, `EMAIL`, `TAG` should be limited to 50 characters  or fewer
 * `NAME` should be limited to 30 characters or fewer<br>
 
-to ensure that all fields are fully visible on the screen without being cut off or truncated, 
+to ensure that all fields are fully visible on the screen without being cut off or truncated. 
 
 Please also avoid specifying _any_ additional flags besides the ones specified in the command format.
 ```
@@ -511,7 +511,7 @@ Furthermore, certain edits can cause the ClassMonitor to behave in unexpected wa
 
 _Details coming soon ..._
 
-## [FAQ](#faq)
+## FAQ
 
 **Q**: How do I transfer my data to another Computer? <br>
 **A**: First, install the app on the other computer. Then, replace the empty data file it creates with the file containing your data from the previous ClassMonitor home folder.
