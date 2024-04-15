@@ -419,7 +419,7 @@ the `edit` command will also be extended to allow users to edit the comments.
 
 Usage: `edit INDEX ...c/INDEX2 COMMENT...`
 
-The command will edit the comment at the student with index `INDEX` with comment index `INDEX2`. 
+The command will edit the comment at the student with index `INDEX` with comment index `INDEX2`.
 
 #### UI Modifications
 
@@ -427,7 +427,7 @@ The command will edit the comment at the student with index `INDEX` with comment
 * Users will be able to view the comments they have left for each student in a separate **window**. The components of the window will track changes to the student comments in the model.
 
 **Alternative 2**
-* Users will be able to view the comments they have left for each student in a separate display in the same window. 
+* Users will be able to view the comments they have left for each student in a separate display in the same window.
 
 
 ![Proposed UI](images\StarCommentUiClassDiagram.png).
@@ -706,6 +706,6 @@ These instructions only provide a starting point for testers to work on; testers
 
 1. _{ more test cases …​ }_
 
-## Glossary 
+## Glossary
 
 {% include glossary.md type="dg" %}
