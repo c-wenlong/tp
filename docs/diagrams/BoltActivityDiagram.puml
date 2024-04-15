@@ -3,12 +3,21 @@
 start
 :User enters bolt command;
 if () then ([else])
-  :Error:Invalid command format;
+  :Error: Invalid index provided;
   stop
-( [Student index and number of bolts to award provided]) elseif () then ([else])
-  :Error: Invalid Student index;
+( [Positive index provided]) elseif () then ([else])
+  :Error: Invalid command format;
   stop
-else ( [Student index is in valid range of Student List])
+( [Number of bolts to award provided]) elseif () then ([else])
+  :Error: Invalid number of bolts provided;
+  stop
+( [Number of bolts to award between 1 and 10 inclusive]) elseif () then ([else])
+  :Error: Invalid index provided;
+  stop
+( [Student index is in valid range of Student List]) elseif () then ([else])
+  :Error: Total number of bolts invalid;
+  stop
+else ( [Total number of bolts between 0 and 50000 inclusive])
 endif
   :Bolt Command successfully executes.
 Student is awarded the number of bolts.;

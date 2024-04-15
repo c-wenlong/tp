@@ -3,7 +3,7 @@ layout: page
 title: User Guide
 show-toc: true
 ---
-**_Greetings Teaching Assistants (TAs)!_** 
+**_Greetings Teaching Assistants (TAs)!_**
 
 We are a team of 5 ex-TAs from the National University of Singapore majoring in Computer Science. We have taught classes and managed students and understand that administration can a burden. Perhaps you feel that the current student management systems are
 * Tedious?
@@ -61,11 +61,11 @@ ClassMonitor collects and tracks the following data, allowing you to tailor your
 
 1. Open a command terminal. You can do this by searching for "Command Prompt" (for Windows) or "Terminal" (for Mac) in your computer's search bar.
 
-1. In the command terminal, navigate to the folder where you placed the classmonitor.jar file. You can do this by using the "cd" command followed by the folder path. For example, if your file is in the "Downloads" folder, you would type: 
+1. In the command terminal, navigate to the folder where you placed the classmonitor.jar file. You can do this by using the "cd" command followed by the folder path. For example, if your file is in the "Downloads" folder, you would type:
     ```
     cd Downloads
     ```
-   
+
 1. After navigating to the correct folder, type the following command and press Enter:
    ```
    java -jar classmonitor.jar
@@ -203,15 +203,15 @@ commandOutputBox="images/add.png"
 **Examples:**
 *  `edit 1 p/98765432 e/johndoe@u.nus.edu` Edits the phone number and email address of the 1st student to be `98765432` and `johndoe@u.nus.edu` respectively.
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd student to be `Betsy Crower` and clears all existing tags.
-*  `edit 3 s/0 b/0` Edits both the total number of stars and the total number of bolts received by the 3rd student to be `0`. 
+*  `edit 3 s/0 b/0` Edits both the total number of stars and the total number of bolts received by the 3rd student to be `0`.
 
 #### `star` - awards for good participation
 
 **Format:** `star INDEX s/STAR`
 
 ```info
-* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ 
-* `STAR` refers to the number of stars to be awarded to the student. ​ 
+* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
+* `STAR` refers to the number of stars to be awarded to the student. ​
 ```
 
 ```note
@@ -242,13 +242,13 @@ commandOutputBox="images/star.png"
 
 ```info
 * The number of bolts corresponds to the number of times the student is absent. ​
-* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​ 
+* Edits the student at the specified `INDEX`. The index refers to the index number shown in the displayed student list. ​
 * `BOLT` refers to the number of bolts to be awarded to the student. ​
 ```
 
 ```note
-* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​ 
-* `BOLT` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​ 
+* `INDEX` **must be a positive integer** (e.g. 1, 2, 3, …) ​
+* `BOLT` **must be a positive integer between 1 and 10** (e.g. 1, 2, ..., 10) ​
 * The specified number of bolts will be added to the student's current bolt count.
 * A student can only accumulate a maximum of 50,000 bolts and a minimum of 0 bolts.
 ```
@@ -280,18 +280,18 @@ The parameters for `CRITERIA` depend on the `FIELD` specified.
 
 | Field  | Criteria                     | Format, Examples                                                         |
 |--------|---------------------------------------------------------------------------------------------------------|
-| name   | KEYWORD [MORE_KEYWORDS]…​ | `find name KEYWORD [MORE_KEYWORDS]…​` <br> e.g. `find name Alex David`| 
-| major  | SUBSTRING                    | `find major SUBSTRING` <br> e.g. `find major Science`                         | 
-| star   | OPERATOR NUMBER              | `find star OPERATOR NUMBER` <br> e.g. `find star = 0`                        |
-| bolt   | OPERATOR NUMBER              | `find bolt OPERATOR NUMBER` <br> e.g. `find bolt > 5`                        |
-| tag    | SUBSTRING                    | `find tag SUBSTRING` <br> e.g. `find tag CS2103T`                             |
+| name   | KEYWORD [MORE_KEYWORDS]…​ | `find name KEYWORD [MORE_KEYWORDS]…​` <br> e.g. `find name Alex David`|
+| major  | SUBSTRING                    | `find major SUBSTRING` <br> e.g. `find major Science`                    |
+| star   | OPERATOR NUMBER              | `find star OPERATOR NUMBER` <br> e.g. `find star = 0`                    |
+| bolt   | OPERATOR NUMBER              | `find bolt OPERATOR NUMBER` <br> e.g. `find bolt > 5`                    |
+| tag    | SUBSTRING                    | `find tag SUBSTRING` <br> e.g. `find tag CS2103T`                        |
 
 ```info
 * `find name`: Finds students with names that match **any** of the given keywords.
    * The order of the keywords does not matter. E.g. `Hans Bo` will match `Bo Hans`.
    * Only full words will be matched. E.g. `Han` will not match `Hans`.
    * Students matching at least one keyword will be returned (i.e. **OR** search).
-   
+
 * `find major`/`find tag`: Finds students with majors/tags that **contain** the given keyword.
    * `find major Science` will return students with `Computer Science` majors and `Science` majors.
    * `find tag CS` will return students with `CS2103T` tags and `CS2100` tags.
@@ -331,7 +331,7 @@ Use the `list` command to view all students again.
 
 ```info
 * Accepted fields are `name`, `phone`, `email`, `major`, `star`, `bolt`.
-* Accepted orders are 
+* Accepted orders are
    * `asc` for ascending order of the specific field
    * `desc` for descending order of the specific field
 * `name` and `email` are sorted in **lexicographical** order while `phone`,`star`, and `bolt` are sorted in **numeric** order.
@@ -480,7 +480,7 @@ Other acknowledgments:
 * Miscellaneous:
     * [Docusaurus](https://docusaurus.io/docs/markdown-features/admonitions) for admonition colors and styling
     * [SchemeColor](https://www.schemecolor.com/pastel-rainbow.php) for admonition colors
- 
+
 ## Glossary
 
 {% include glossary.md type="ug" %}
