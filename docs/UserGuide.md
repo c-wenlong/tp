@@ -119,7 +119,7 @@ This User Guide is highly navigable; simply click on any item in the [Table of C
 
 ### Admonition Boxes
 
-Throughout this guide, you may find coloured boxes containing highlighted pieces of text. These are known as admonition boxes, or simply, admonitions. Please take note of the content within.
+Throughout this guide, you may find coloured boxes containing highlighted pieces of text. These are known as admonition boxes, or simply, [admonitions](#glossary-admonitions). Please take note of the content within.
 
 | Icon                           | Meaning                                                     |
 |--------------------------------|-------------------------------------------------------------|
