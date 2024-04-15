@@ -13,7 +13,7 @@ We are a team of 5 ex-TAs from the National University of Singapore majoring in 
 Well, we had the same thoughts! Which is why we decided to come together to build ClassMonitor for you. We hope that you can try out our desktop application and experience the productivity boost yourself! 😊
 
 ## About ClassMonitor
-ClassMonitor is a Student Management System that empowers TAs and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good class participation and bolts for absenteeism!
+ClassMonitor is a **Student Management System** that empowers TAs and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible **tagging system** to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s **statistics** – you can allocate stars to students for good class participation and bolts for absenteeism!
 
 For a more detailed view of ClassMonitor’s features, you can refer to the [Features](#features) section below!
 With a focus on efficiency, you can interact with ClassMonitor without ever reaching for your mouse or moving away from your keyboard! With a focus on user-friendliness, ClassMonitor is easy to learn!
@@ -72,7 +72,7 @@ ClassMonitor collects and tracks the following data, allowing you to tailor your
    ```
    java -jar classmonitor.jar
    ```
-   This command launches ClassMonitor. After a few seconds, a Graphical User Interface (GUI) similar to the one shown below should appear. You'll see some sample data in the app.
+   This command launches ClassMonitor. After a few seconds, a [Graphical User Interface](#glossary-graphical-user-interface) (GUI) similar to the one shown below should appear. You'll see some sample data in the app.
    ![Ui](images/Ui_v1.4.png)
 
 1. Type the command in the command box and press Enter to execute it. E.g. typing **`help`** and pressing Enter will open the help window.<br>
