@@ -26,11 +26,12 @@ public class BoltCommandParser implements Parser<BoltCommand> {
         ArgumentMultimap argMultimap =
                 ArgumentTokenizer.tokenize(args, PREFIX_BOLT); // tokenize args by PREFIX_BOLT
 
-
         if (!arePrefixesPresent(argMultimap, PREFIX_BOLT)
                 || argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, BoltCommand.MESSAGE_USAGE));
         } // if no PREFIX used, or if the Preamble is empty, we throw a ParseException
+
+        argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_BOLT);
 
         Index index = ParserUtil.parseIndex(argMultimap.getPreamble());
 
