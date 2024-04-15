@@ -16,6 +16,7 @@ public class SortCommand extends Command {
             + "based on any given field (case-insensitive) of the student in either ascending or descending order. \n"
             + "Parameters: FIELD ORDER \n"
             + "Example: " + COMMAND_WORD + " name" + " asc";
+
     private String field;
     private boolean isAscending;
 
