@@ -6,7 +6,7 @@ title: ClassMonitor
 [![CI Status](https://github.com/AY2324S2-CS2103T-F13-4/tp/workflows/Java%20CI/badge.svg)](https://github.com/AY2324S2-CS2103T-F13-4/tp/actions)
 [![codecov](https://codecov.io/gh/AY2324S2-CS2103T-F13-4/tp/branch/master/graph/badge.svg)](https://codecov.io/gh/AY2324S2-CS2103T-F13-4/tp)
 
-![Ui](images/Ui_v1.3.png)
+![Ui](images/Ui_v1.4.png)
 
 **ClassMonitor is a desktop application for managing your student details.** While it has a GUI, most of the user interactions happen using a CLI (Command Line Interface).
 
