@@ -101,6 +101,84 @@ ClassMonitor collects and tracks the following data, allowing you to tailor your
 1. Refer to the [Commands](#commands) section for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
+## How to Use User Guide
+Thank you for choosing ClassMonitor! We are delighted to have you as a user.
+```info
+We **highly recommend** that you read through the User Guide in a **sequential order**. Please note the importance of the [Reference Guide](#reference-guide) section, which covers how to use ClassMonitor!
+```
+
+```tip
+This User Guide is highly navigable; simply click on any item in the [Table of Contents](#markdown-toc-toc-heading) and be directed to it! Clicking on the respective headings will bring you back to the Table of Contents, so it's easy to jump across sections!
+```
+
+If you have not installed ClassMonitor head over to the [Quick Start](#quick-start) section.
+
+If you are an experienced user, you can refer to the [Command Summary](#command-summary) for a quick overview of all of ClassMonitor's commands.
+
+If you are stuck, refer to the section on [FAQ](#faq).
+
+### Admonition Boxes
+
+Throughout this guide, you may find coloured boxes containing highlighted pieces of text. These are known as admonition boxes, or simply, admonitions. Please take note of the content within.
+
+| Icon                           | Meaning                                                     |
+|--------------------------------|-------------------------------------------------------------|
+| ![Note](images/Note.png)       | Something you should keep in mind.                          |
+| ![Tip](images/Tip.png)         | Something you might find useful.                            |
+| ![Info](images/Info.png)       | Something that provides information useful in that context. |
+| ![Warning](images/Warning.png) | Something you should be cautious about.                     |
+| ![Danger](images/Danger.png)   | Something you should pay a lot of attention to.             |
+
+
+## Reference Guide
+This section covers all you should know about ClassMonitor. Of special note is the [Key Definitions](#key-definitions) section, which covers essential knowledge to using ClassMonitor's features.
+
+### Key Definitions
+
+#### Student
+
+A student in ClassMonitor represents a student in one of your classes.
+
+The following are the fields for each student:
+
+* Student's Name
+* Student's Major
+* Student's Phone Number
+* Student's Email
+* Student's Stars (a measure of their class participation)
+* Student's Bolts (a measure of the classes the student was absent for)
+* Student's Tags
+
+Students are unique by name but are currently case-insensitive. This means you cannot add two or more students with the same name if they have the same case for this current version.
+
+#### Tag
+
+A Tag in ClassMonitor serves as a means to categorise students.
+
+Each student can have multiple tags. These Tags are optional.
+
+Feel free to add tags as you see fit to organize your students. Examples of how you may use a tag can include:
+
+* Labelling the tutorial group of the student, e.g. `t18`, `t09`, `t6`
+* Labelling the course code for the class the student is in, e.g. `CS1101S`, `UTW1101A`, `HY2220`
+* Noting important student particulars, e.g. `Dyslexic`
+
+The tags assigned to a student can be edited and these changes would be reflected for the student immediately.
+
+#### Flags
+
+Flags are delimiters that enable ClassMonitor to distinguish different parameters without ambiguity.
+
+| Flag | Corresponding Field |
+|------|---------------------|
+| n/   | NAME                |
+| p/   | PHONE               |
+| e/   | EMAIL               |
+| m/   | MAJOR               |
+| s/   | STAR                |
+| b/   | BOLT                |
+| t/   | TAG                 |
+
 
 ## Commands
 
@@ -150,7 +228,7 @@ For the best user experience,
 * `PHONE_NUMBER`, `MAJOR`, `EMAIL`, `TAG` should be limited to 50 characters  or fewer
 * `NAME` should be limited to 30 characters or fewer<br>
 
-to ensure that all fields are fully visible on the screen without being cut off or truncated.
+to ensure that all fields are fully visible on the screen without being cut off or truncated. 
 
 Please also avoid specifying _any_ additional flags besides the ones specified in the command format.
 ```
@@ -206,6 +284,7 @@ commandOutputBox="images/add.png"
 *  `edit 1 p/98765432 e/johndoe@u.nus.edu` Edits the phone number and email address of the 1st student to be `98765432` and `johndoe@u.nus.edu` respectively.
 *  `edit 2 n/Betsy Crower t/` Edits the name of the 2nd student to be `Betsy Crower` and clears all existing tags.
 *  `edit 3 s/0 b/0` Edits both the total number of stars and the total number of bolts received by the 3rd student to be `0`.
+
 
 #### `star` - awards for good participation
 

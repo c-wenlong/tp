@@ -204,7 +204,7 @@ Step 4. `LogicManager` calls on `StarCommand.execute()`, which updates the class
     * Pros: Able to edit the number of stars however one desires.
     * Cons: Command is not modularised, user have to calculate the number of stars themselves when updating.
 
-
+    
 ### Awarding Bolts to a Student
 
 #### Overview
@@ -307,11 +307,7 @@ Step 3. The `ClassMonitorParser` calls `FindCommandParser.parse()`, which then c
 If either the field `field` or sorting order `isAscending`, then it will raise a parse error.
 ```
 
-
 Step 4. `LogicManager` calls on `SortCommand.execute()`, which updates the student list with the new filtered list.
-
-
-
 
 
 ### \[Proposed\] Undo/redo feature
