@@ -369,7 +369,7 @@ commandOutputBox="images/sort.png"
 * `delete 2` deletes the 2nd student in the displayed list.
 * `find name Alex` followed by `delete 1` deletes the 1st student in the results of the `find` command.
 
-#### `clear` - Clears all students' particulars
+#### `clear` - clears all students' particulars
 
 **Format:** `clear`
 
@@ -379,7 +379,7 @@ This is **NOT** an undo-able process. Once you `clear` ClassMonitor, your data w
 
 ### General Commands
 
-#### `help` - to view help
+#### `help` - view user guide for help
 
 **Format:** `help`
 
