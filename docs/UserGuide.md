@@ -13,12 +13,12 @@ We are a team of 5 ex-TAs from the National University of Singapore majoring in 
 Well, we had the same thoughts! Which is why we decided to come together to build ClassMonitor for you. We hope that you can try out our desktop application and experience the productivity boost yourself! 😊
 
 ## About ClassMonitor
-ClassMonitor is a Student Management System that empowers TAs and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good class participation and bolts for absenteeism!
+ClassMonitor is a **Student Management System** that empowers TAs and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible **tagging system** to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s **statistics** – you can allocate stars to students for good class participation and bolts for absenteeism!
 
-For a more detailed view of ClassMonitor’s features, you can refer to the Features section below!
+For a more detailed view of ClassMonitor’s features, you can refer to the [Features](#features) section below!
 With a focus on efficiency, you can interact with ClassMonitor without ever reaching for your mouse or moving away from your keyboard! With a focus on user-friendliness, ClassMonitor is easy to learn!
 
-This User Guide provides an in-depth documentation, so you can easily use and integrate ClassMonitor into your day-to-day classes as a Professor or TA. It covers how to launch ClassMonitor, core ClassMonitor features and commands, common terms and definitions used in ClassMonitor, and some troubleshooting recommendations. Head over to [How to Use User Guide](#how-to-use-user-guide) to get started!
+This User Guide provides an in-depth documentation, so you can easily use and integrate ClassMonitor into your day-to-day classes as a Professor or TA. It covers how to launch ClassMonitor, core ClassMonitor features and commands, common terms and definitions used in ClassMonitor, and some troubleshooting recommendations. Head over to [How to Use The User Guide](#how-to-use-the-user-guide) to get started!
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -72,7 +72,7 @@ ClassMonitor collects and tracks the following data, allowing you to tailor your
    ```
    java -jar classmonitor.jar
    ```
-   This command launches ClassMonitor. After a few seconds, a Graphical User Interface (GUI) similar to the one shown below should appear. You'll see some sample data in the app.
+   This command launches ClassMonitor. After a few seconds, a [Graphical User Interface](#glossary-graphical-user-interface) (GUI) similar to the one shown below should appear. You'll see some sample data in the app.
    ![Ui](images/Ui_v1.4.png)
 
 1. Type the command in the command box and press Enter to execute it. E.g. typing **`help`** and pressing Enter will open the help window.<br>
@@ -101,25 +101,25 @@ ClassMonitor collects and tracks the following data, allowing you to tailor your
 1. Refer to the [Commands](#commands) section for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
-## How to Use User Guide
-Thank you for choosing ClassMonitor! We are delighted to have you as a user.
-```info
-We **highly recommend** that you read through the User Guide in a **sequential order**. Please note the importance of the [Reference Guide](#reference-guide) section, which covers how to use ClassMonitor!
+## How to Use The User Guide
+
+```note
+We **highly recommend** that you read through the User Guide in **sequential order**.
 ```
 
-```tip
-This User Guide is highly navigable; simply click on any item in the [Table of Contents](#markdown-toc-toc-heading) and be directed to it! Clicking on the respective headings will bring you back to the Table of Contents, so it's easy to jump across sections!
-```
-
-If you have not installed ClassMonitor head over to the [Quick Start](#quick-start) section.
+If you have not installed ClassMonitor, head over to the [Quick Start](#quick-start) section.
 
 If you are an experienced user, you can refer to the [Command Summary](#command-summary) for a quick overview of all of ClassMonitor's commands.
 
 If you are stuck, refer to the section on [FAQ](#faq).
 
+```tip
+This User Guide is highly navigable; simply click on any item in the [Table of Contents](#markdown-toc-toc-heading) and be directed to it! Clicking on the respective headings will bring you back to the Table of Contents, so it's easy to jump across sections!
+```
+
 ### Admonition Boxes
 
-Throughout this guide, you may find coloured boxes containing highlighted pieces of text. These are known as admonition boxes, or simply, admonitions. Please take note of the content within.
+Throughout this guide, you may find coloured boxes containing highlighted pieces of text. These are known as admonition boxes, or simply, [admonitions](#glossary-admonitions). Please take note of the content within.
 
 | Icon                           | Meaning                                                     |
 |--------------------------------|-------------------------------------------------------------|
@@ -149,7 +149,7 @@ The following are the fields for each student:
 * Student's Bolts (a measure of the classes the student was absent for)
 * Student's Tags
 
-Students are unique by name but are currently case-insensitive. This means you cannot add two or more students with the same name if they have the same case for this current version.
+Students are unique by name, and this check is [case-sensitive](#glossary-case-sensitive). This means that you cannot add two or more students with the **same name and same case** for this current version.
 
 #### Tag
 
