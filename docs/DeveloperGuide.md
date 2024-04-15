@@ -294,7 +294,9 @@ based on one of its fields either in ascending or descending order
 
 #### Feature Details
 
-Here is the activity diagram showing the process of the `Sort` command:
+Here is the activity diagram showing the process of the `sort` command:
+
+![SortActivityDiagram](images/SortActivityDiagram.png)
 
 Here is the sequence diagram showing how a sort operation goes through the `Logic`, `Model` and `Storage` components.
 

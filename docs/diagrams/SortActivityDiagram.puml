@@ -1,0 +1,18 @@
+@startuml
+!pragma useVerticalIf on
+start
+:User enters sort command;
+if () then ([else])
+  :Error: Invalid command format;
+  stop
+( [Field and order provided]) elseif () then ([else])
+  :Error: Invalid command format;
+  stop
+else ( [Valid field and valid order provided])
+endif
+  :Sort Command successfully executes.The displayed list of
+students is updated to be sorted by the provided field
+in the specified order;
+stop
+
+@enduml
