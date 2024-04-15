@@ -309,7 +309,7 @@ Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 Step 3. The `ClassMonitorParser` calls `SortCommandParser.parse()`, which returns a `SortCommand`.
 
 ```note
-If either the field `field` or sorting order `isAscending`, then it will raise a parse error.
+If either the field `field` or sorting order `isAscending` is not provided, a parse error will be thrown.
 ```
 
 Step 4. `LogicManager` calls on `SortCommand.execute()`, which updates the classmonitor with the new sorted list.
