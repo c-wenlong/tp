@@ -13,7 +13,7 @@ public class SortCommand extends Command {
     public static final String COMMAND_WORD = "sort";
     public static final String MESSAGE_SUCCESS = "Sorted all persons by %s in %s order.";
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": sorts all students in ClassMonitor "
-            + "based on any given field (case-insensitive) of the student in either ascending or descending order"
+            + "based on any given field (case-insensitive) of the student in either ascending or descending order ."
             + "Parameters: <Field>(email, major, name, phone, star) <asc/desc> \n"
             + "Example: " + COMMAND_WORD + " name" + " asc";
     private String field;
