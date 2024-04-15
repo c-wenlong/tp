@@ -55,6 +55,8 @@ ClassMonitor collects and tracks the following data, allowing you to tailor your
 
 1. Ensure you have Java `11` or above installed in your Computer. You can download it [here](https://docs.oracle.com/en/java/javase/11/install/overview-jdk-installation.html#GUID-8677A77F-231A-40F7-98B9-1FD0B48C346A).
 
+1. Please follow these [steps](https://blog.hubspot.com/website/check-java-verison) to verify the version of Java installed on your system.
+
 1. Download the latest `classmonitor.jar` from [here](https://github.com/AY2324S2-CS2103T-F13-4/tp/releases).
 
 1. Copy the file to the folder you want to use as the _home folder_ for your ClassMonitor.
