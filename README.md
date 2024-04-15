@@ -1,6 +1,6 @@
 [![CI Status](https://github.com/AY2324S2-CS2103T-F13-4/tp/workflows/Java%20CI/badge.svg)](https://github.com/AY2324S2-CS2103T-F13-4/tp/actions)
 
-![Ui](docs/images/Ui_v1.3.png)
+![Ui](docs/images/Ui_v1.4.png)
 
 # **ClassMonitor** <br>
 
@@ -15,6 +15,6 @@ ClassMonitor can be used for the following: <br>
 
 ##### _And more_
 
-#### For the detailed documentation of this project, see the **[ClassMonitor User Guide](https://nus-cs2103-ay2324s2.github.io/tp/UserGuide.html)**.
+#### For the detailed documentation of this project, see the **[ClassMonitor User Guide](https://ay2324s2-cs2103t-f13-4.github.io/tp/UserGuide.html)**.
 #### It is built off the [AddressBook-Level3 project](https://github.com/nus-cs2103-AY2324S2/tp), simulating the brownfield process of working with an existing codebase.
 #### This project is a modification of **the se-education.org** initiative. If you would like to find out more, see [se-education.org](https://se-education.org#https://se-education.org/#contributing) for more info.
