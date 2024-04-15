@@ -73,7 +73,7 @@ ClassMonitor collects and tracks the following data, allowing you to tailor your
    java -jar classmonitor.jar
    ```
    This command launches ClassMonitor. After a few seconds, a [Graphical User Interface](#glossary-graphical-user-interface) (GUI) similar to the one shown below should appear. You'll see some sample data in the app.
-   ![Ui](images/Ui_v1.4.png)
+   ![Ui](images/Ui.png)
 
 1. Type the command in the command box and press Enter to execute it. E.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
