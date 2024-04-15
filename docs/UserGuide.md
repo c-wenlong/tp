@@ -28,8 +28,6 @@ This User Guide provides an in-depth documentation, so you can easily use and in
 
 ## Features
 
-## Quick Start
-=======
 ClassMonitor provides two core features:
 
 * Student Management System
@@ -478,7 +476,7 @@ Shows a pop-up message like below explaining how to access the help page.
 You can also close the program by using the **x** circle at the top left of the application's GUI.
 ```
 
-## [Command summary](#command-summary)
+## Command summary
 
 | Action     | Format, Examples                                                                                                                                       |
 |------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
