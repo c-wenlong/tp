@@ -149,7 +149,7 @@ The following are the fields for each student:
 * Student's Bolts (a measure of the classes the student was absent for)
 * Student's Tags
 
-Students are unique by name but are currently case-insensitive. This means you cannot add two or more students with the same name if they have the same case for this current version.
+Students are unique by name, and this check is [case-sensitive](#glossary-case-sensitive). This means that you cannot add two or more students with the **same name and same case** for this current version.
 
 #### Tag
 
