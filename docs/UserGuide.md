@@ -15,10 +15,10 @@ Well, we had the same thoughts! Which is why we decided to come together to buil
 ## About ClassMonitor
 ClassMonitor is a Student Management System that empowers TAs and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good class participation and bolts for absenteeism!
 
-For a more detailed view of ClassMonitor’s features, you can refer to the Features section below!
+For a more detailed view of ClassMonitor’s features, you can refer to the [Features](#features) section below!
 With a focus on efficiency, you can interact with ClassMonitor without ever reaching for your mouse or moving away from your keyboard! With a focus on user-friendliness, ClassMonitor is easy to learn!
 
-This User Guide provides an in-depth documentation, so you can easily use and integrate ClassMonitor into your day-to-day classes as a Professor or TA. It covers how to launch ClassMonitor, core ClassMonitor features and commands, common terms and definitions used in ClassMonitor, and some troubleshooting recommendations. Head over to [How to Use User Guide](#how-to-use-user-guide) to get started!
+This User Guide provides an in-depth documentation, so you can easily use and integrate ClassMonitor into your day-to-day classes as a Professor or TA. It covers how to launch ClassMonitor, core ClassMonitor features and commands, common terms and definitions used in ClassMonitor, and some troubleshooting recommendations. Head over to [How to Use The User Guide](#how-to-use-the-user-guide) to get started!
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -101,21 +101,21 @@ ClassMonitor collects and tracks the following data, allowing you to tailor your
 1. Refer to the [Commands](#commands) section for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
-## How to Use User Guide
-Thank you for choosing ClassMonitor! We are delighted to have you as a user.
-```info
-We **highly recommend** that you read through the User Guide in a **sequential order**. Please note the importance of the [Reference Guide](#reference-guide) section, which covers how to use ClassMonitor!
+## How to Use The User Guide
+
+```note
+We **highly recommend** that you read through the User Guide in **sequential order**.
 ```
 
-```tip
-This User Guide is highly navigable; simply click on any item in the [Table of Contents](#markdown-toc-toc-heading) and be directed to it! Clicking on the respective headings will bring you back to the Table of Contents, so it's easy to jump across sections!
-```
-
-If you have not installed ClassMonitor head over to the [Quick Start](#quick-start) section.
+If you have not installed ClassMonitor, head over to the [Quick Start](#quick-start) section.
 
 If you are an experienced user, you can refer to the [Command Summary](#command-summary) for a quick overview of all of ClassMonitor's commands.
 
 If you are stuck, refer to the section on [FAQ](#faq).
+
+```tip
+This User Guide is highly navigable; simply click on any item in the [Table of Contents](#markdown-toc-toc-heading) and be directed to it! Clicking on the respective headings will bring you back to the Table of Contents, so it's easy to jump across sections!
+```
 
 ### Admonition Boxes
 
