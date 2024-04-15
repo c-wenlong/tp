@@ -6,8 +6,12 @@ show-toc: true
 
 ## About ClassMonitor
 
-{% include toc.md header=true show-in-toc=true ordered=true %}
+ClassMonitor is a Student Management System that empowers TAs and Professors to manage their student particulars and obtain insights about their students' performance ratings. As a TA, you can easily view and edit your students' particulars during your daily classes. Utilize ClassMonitor’s flexible tagging system to help you organize your students according to their modules and classes. Finally, streamline your performance grading decisions by deriving insights from your students' performance indicators across time, through ClassMonitor’s statistics – you can allocate stars to students for good class participation and bolts for absenteeism!
 
+The Developer Guide offers comprehensive documentation on the design and implementation of ClassMonitor. It includes details on the architecture of ClassMonitor, specifications for individual components, and an overview of the software's functionality and operation.
+
+{% include toc.md header=true show-in-toc=true ordered=true %}
+--------------------------------------------------------------------------------------------------------------------
 
 ## Acknowledgements
 
@@ -21,10 +25,9 @@ Refer to the guide [_Setting up and getting started_](SettingUp.md).
 
 ## Design
 
-<div markdown="span" class="alert alert-primary">
-
+```tip
 :bulb: **Tip:** The `.puml` files used to create diagrams in this document `docs/diagrams` folder. Refer to the [_PlantUML Tutorial_ at se-edu/guides](https://se-education.org/guides/tutorials/plantUml.html) to learn how to create and edit diagrams.
-</div>
+```
 
 ### Architecture
 
@@ -95,8 +98,9 @@ The sequence diagram below illustrates the interactions within the `Logic` compo
 
 ![Interactions Inside the Logic Component for the `delete 1` Command](images/FindStarsLessThanSequenceDiagram.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `FindStarsLessThanCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
-</div>
+```note
+The lifeline for `FindStarsLessThanCommandParser` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline continues till the end of diagram.
+```
 
 How the `Logic` component works:
 
@@ -127,11 +131,12 @@ The `Model` component,
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as a `ReadOnlyUserPref` objects.
 * does not depend on any of the other three components (as the `Model` represents data entities of the domain, they should make sense on their own without depending on other components)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `ClassMonitor`, which `Student` references. This allows `ClassMonitor` to only require one `Tag` object per unique tag, instead of each `Student` needing their own `Tag` objects.<br>
+```note
+An alternative (arguably, a more OOP) model is given below. It has a `Tag` list in the `ClassMonitor`, which `Student` references. This allows `ClassMonitor` to only require one `Tag` object per unique tag, instead of each `Student` needing their own `Tag` objects.<br>
+
 
 <img src="images/BetterModelClassDiagram.png" width="450" />
-
-</div>
+```
 
 
 ### Storage component
@@ -151,7 +156,7 @@ Classes used by multiple components are in the `seedu.classmonitor.commons` pack
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Implementation**
+## Implementation
 
 This section describes some noteworthy details on how certain features are implemented.
 
@@ -180,9 +185,10 @@ Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 
 Step 3. The `ClassMonitorParser` calls `StarCommandParser.parse()`, which returns a `StarCommand`.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the number of stars is negative (i.e. < 1), then it will raise a parse error.
+```note
+If the number of stars is negative (i.e. < 1), then it will raise a parse error.
+```
 
-</div>
 
 Step 4. `LogicManager` calls on `StarCommand.execute()`, which updates the classmonitor with the new number of stars.
 
@@ -198,36 +204,6 @@ Step 4. `LogicManager` calls on `StarCommand.execute()`, which updates the class
     * Pros: Able to edit the number of stars however one desires.
     * Cons: Command is not modularised, user have to calculate the number of stars themselves when updating.
 
-### Sorting Students
-
-#### Overview
-
-The sorting mechanism is facilitated by `SortCommand`, which is called by its `execute` method to sort the students
-based on one of its fields either in ascending or descending order
-
-* `SortCommandParser#parse()` — Parses the parameters of the sort command from its command-line String input.
-* `SortCommand#execute()` — Updates the `ClassMonitor` to display the sorted list.
-
-#### Feature Details
-
-Here is the activity diagram showing the process of the `Sort` command:
-
-Here is the sequence diagram showing how a sort operation goes through the `Logic`, `Model` and `Storage` components.
-
-![SortSequenceDiagram](images/SortCommandSequenceDiagram.png)
-
-Step 1. The user launches the application for the first time and enters in command: `sort name desc`.
-
-Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
-
-Step 3. The `ClassMonitorParser` calls `SortCommandParser.parse()`, which returns a `SortCommand`.
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If either the field `field` or sorting order `isAscending`,
-then it will raise a parse error.
-
-</div>
-
-Step 4. `LogicManager` calls on `SortCommand.execute()`, which updates the classmonitor with the new sorted list.
 
 ### Awarding Bolts to a Student
 
@@ -254,9 +230,9 @@ Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 
 Step 3. The `ClassMonitorParser` calls `BoltCommandParser.parse()`, which returns a `BoltCommand`.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the number of bolts is negative (i.e. < 1), then it will raise a parse error.
-
-</div>
+```note
+If the number of bolts is negative (i.e. < 1), then it will raise a parse error.
+```
 
 Step 4. `LogicManager` calls on `BoltCommand.execute()`, which updates the classmonitor with the new number of bolts.
 
@@ -271,6 +247,37 @@ Step 4. `LogicManager` calls on `BoltCommand.execute()`, which updates the class
 * **Method 2:** Updates the number of bolts using `Edit` command.
     * Pros: Able to edit the number of bolts however one desires.
     * Cons: Command is not modularised, user have to calculate the number of bolts themselves when updating.
+
+
+### Sorting Students
+
+#### Overview
+
+The sorting mechanism is facilitated by `SortCommand`, which is called by its `execute` method to sort the students
+based on one of its fields either in ascending or descending order
+
+* `SortCommandParser#parse()` — Parses the parameters of the sort command from its command-line String input.
+* `SortCommand#execute()` — Updates the `ClassMonitor` to display the sorted list.
+
+#### Feature Details
+
+Here is the activity diagram showing the process of the `Sort` command:
+
+Here is the sequence diagram showing how a sort operation goes through the `Logic`, `Model` and `Storage` components.
+
+![SortSequenceDiagram](images/SortCommandSequenceDiagram.png)
+
+Step 1. The user launches the application for the first time and enters in command: `sort name desc`.
+
+Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
+
+Step 3. The `ClassMonitorParser` calls `SortCommandParser.parse()`, which returns a `SortCommand`.
+
+```note
+If either the field `field` or sorting order `isAscending`, then it will raise a parse error.
+```
+
+Step 4. `LogicManager` calls on `SortCommand.execute()`, which updates the classmonitor with the new sorted list.
 
 ### Finding Students
 
@@ -296,10 +303,10 @@ Step 2. The `LogicManager` calls on `ClassMonitorParser` to parse the String.
 
 Step 3. The `ClassMonitorParser` calls `FindCommandParser.parse()`, which then calls `FindCommandParser.parseFindName()`, which returns a `FindCommand`.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If either the field `field` or sorting order `isAscending`,
-then it will raise a parse error.
+```note
+If either the field `field` or sorting order `isAscending`, then it will raise a parse error.
+```
 
-</div>
 
 Step 4. `LogicManager` calls on `SortCommand.execute()`, which updates the addressbook with the new filtered list.
 
@@ -333,26 +340,25 @@ Step 3. The user executes `add n/David …​` to add a new student. The `add` c
 
 ![UndoRedoState2](images/UndoRedoState2.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If a command fails its execution, it will not call `Model#commitClassMonitor()`, so ClassMonitor state will not be saved into the `classMonitorStateList`.
-
-</div>
+```note
+The Developer Guide offers comprehensive documentation on the design and implementation of ClassMonitor. It includes details on the architecture of ClassMonitor, specifications for individual components, and an overview of the software's functionality and operation.If a command fails its execution, it will not call `Model#commitClassMonitor()`, so ClassMonitor state will not be saved into the `classMonitorStateList`.
+```
 
 Step 4. The user now decides that adding the student was a mistake, and decides to undo that action by executing the `undo` command. The `undo` command will call `Model#undoClassMonitor()`, which will shift the `currentStatePointer` once to the left, pointing it to the previous ClassMonitor state, and restores ClassMonitor to that state.
 
 ![UndoRedoState3](images/UndoRedoState3.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index 0, pointing to the initial ClassMonitor state, then there are no previous ClassMonitor states to restore. The `undo` command uses `Model#canUndoClassMonitor()` to check if this is the case. If so, it will return an error to the user rather
-than attempting to perform the undo.
-
-</div>
+```note
+If the `currentStatePointer` is at index 0, pointing to the initial ClassMonitor state, then there are no previous ClassMonitor states to restore. The `undo` command uses `Model#canUndoClassMonitor()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
+```
 
 The following sequence diagram shows how an undo operation goes through the `Logic` component:
 
 ![UndoSequenceDiagram](images/UndoSequenceDiagram-Logic.png)
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-
-</div>
+```note
+The lifeline for `UndoCommand` should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+```
 
 Similarly, how an undo operation goes through the `Model` component is shown below:
 
@@ -360,9 +366,9 @@ Similarly, how an undo operation goes through the `Model` component is shown bel
 
 The `redo` command does the opposite — it calls `Model#redoClassMonitor()`, which shifts the `currentStatePointer` once to the right, pointing to the previously undone state, and restores ClassMonitor to that state.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** If the `currentStatePointer` is at index `classMonitorStateList.size() - 1`, pointing to the latest ClassMonitor state, then there are no undone ClassMonitor states to restore. The `redo` command uses `Model#canRedoClassMonitor()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-
-</div>
+```note
+If the `currentStatePointer` is at index `classMonitorStateList.size() - 1`, pointing to the latest ClassMonitor state, then there are no undone ClassMonitor states to restore. The `redo` command uses `Model#canRedoClassMonitor()` to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+```
 
 Step 5. The user then decides to execute the command `list`. Commands that do not modify ClassMonitor, such as `list`, will usually not call `Model#commitClassMonitor()`, `Model#undoClassMonitor()` or `Model#redoClassMonitor()`. Thus, the `classMonitorStateList` remains unchanged.
 
@@ -413,7 +419,7 @@ the `edit` command will also be extended to allow users to edit the comments.
 
 Usage: `edit INDEX ...c/INDEX2 COMMENT...`
 
-The command will edit the comment at the student with index `INDEX` with comment index `INDEX2`. 
+The command will edit the comment at the student with index `INDEX` with comment index `INDEX2`.
 
 #### UI Modifications
 
@@ -421,7 +427,7 @@ The command will edit the comment at the student with index `INDEX` with comment
 * Users will be able to view the comments they have left for each student in a separate **window**. The components of the window will track changes to the student comments in the model.
 
 **Alternative 2**
-* Users will be able to view the comments they have left for each student in a separate display in the same window. 
+* Users will be able to view the comments they have left for each student in a separate display in the same window.
 
 
 ![Proposed UI](images\StarCommentUiClassDiagram.png).
@@ -429,7 +435,7 @@ The command will edit the comment at the student with index `INDEX` with comment
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Documentation, logging, testing, configuration, dev-ops**
+## Documentation, logging, testing, configuration, dev-ops
 
 * [Documentation guide](Documentation.md)
 * [Testing guide](Testing.md)
@@ -439,7 +445,7 @@ The command will edit the comment at the student with index `INDEX` with comment
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Requirements**
+## Appendix: Requirements
 
 ### Product scope
 
@@ -450,43 +456,50 @@ The command will edit the comment at the student with index `INDEX` with comment
 * prefers desktop apps on a laptop
 * prefers typing in a CLI interface to mouse interactions
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
+**Value proposition**: ClassMonitor empowers TAs to manage their students and obtain insights from students' data.
 
 
 ### User stories
 
-Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unlikely to have) - `*`
+```info
+The following legend describes the symbols used in this section:
 
-| Priority | As a …​                                  | I want to …​                                      | So that I can…​                                                                           |
-|----------|------------------------------------------|---------------------------------------------------|-------------------------------------------------------------------------------------------|
-| `* * *`  | TA using the App for the first time      | see usage instructions                            | refer to instructions when I forget how to use the App                                    |
-| `* * *`  | TA                                       | add a new student                                 |                                                                                           |
-| `* * *`  | TA                                       | delete a student                                  | remove entries that I no longer need                                                      |
-| `* * *`  | TA                                       | find a student by name                            | locate details of students without having to go through the entire list                   |
-| `* * *`  | TA                                       | know the majors of my students                    | understand their learning needs                                                           |
-| `*`      | TA                                       | have a personal description of the student        | know more about them                                                                      |
-| `* * *`  | TA                                       | give student stars for class participation        | give credit for class participation                                                       |
-| `* * *`  | TA                                       | view a student's participation                    | gauge their engagement in class                                                           |
-| `*`      | TA                                       | sort students based on participation              | praise those who have taken initiative and remind those who have not to be more proactive |
-| `* * *`  | TA                                       | tag the students by their TGs                     | remember which class my students are in                                                   |
-| `* * *`  | TA                                       | tag the students by their modules                 | remember which module my students are in                                                  |
-| `* *`    | TA                                       | filter the students by their TGs                  | view all the students from a TG                                                           |
-| `* *`    | TA                                       | filter students by their modules                  | view all the students from a module                                                       |
-| `* *`    | TA                                       | identify underperforming students with bad grades | intervene and help them                                                                   |
-| `* *`    | TA                                       | check who's work I havent graded yet              | remember to do so                                                                         |
-| `* * `   | TA                                       | exit the program                                  |                                                                                           |
-| `* `     | TA                                       | clear all students' details                       | remove all entries quickly                                                                |
-| `*`      | TA with many students in ClassMonitor | sort students by name                             | locate a student easily                                                                   |
+| Priority | Symbol  |     Meaning      |
+|:--------:|:-------:|:----------------:|
+|   High   | `* * *` |    Must have     |
+|  Medium  |  `* *`  |   Nice to have   |
+|   Low    |   `*`   | Unlikely to have |
+```
 
-*{More to be added}*
+
+| Priority | As a …​                               | I want to …​                               | So that I can…​                                                                           |
+|----------|---------------------------------------|--------------------------------------------|-------------------------------------------------------------------------------------------|
+| `* * *`  | TA using the App for the first time   | see usage instructions                     | refer to instructions when I forget how to use the App                                    |
+| `* * *`  | TA                                    | add a new student                          |                                                                                           |
+| `* * *`  | TA                                    | edit a student's details                   |                                                                                           |
+| `* * *`  | TA                                    | delete a student                           | remove entries that I no longer need                                                      |
+| `* * *`  | TA                                    | know the majors of my students             | understand their learning needs                                                           |
+| `* * *`  | TA                                    | find a student by name                     | locate details of students without having to go through the entire list                   |
+| `* * *`  | TA                                    | track a student's participation            | gauge their engagement in class                                                           |
+| `* * *`  | TA                                    | track a student's attendance               | mark and record attendance efficiently                                                    |
+| `* * *`  | TA                                    | tag the students by their TGs              | remember which class my students are in                                                   |
+| `* * *`  | TA                                    | tag the students by their modules          | remember which module my students are in                                                  |
+| `* *`    | TA                                    | filter the students by their TGs           | view all the students from a TG                                                           |
+| `* *`    | TA                                    | filter students by their modules           | view all the students from a module                                                       |
+| `* *`    | TA                                    | exit the program                           |                                                                                           |
+| `* *`    | TA                                    | sort students based on participation       | praise those who have taken initiative and remind those who have not to be more proactive |
+| `*`      | TA                                    | have a personal description of the student | know more about them                                                                      |
+| `* `     | TA                                    | clear all students' details                | remove all entries quickly                                                                |
+| `*`      | TA with many students in ClassMonitor | sort students by name                      | locate a student easily                                                                   |
+
 
 ### Use cases
 
 (For all use cases below, the **System** is the `ClassMonitor` and the **Actor** is the `TA`, unless specified otherwise)
 
-**Use case: Delete a student**
+#### Use case 1: Delete a student
 
-**MSS**
+[[ main-success-scenario-mss:MSS ]]:
 
 1.  TA requests to list students
 2.  ClassMonitor shows a list of students
@@ -495,7 +508,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
     Use case ends.
 
-**Extensions**
+Extensions:
 
 * 2a. The list is empty.
 
@@ -507,9 +520,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
-**Use case: Add a student**
+#### Use case 2: Add a student
 
-**MSS**
+[[ main-success-scenario-mss:MSS ]]:
 
 1. TA requests to add a student in the list
 2. TA includes the relevant student's info
@@ -517,16 +530,16 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
     Use case ends.
 
-**Extensions**
+Extensions:
 
 * 2a. TA did not follow the correct format as stated in the instructions.
 * 2a1. ClassMonitor shows an error message.
 
   Use case ends.
 
-**Use case: Add a tag to a student**
+#### Use case 3: Add a tag to a student
 
-**MSS**
+[[ main-success-scenario-mss:MSS ]]:
 
 1.  TA requests to list students
 2.  ClassMonitor shows a list of students
@@ -535,7 +548,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
     Use case ends.
 
-**Extensions**
+Extensions:
 
 * 2a. The list is empty.
 
@@ -547,9 +560,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
-**Use case: Find a student by name**
+#### Use case 4: Find a student by name
 
-**MSS**
+[[ main-success-scenario-mss:MSS ]]:
 
 1.  TA requests to list students
 2.  ClassMonitor shows a list of students
@@ -558,7 +571,7 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
     Use case ends.
 
-**Extensions**
+Extensions:
 
 * 2a. The list is empty.
 
@@ -570,39 +583,39 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
       Use case resumes at step 2.
 
-**Use case: Add a star to a student**
+#### Use case 5: Add a star/bolt to a student
 
-**MSS**
+[[ main-success-scenario-mss:MSS ]]:
 
 1.  TA requests to list students
 2.  ClassMonitor shows a list of students
-3.  TA adds a star to a specific student in the list
-4.  ClassMonitor adds a star to the student
+3.  TA adds a star/bolt to a specific student in the list
+4.  ClassMonitor adds a star/bolt to the student
 
     Use case ends.
 
-**Extensions**
+Extensions:
 
 * 2a. The list is empty.
 
   Use case ends.
 
-**Use case: Filter students by tag**
+#### Use case 6: Find students by a specific field
 
-**MSS**
+[[ main-success-scenario-mss:MSS ]]:
 
 1.  TA requests to list students
 2.  ClassMonitor shows a list of students
-3.  TA requests to filter students by a specific tag
-4.  ClassMonitor shows a filtered list of students
+3.  TA requests to filter students by a specific field and criteria
+4.  ClassMonitor shows a filtered list of students based on the field and criteria specified.
 
     Use case ends.
 
-**Extensions**
+Extensions:
 
 * 2a. The list is empty.
 
-* 3a. The given tag does not exist.
+* 3a. The given field does not exist.
 
     * 3a1. ClassMonitor shows an error message.
 
@@ -610,22 +623,22 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
   Use case ends.
 
-**Use case: Sort list of students by parameter**
+#### Use case 7: Sort list of students by a specific field
 
-**MSS**
+[[ main-success-scenario-mss:MSS ]]:
 
 1.  TA requests to list students
 2.  ClassMonitor shows a list of students
 3.  TA requests to sort students by a specific parameter in ascending/descending order
-4.  ClassMonitor shows a sorted list of students.
+4.  ClassMonitor shows a sorted list of students based on the field and order specified.
 
     Use case ends.
 
-**Extensions**
+Extensions:
 
 * 2a. The list is empty.
 
-* 3a. The given parameter does not exist.
+* 3a. The given field does not exist.
 
     * 3a1. ClassMonitor shows an error message.
 
@@ -640,13 +653,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
 4.  All user operations should be completed within 100 milliseconds.
 5.  The project must adhere to a bi-weekly iterative development schedule, ensuring continuous delivery or improvement of a working product every two weeks.
-
-### Glossary
-
-* **Mainstream OS**: Windows, Linux, Unix, MacOS
-* **Course**: A course with a program and syllabus. e.g. CS2030S
-* **Tutorial Group (TG)**: A group of students from a particular course. e.g. G13
-* **Teaching Assistant (TA)**: A tutor attached to class
 
 --------------------------------------------------------------------------------------------------------------------
 ## **Appendix: Planned Enhancements**
@@ -694,14 +700,14 @@ Currently, ClassMonitor uses a generic 'try-catch' approach to handling errors i
    1. e.g. `star i/1 s/3` could throw the error `invalid index/preamble 'i/1' given.`.
 2. Have the command throw an error message for each option/preamble that is invalid or missing.
    1. e.g. `edit 1 n/s*m p/` will throw an error message with the concatenation for the invalid name and missing phone number.
+
 ## **Appendix: Instructions for manual testing**
 
 Given below are instructions to test the app manually.
 
-<div markdown="span" class="alert alert-info">:information_source: **Note:** These instructions only provide a starting point for testers to work on;
-testers are expected to do more *exploratory* testing.
-
-</div>
+```note
+These instructions only provide a starting point for testers to work on; testers are expected to do more *exploratory* testing.
+```
 
 ### Launch and shutdown
 
@@ -744,3 +750,7 @@ testers are expected to do more *exploratory* testing.
    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
 
 1. _{ more test cases …​ }_
+
+## Glossary
+
+{% include glossary.md type="dg" %}
